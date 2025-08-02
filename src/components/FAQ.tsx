@@ -69,7 +69,7 @@ const FAQ = () => {
   return (
     <section 
       ref={sectionRef}
-      className={`py-20 bg-white transition-all duration-1000 ${
+      className={`py-20 bg-gradient-to-br from-black via-gray-900 to-gray-800 transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
     >
@@ -79,8 +79,8 @@ const FAQ = () => {
         <div className={`text-center mb-16 transition-all duration-1000 delay-200 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-100 mb-6">
+            <span style={{color: 'rgb(203, 255, 0)'}}>
               got questions? we have answers.
             </span>
           </h2>
@@ -91,18 +91,18 @@ const FAQ = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-gray-50 rounded-2xl border border-gray-200 hover:shadow-md transition-shadow duration-300">
+            <div key={index} className="bg-gray-800 rounded-2xl border border-gray-600 hover:border-yellow-400/30 hover:shadow-lg transition-all duration-300">
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none"
               >
-                <h3 className="text-xl font-bold text-gray-900 pr-8">
+                <h3 className="text-xl font-bold text-gray-100 pr-8">
                   {faq.question}
                 </h3>
-                <div className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 transition-transform duration-300 ${
+                <div className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-yellow-400/20 transition-transform duration-300 ${
                   openFAQ === index ? 'rotate-180' : ''
                 }`}>
-                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5" style={{color: 'rgb(203, 255, 0)'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
@@ -110,8 +110,8 @@ const FAQ = () => {
               
               {openFAQ === index && (
                 <div className="px-8 pb-6">
-                  <div className="border-t border-gray-200 pt-6">
-                    <p className="text-lg text-gray-700 leading-relaxed">
+                  <div className="border-t border-gray-600 pt-6">
+                    <p className="text-lg text-gray-300 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -126,12 +126,24 @@ const FAQ = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <div className="mb-6">
-            <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-12 py-4 rounded-full font-bold text-xl hover:shadow-xl transition-all duration-300 transform hover:scale-105 uppercase tracking-wide">
+            <button 
+              className="text-black px-12 py-4 rounded-full font-bold text-xl hover:shadow-xl transition-all duration-300 transform hover:scale-105 uppercase tracking-wide"
+              style={{
+                backgroundColor: 'rgb(203, 255, 0)',
+                boxShadow: '0 10px 25px rgba(203, 255, 0, 0.2)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 20px 40px rgba(203, 255, 0, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 10px 25px rgba(203, 255, 0, 0.2)';
+              }}
+            >
               GET FEATURED TODAY
             </button>
           </div>
           
-          <p className="text-gray-600 text-lg italic">
+          <p className="text-gray-400 text-lg italic">
             *100% Money Back Guarantee
           </p>
         </div>
