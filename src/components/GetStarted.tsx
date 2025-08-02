@@ -1,0 +1,284 @@
+"use client";
+
+import React, { useEffect, useRef, useState } from 'react';
+
+const GetStarted = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <section 
+      ref={sectionRef}
+      className={`py-20 bg-gradient-to-br from-gray-50 to-blue-50 transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className={`text-center mb-16 transition-all duration-1000 delay-200 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Let's get started
+            </span>
+          </h2>
+        </div>
+
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          
+          {/* Left Column - What's Included */}
+          <div className={`transition-all duration-1000 delay-300 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+          }`}>
+            
+            {/* Example Image */}
+            <div className="mb-8">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/linJJKxkNTQ3VC8ZDegR/media/67747c2504db6df1adef7f0c.png"
+                alt="News Publication Example"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+            
+            {/* What's Included Card */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">What's included:</h3>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mt-1 mr-4">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700"><strong>Feature in a Top-Tier News Article</strong> - Like USA News, NY Weekly, Women's Insider, Biz Weekly, CEO Times, Men's Insider & AP.</span>
+                </li>
+                
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mt-1 mr-4">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700"><strong>SEO Boost</strong> - High Domain Authority Backlink to your website indexed on Google.</span>
+                </li>
+                
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mt-1 mr-4">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700"><strong>"Featured On" Banner</strong> - Install valuable badges to your website, ads, social media & share with clients.</span>
+                </li>
+                
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mt-1 mr-4">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700"><strong>Niche-Targeted News Outlet</strong> - Publication tailored to your customer demographic.</span>
+                </li>
+                
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mt-1 mr-4">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700"><strong>Staff Contributor Publication</strong> - Ensuring credibility & authority.</span>
+                </li>
+                
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mt-1 mr-4">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700"><strong>Comprehensive Article Package</strong> - Up to 1,000 words, 4 images, and 7 backlinks.</span>
+                </li>
+                
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mt-1 mr-4">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700"><strong>Review and Approval Process</strong> - Make any changes before publishing.</span>
+                </li>
+                
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mt-1 mr-4">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700"><strong>Quick Setup</strong> - Get started in 2 minutes. Our team handles everything A to Z.</span>
+                </li>
+                
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center mt-1 mr-4">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700 font-bold text-purple-600">+ Five Never-Before Released Bonuses!</span>
+                </li>
+              </ul>
+              
+              <div className="border-t pt-6">
+                <p className="text-green-600 font-bold text-lg mb-2">✅ Backed by Our 100% Money Back Guarantee</p>
+                <p className="text-gray-600 flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  100% Secure 256-Bit Encrypted Checkout
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Pricing & Bonuses */}
+          <div className={`transition-all duration-1000 delay-500 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+          }`}>
+            
+            {/* First Publication Image */}
+            <div className="mb-8">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/linJJKxkNTQ3VC8ZDegR/media/67f73892c220406941faaf5f.png"
+                alt="News Publication Example 2"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+
+            {/* Get Started Button */}
+            <div className="text-center mb-8">
+              <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-12 py-4 rounded-full font-bold text-xl hover:shadow-xl transition-all duration-300 transform hover:scale-105 uppercase tracking-wide w-full">
+                GET STARTED NOW
+              </button>
+            </div>
+
+            {/* Second Publication Image */}
+            <div className="mb-8">
+              <img 
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/linJJKxkNTQ3VC8ZDegR/media/67747184d515b16c479d2b7c.png"
+                alt="News Publication Example 3"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+
+            {/* Pricing & Bonuses Card */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+                Only <span className="text-green-600">$147</span> For A Top-Tier News Article
+              </h3>
+              
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center mt-1 mr-4">
+                    <span className="text-white font-bold text-xs">1</span>
+                  </div>
+                  <span className="text-gray-700"><strong>Bonus 1: $5 A Day Viral Brand Strategy in 2025</strong> - Access our secret viral brand machine to make your brand, products & content go viral.</span>
+                </li>
+                
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center mt-1 mr-4">
+                    <span className="text-white font-bold text-xs">2</span>
+                  </div>
+                  <span className="text-gray-700"><strong>Bonus 2: Complete PR Secrets Library</strong> - Exact steps we use to get clients featured in top news outlets in 2025.</span>
+                </li>
+                
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center mt-1 mr-4">
+                    <span className="text-white font-bold text-xs">3</span>
+                  </div>
+                  <span className="text-gray-700"><strong>Bonus 3: Free Major Interview Strategy</strong> - How to land TV, magazines, radio, podcasts & more in 2025.</span>
+                </li>
+                
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center mt-1 mr-4">
+                    <span className="text-white font-bold text-xs">4</span>
+                  </div>
+                  <span className="text-gray-700"><strong>Bonus 4: PR to Profit Blueprint 2025</strong> - Turn your PR coverage into measurable revenue.</span>
+                </li>
+                
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center mt-1 mr-4">
+                    <span className="text-white font-bold text-xs">5</span>
+                  </div>
+                  <span className="text-gray-700"><strong>Bonus 5: Exclusive "Perfect PR AI"</strong> - Our secret weapon that instantly drafts unlimited flawless PR articles in 2025.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Guarantee Section */}
+        <div className={`mt-16 text-center transition-all duration-1000 delay-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
+          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">
+              <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                Everything to gain and nothing to lose
+              </span>
+            </h3>
+            
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+              <div className="flex-shrink-0">
+                <img 
+                  src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/linJJKxkNTQ3VC8ZDegR/media/65f8eac34d78695539c2441a.png"
+                  alt="Money Back Guarantee"
+                  className="w-24 h-24"
+                />
+              </div>
+              
+              <div className="text-left">
+                <p className="text-xl font-bold text-gray-900 mb-4">
+                  <strong>100% money-back guarantee.</strong> That's how confident we are.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  If, for any reason, we are unable to get your business featured, you will
+                  receive a full refund to your credit card — no questions asked.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default GetStarted;
