@@ -25,10 +25,9 @@ const Header = () => {
             </div>
             {/* Company Name */}
             <div className="flex flex-col">
-              <h1 className="text-lg font-bold leading-tight" style={{color: 'rgb(203, 255, 0)'}}>
-                Digital Networking
-              </h1>
-              <span className="text-sm text-gray-400 leading-tight">Agency</span>
+              <h2 className="text-base font-semibold leading-tight tracking-wide" style={{color: 'rgb(203, 255, 0)', fontFamily: 'Inter, system-ui, -apple-system, sans-serif'}}>
+                Digital Networking Agency
+              </h2>
             </div>
           </div>
           

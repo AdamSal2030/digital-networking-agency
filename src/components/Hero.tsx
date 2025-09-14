@@ -37,9 +37,9 @@ const Hero = () => {
               in a Major News Outlet Like
             </h2>
             <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-300 italic leading-relaxed">
-              <div>USA News, New York Review,</div>
-              <div>CEO Times, Biz Weekly, and</div>
-              <div>Women's Insider</div>
+              <div>CEO Weekly, US business news,</div>
+              <div>Women journal, Wall Street Times, and</div>
+              <div>New York weekly</div>
             </div>
           </div>
           
