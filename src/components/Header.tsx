@@ -16,7 +16,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="text-2xl font-bold" style={{color: 'rgb(203, 255, 0)'}}>
-              Digital Networking
+              Digital Networking Agency
             </h1>
           </div>
           

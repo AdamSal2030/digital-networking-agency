@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="mb-6">
               <h3 className="text-3xl font-bold mb-4" style={{color: 'rgb(203, 255, 0)'}}>
-                Digital Networking
+                Digital Networking Agency
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 We scale brands into industry leaders through top-tier media coverage. 
