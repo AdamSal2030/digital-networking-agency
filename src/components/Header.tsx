@@ -13,11 +13,23 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-gray-700 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold" style={{color: 'rgb(203, 255, 0)'}}>
-              Digital Networking Agency
-            </h1>
+          {/* Logo and Company Name */}
+          <div className="flex items-center space-x-3">
+            {/* Logo placeholder - replace with your actual logo */}
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden" style={{backgroundColor: 'rgb(203, 255, 0)'}}>
+              <img 
+                src="/logo.png" 
+                alt="Digital Networking Agency Logo" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+            {/* Company Name */}
+            <div className="flex flex-col">
+              <h1 className="text-lg font-bold leading-tight" style={{color: 'rgb(203, 255, 0)'}}>
+                Digital Networking
+              </h1>
+              <span className="text-sm text-gray-400 leading-tight">Agency</span>
+            </div>
           </div>
           
           {/* Desktop Navigation */}
@@ -70,6 +82,13 @@ const Header = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
+              </a>
+              <a 
+                href="/service" 
+                className="block px-3 py-2 text-gray-300 hover:text-yellow-400 hover:bg-gray-700 rounded-md font-medium transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Service
               </a>
               <a 
                 href="/about" 
