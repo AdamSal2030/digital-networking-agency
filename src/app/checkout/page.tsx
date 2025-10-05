@@ -95,12 +95,18 @@ export default function CheckoutPage() {
       return;
     }
 
+     const selectedPublications =
+    product === "ONE"
+      ? [publication1]
+      : [publication1, publication2].filter(Boolean);
+
     setLoading(true);
     try {
+      console.log(selectedPublications)
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ product, publication1, publication2, customer: form }),
+        body: JSON.stringify({ product, publications: selectedPublications, customer: form }),
       });
 
       if (!res.ok) {
