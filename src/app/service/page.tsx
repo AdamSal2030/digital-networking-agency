@@ -4,8 +4,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Star, Tv, BookOpen, Users, Award, TrendingUp } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const ServicesPage = () => {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -269,6 +271,7 @@ const ServicesPage = () => {
               onMouseLeave={(e) => {
                 e.currentTarget.style.boxShadow = '0 10px 25px rgba(203, 255, 0, 0.2)';
               }}
+              onClick={() => router.push('/checkout')} 
             >
               Get Started Today
             </button>

@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const FAQ = () => {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(0); // First FAQ open by default
   const sectionRef = useRef<HTMLElement>(null);
@@ -138,6 +140,7 @@ const FAQ = () => {
               onMouseLeave={(e) => {
                 e.currentTarget.style.boxShadow = '0 10px 25px rgba(203, 255, 0, 0.2)';
               }}
+              onClick={() => router.push('/checkout')}
             >
               GET FEATURED TODAY
             </button>

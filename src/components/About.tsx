@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const About = () => {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -107,6 +109,7 @@ const About = () => {
                 onMouseLeave={(e) => {
                   e.currentTarget.style.boxShadow = '0 10px 25px rgba(203, 255, 0, 0.2)';
                 }}
+                onClick={() => router.push('/checkout')}   
               >
                 Start Your Success Story
               </button>

@@ -1,8 +1,10 @@
 "use client";
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 
 const Hero = () => {
+  const router = useRouter();
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 pt-16">
       {/* Background decoration */}
@@ -86,6 +88,7 @@ const Hero = () => {
               onMouseLeave={(e) => {
                 e.currentTarget.style.boxShadow = '0 10px 25px rgba(203, 255, 0, 0.2)';
               }}
+              onClick={() => router.push('/checkout')}
             >
               GET FEATURED TODAY
             </button>
