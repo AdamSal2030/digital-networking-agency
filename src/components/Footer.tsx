@@ -51,13 +51,30 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-gray-300">1001 S Main St STE 500, Kalispell, MT 59901</span>
+                <span className="text-gray-300">6545 MARKET AVE N STE 100 CANTON, OH 44721</span>
               </div>
               <div className="flex items-center">
                 <svg className="w-5 h-5 mr-3" style={{color: 'rgb(203, 255, 0)'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span className="text-gray-300">support@digitalnetworkingagency.com</span>
+                <span className="text-gray-300">sam@digitalnetworkingagency.com</span>
+              </div>
+              <div className="flex items-center">
+                <svg
+                  className="w-5 h-5 mr-3"
+                  style={{ color: 'rgb(203, 255, 0)' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h2a2 2 0 012 2v2a1 1 0 01-.293.707l-1.414 1.414a16.02 16.02 0 006.586 6.586l1.414-1.414A1 1 0 0116 13h2a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"
+                  />
+                </svg>
+                <span className="text-gray-300">307 284 1045</span>
               </div>
             </div>
           </div>
