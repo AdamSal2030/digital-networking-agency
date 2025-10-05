@@ -1,4 +1,3 @@
-// src/app/checkout/page.tsx
 "use client";
 
 import React, { useState } from "react";
@@ -22,9 +21,48 @@ const PRODUCT_COPY: Record<ProductKey, { title: string; price: number; priceText
   },
 };
 
+const PUBLICATIONS = [
+  "The American News",
+  "Artist Weekly",
+  "Atlanta Wire",
+  "BLK News",
+  "California Gazette",
+  "California Observer",
+  "CEO Weekly",
+  "Celebrity News",
+  "Economic Insider",
+  "Entertainment Monthly News",
+  "Entertainment Post",
+  "Famous Times",
+  "Influencer Daily",
+  "Kivo Daily",
+  "Los Angeles Wire",
+  "Market Daily",
+  "Miami Wire",
+  "Music Observer",
+  "Texas Today",
+  "The Wall Street Times",
+  "New York Weekly",
+  "New York Wire",
+  "Net Worth",
+  "Real Estate Today",
+  "Portland News",
+  "San Francisco Post",
+  "The Chicago Journal",
+  "US Insider",
+  "US Reporter",
+  "US Business News",
+  "Voyage New York",
+  "Women’s Journal",
+  "World Reporter",
+];
+
+
 export default function CheckoutPage() {
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState<ProductKey>("ONE");
+  const [publication1, setPublication1] = useState("");
+  const [publication2, setPublication2] = useState("");
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -43,7 +81,17 @@ export default function CheckoutPage() {
 
   const onBuy = async () => {
     if (!form.firstName || !form.lastName || !form.email || !form.phone) {
-      alert("Please fill first name, last name, phone and email.");
+      alert("Please fill first name, last name, phone, and email.");
+      return;
+    }
+
+    if (product === "ONE" && !publication1) {
+      alert("Please select a publication before continuing.");
+      return;
+    }
+
+    if (product === "TWO" && (!publication1 || !publication2)) {
+      alert("Please select both publications before continuing.");
       return;
     }
 
@@ -52,7 +100,7 @@ export default function CheckoutPage() {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ product, customer: form }),
+        body: JSON.stringify({ product, publication1, publication2, customer: form }),
       });
 
       if (!res.ok) {
@@ -107,13 +155,14 @@ export default function CheckoutPage() {
               <h1 className="text-3xl font-bold text-gray-100 mb-2">
                 FILL OUT THE FORM & GET FEATURED TODAY!
               </h1>
-              <p className="text-xl text-gray-300">Choose your package and continue to secure Stripe Checkout.</p>
+              <p className="text-xl text-gray-300">
+                Choose your package and publication(s), then continue to checkout.
+              </p>
             </div>
 
             {/* Product Selection */}
             <div className="space-y-4 mb-8">
               <h4 className="text-xl font-bold text-gray-100">Select Package</h4>
-
               {Object.entries(PRODUCT_COPY).map(([key, item]) => (
                 <label
                   key={key}
@@ -137,11 +186,50 @@ export default function CheckoutPage() {
               ))}
             </div>
 
+            {/* Publication Dropdown(s) */}
+            <div className="mb-8">
+              <h4 className="text-xl font-bold text-gray-100 mb-3">
+                {product === "TWO" ? "Select Your Publications" : "Select Publication"}
+              </h4>
+
+              {/* First Dropdown */}
+              <select
+                value={publication1}
+                onChange={(e) => setPublication1(e.target.value)}
+                className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400 mb-4"
+              >
+                <option value="">Select 1st publication</option>
+                {PUBLICATIONS.map((pub) => (
+                  <option key={pub} value={pub}>
+                    {pub}
+                  </option>
+                ))}
+              </select>
+
+              {/* Second Dropdown (only for Two-Tier) */}
+              {product === "TWO" && (
+                <select
+                  value={publication2}
+                  onChange={(e) => setPublication2(e.target.value)}
+                  className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400"
+                >
+                  <option value="">Select 2nd publication</option>
+                  {PUBLICATIONS.map((pub) => (
+                    <option key={pub} value={pub}>
+                      {pub}
+                    </option>
+                  ))}
+                </select>
+              )}
+            </div>
+
             {/* Order Summary */}
             <div className="bg-gray-700 rounded-lg p-6 mb-8">
               <h4 className="text-xl font-bold text-gray-100 mb-4">Order Summary</h4>
               <div className="flex justify-between items-start">
-                <span className="text-gray-300 flex-1 mr-4">{selected.title} [One-Time Payment]</span>
+                <span className="text-gray-300 flex-1 mr-4">
+                  {selected.title} [One-Time Payment]
+                </span>
                 <span className="text-gray-100">1</span>
                 <span className="text-gray-100 ml-4">{selected.priceText}</span>
               </div>
