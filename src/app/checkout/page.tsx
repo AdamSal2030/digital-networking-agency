@@ -80,6 +80,16 @@ export default function CheckoutPage() {
   };
 
   const onBuy = async () => {
+    // Require agreement checkbox
+    const agreeEl = document.getElementById("agree") as HTMLInputElement | null;
+    if (!agreeEl?.checked) {
+      alert(
+        "Please confirm you have read and agree to the Terms of Service, Refund Policy, and Privacy Policy."
+      );
+      return;
+    }
+
+    // Basic validations
     if (!form.firstName || !form.lastName || !form.email || !form.phone) {
       alert("Please fill first name, last name, phone, and email.");
       return;
@@ -95,14 +105,13 @@ export default function CheckoutPage() {
       return;
     }
 
-     const selectedPublications =
-    product === "ONE"
-      ? [publication1]
-      : [publication1, publication2].filter(Boolean);
+    const selectedPublications =
+      product === "ONE"
+        ? [publication1]
+        : [publication1, publication2].filter(Boolean);
 
     setLoading(true);
     try {
-      console.log(selectedPublications)
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -126,6 +135,20 @@ export default function CheckoutPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      {/* ===== Top Logo Bar (Logo left, single button right) ===== */}
+      <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-black/80 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
+            <img
+              src="/logo.png"
+              alt="Digital Networking Agency"
+              className="h-10 w-auto"
+            />
+          </div>
+        </div>
+      </header>
+
       {/* Top Guarantee Bar */}
       <div className="bg-gradient-to-r from-green-600 to-green-700 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -320,6 +343,49 @@ export default function CheckoutPage() {
                     className="bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400"
                   />
                 </div>
+              </div>
+
+              {/* Agreement Checkbox */}
+              <div className="flex items-start space-x-3 bg-gray-700/40 border border-gray-600 rounded-lg p-4 mb-4">
+                <input
+                  type="checkbox"
+                  id="agree"
+                  className="mt-1 w-5 h-5 accent-lime-400 cursor-pointer"
+                  required
+                />
+                <label
+                  htmlFor="agree"
+                  className="text-gray-300 text-sm leading-relaxed"
+                >
+                  By proceeding, I confirm that I have read and agree to the{" "}
+                  <a
+                    href="/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-lime-400 hover:text-lime-300"
+                  >
+                    Terms of Service
+                  </a>
+                  ,{" "}
+                  <a
+                    href="/refunds"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-lime-400 hover:text-lime-300"
+                  >
+                    Refund Policy
+                  </a>
+                  , and{" "}
+                  <a
+                    href="/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-lime-400 hover:text-lime-300"
+                  >
+                    Privacy Policy
+                  </a>
+                  .
+                </label>
               </div>
 
               {/* Pay Button */}

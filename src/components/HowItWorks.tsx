@@ -1,11 +1,10 @@
-
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import React, { useEffect, useRef, useState } from "react";
+// import { useRouter } from "next/navigation"; // not needed now
 
 const HowItWorks = () => {
-  const router = useRouter();
+  // const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -33,8 +32,29 @@ const HowItWorks = () => {
     };
   }, []);
 
+  // ✅ Open LiveChat with prefilled draft
+  function openCTAChat() {
+    if (typeof window === "undefined") return;
+    const w = (window as any).LiveChatWidget;
+    const legacy = (window as any).LC_API;
+    const message = "Hi I want to get featured.";
+
+    try {
+      w?.call?.("set_session_variables", {
+        page: typeof window !== "undefined" ? window.location.pathname : "/how-it-works",
+        source: "how_it_works_cta",
+      });
+    } catch {}
+
+    try {
+      w?.call?.("maximize", { messageDraft: message });
+    } catch {
+      try { legacy?.open_chat_window?.(); } catch {}
+    }
+  }
+
   return (
-    <section 
+    <section
       ref={sectionRef}
       className={`py-20 bg-gradient-to-br from-gray-800 via-black to-gray-900 transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -98,20 +118,20 @@ const HowItWorks = () => {
           <div className={`transition-all duration-1000 delay-400 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            <div className="bg-gray-800 rounded-2xl p-8 border border-gray-600 hover:border-yellow-400/30 hover:shadow-lg transition-all duration-300 group">
+              <div className="bg-gray-800 rounded-2xl p-8 border border-gray-600 hover:border-yellow-400/30 hover:shadow-lg transition-all duration-300 group">
               
               {/* Step Number */}
-              <div 
-                className="w-16 h-16 rounded-full flex items-center justify-center mb-6 text-black font-bold text-xl"
+                <div
+                  className="w-16 h-16 rounded-full flex items-center justify-center mb-6 text-black font-bold text-xl"
                 style={{backgroundColor: 'rgb(203, 255, 0)'}}
-              >
+                >
                 2
-              </div>
+                </div>
               
               {/* Step Title */}
-              <h3 className="text-2xl font-bold text-gray-100 mb-4 group-hover:text-yellow-400 transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-gray-100 mb-4 group-hover:text-yellow-400 transition-colors duration-300">
                 STEP 2
-              </h3>
+                </h3>
               
               {/* Step Content */}
               <p className="text-gray-300 text-lg leading-relaxed">
@@ -119,11 +139,11 @@ const HowItWorks = () => {
               </p>
               
               {/* Icon */}
-              <div className="mt-6 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300">
-                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="mt-6 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300">
+                  <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-              </div>
+                  </svg>
+                </div>
             </div>
           </div>
 
@@ -170,28 +190,28 @@ const HowItWorks = () => {
           {/* Assurance Text */}
           <div className="mb-8">
             <p className="text-xl sm:text-2xl font-bold text-gray-100 mb-4">
-              After you checkout, we handle everything from A to Z!
-            </p>
+            After you checkout, we handle everything from A to Z!
+          </p>
           </div>
           
           {/* CTA Button */}
           <div className="mb-6">
-            <button 
-              className="text-black px-12 py-4 rounded-full font-bold text-xl hover:shadow-xl transition-all duration-300 transform hover:scale-105 uppercase tracking-wide"
-              style={{
+          <button
+            className="text-black px-12 py-4 rounded-full font-bold text-xl hover:shadow-xl transition-all duration-300 transform hover:scale-105 uppercase tracking-wide"
+            style={{
                 backgroundColor: 'rgb(203, 255, 0)',
                 boxShadow: '0 10px 25px rgba(203, 255, 0, 0.2)'
-              }}
-              onMouseEnter={(e) => {
+            }}
+            onMouseEnter={(e) => {
                 e.currentTarget.style.boxShadow = '0 20px 40px rgba(203, 255, 0, 0.3)';
-              }}
-              onMouseLeave={(e) => {
+            }}
+            onMouseLeave={(e) => {
                 e.currentTarget.style.boxShadow = '0 10px 25px rgba(203, 255, 0, 0.2)';
-              }}
-              onClick={() => router.push('/checkout')}
-            >
-              GET FEATURED TODAY
-            </button>
+            }}
+              onClick={openCTAChat}
+          >
+            GET FEATURED TODAY
+          </button>
           </div>
           
           {/* Guarantee */}

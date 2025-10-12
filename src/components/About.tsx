@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation'; // no longer needed
 
 const About = () => {
-  const router = useRouter();
+  // const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -31,6 +31,29 @@ const About = () => {
       }
     };
   }, []);
+
+  // ✅ Open LiveChat with a prefilled draft
+  function openCTAChat() {
+    if (typeof window === "undefined") return;
+    const w = (window as any).LiveChatWidget;
+    const legacy = (window as any).LC_API;
+    const message = "Hi I want to get featured.";
+
+    // Optional: context for your agents
+    try {
+      w?.call?.("set_session_variables", {
+        page: typeof window !== "undefined" ? window.location.pathname : "/about",
+        source: "about_start_success_story",
+      });
+    } catch {}
+
+    // Open widget + draft
+    try {
+      w?.call?.("maximize", { messageDraft: message });
+    } catch {
+      try { legacy?.open_chat_window?.(); } catch {}
+    }
+  }
 
   return (
     <section 
@@ -109,7 +132,7 @@ const About = () => {
                 onMouseLeave={(e) => {
                   e.currentTarget.style.boxShadow = '0 10px 25px rgba(203, 255, 0, 0.2)';
                 }}
-                onClick={() => router.push('/checkout')}   
+                onClick={openCTAChat}   // ✅ opens chat with draft
               >
                 Start Your Success Story
               </button>

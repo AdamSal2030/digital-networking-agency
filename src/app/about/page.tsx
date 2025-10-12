@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation"; // ✅ import useRouter
+// import { useRouter } from "next/navigation"; // not needed now
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const AboutPage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-  const router = useRouter(); // ✅ initialize router inside component
+  // const router = useRouter();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,6 +33,29 @@ const AboutPage = () => {
       }
     };
   }, []);
+
+  // ✅ Open LiveChat with prefilled draft
+  function openCTAChat() {
+    if (typeof window === "undefined") return;
+    const w = (window as any).LiveChatWidget;
+    const legacy = (window as any).LC_API;
+    const message = "Hi I want to get featured.";
+
+    // Optional: pass context to your team
+    try {
+      w?.call?.("set_session_variables", {
+        page: typeof window !== "undefined" ? window.location.pathname : "/about",
+        source: "about_page_start_journey",
+      });
+    } catch {}
+
+    // Open widget + draft (user can hit Enter to send)
+    try {
+      w?.call?.("maximize", { messageDraft: message });
+    } catch {
+      try { legacy?.open_chat_window?.(); } catch {}
+    }
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
@@ -172,22 +195,20 @@ const AboutPage = () => {
               </div>
             </div>
 
-            {/* ✅ CTA button with redirect */}
+            {/* ✅ CTA button now opens chat */}
             <div className="mt-16">
               <button
-                onClick={() => router.push("/checkout")} // 👈 redirect to checkout
+                onClick={openCTAChat}
                 className="text-black px-12 py-4 rounded-full font-bold text-xl hover:shadow-xl transition-all duration-300 transform hover:scale-105 uppercase tracking-wide"
                 style={{
                   backgroundColor: "rgb(203, 255, 0)",
                   boxShadow: "0 10px 25px rgba(203, 255, 0, 0.2)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow =
-                    "0 20px 40px rgba(203, 255, 0, 0.3)";
+                  e.currentTarget.style.boxShadow = "0 20px 40px rgba(203, 255, 0, 0.3)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow =
-                    "0 10px 25px rgba(203, 255, 0, 0.2)";
+                  e.currentTarget.style.boxShadow = "0 10px 25px rgba(203, 255, 0, 0.2)";
                 }}
               >
                 Start Your Journey

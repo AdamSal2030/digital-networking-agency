@@ -1,15 +1,39 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation"; // ✅ import useRouter
+// ❌ router not needed anymore since we open chat
+// import { useRouter } from "next/navigation";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const router = useRouter(); // ✅ use inside component
+  // const router = useRouter();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  // ✅ Open LiveChat with a prefilled draft
+  function openCTAChat() {
+    if (typeof window === "undefined") return;
+    const w = (window as any).LiveChatWidget;
+    const legacy = (window as any).LC_API;
+    const message = "Hi I want to get featured.";
+
+    // Optional: pass context for your agents
+    try {
+      w?.call?.("set_session_variables", {
+        page: typeof window !== "undefined" ? window.location.pathname : "/",
+        source: "header_get_started",
+      });
+    } catch {}
+
+    // Open widget + draft (user presses Enter to send)
+    try {
+      w?.call?.("maximize", { messageDraft: message });
+    } catch {
+      try { legacy?.open_chat_window?.(); } catch {}
+    }
+  }
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-gray-700 z-50">
@@ -42,31 +66,22 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <a
-              href="/"
-              className="text-gray-300 hover:text-yellow-400 transition-colors font-medium"
-            >
+            <a href="/" className="text-gray-300 hover:text-yellow-400 transition-colors font-medium">
               Home
             </a>
-            <a
-              href="/service"
-              className="text-gray-300 hover:text-yellow-400 transition-colors font-medium"
-            >
+            <a href="/service" className="text-gray-300 hover:text-yellow-400 transition-colors font-medium">
               Service
             </a>
-            <a
-              href="/about"
-              className="text-gray-300 hover:text-yellow-400 transition-colors font-medium"
-            >
+            <a href="/about" className="text-gray-300 hover:text-yellow-400 transition-colors font-medium">
               About
             </a>
           </nav>
 
           {/* CTA Button */}
           <div className="flex items-center space-x-4">
-            {/* ✅ Updated Get Started button */}
+            {/* ✅ Desktop Get Started opens chat */}
             <button
-              onClick={() => router.push("/checkout")} // 👈 go to checkout page
+              onClick={openCTAChat}
               className="hidden sm:inline-flex text-black px-6 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105"
               style={{ backgroundColor: "rgb(203, 255, 0)" }}
             >
@@ -79,32 +94,12 @@ const Header = () => {
               className="md:hidden p-2 text-gray-300 hover:text-yellow-400 transition-colors"
             >
               {isMobileMenuOpen ? (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
             </button>
@@ -137,11 +132,11 @@ const Header = () => {
                 About
               </a>
               <div className="pt-2">
-                {/* ✅ Mobile Get Started redirect */}
+                {/* ✅ Mobile Get Started opens chat, closes menu */}
                 <button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
-                    router.push("/checkout");
+                    openCTAChat();
                   }}
                   className="w-full text-black px-6 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300"
                   style={{ backgroundColor: "rgb(203, 255, 0)" }}
