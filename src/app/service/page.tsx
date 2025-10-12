@@ -365,7 +365,7 @@ export default function ServicesPage() {
           <div className="rounded-2xl border border-gray-700 bg-gray-800/70 px-6 sm:px-8 py-6">
             <div className="flex items-center justify-center gap-4 mb-6">
               <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-gray-100">
-                Value Publication — <span className="sr-only">$147 each</span>
+                Value Publications — <span className="sr-only">$147 each</span>
               </h2>
               <button
                 onClick={() => goToCheckout()}
