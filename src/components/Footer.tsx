@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { Phone, Mail as MailIcon } from "lucide-react"; // aliased
 
 const Footer = () => {
   const MAILTO = "mailto:sam@digitalnetworkingagency.com";
@@ -73,7 +73,7 @@ const Footer = () => {
                   >
                     <path
                       fillRule="evenodd"
-                      d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11 .65 .166 1.32 .166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682 .057-1.35 .166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                       clipRule="evenodd"
                     />
                   </svg>
@@ -146,22 +146,11 @@ const Footer = () => {
                 </span>
               </div>
 
+              {/* Email row with icon (wrapped to avoid collapse) */}
               <div className="flex items-center">
-                <svg
-                  className="w-5 h-5 mr-3"
-                  style={{ color: "rgb(203, 255, 0)" }}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
+                <span className="inline-flex w-5 h-5 mr-3 items-center justify-center text-[rgb(203,255,0)]">
+                  <MailIcon className="w-5 h-5 flex-shrink-0" strokeWidth={2} />
+                </span>
                 <a
                   href="mailto:sam@digitalnetworkingagency.com"
                   target="_top"
@@ -174,7 +163,7 @@ const Footer = () => {
               </div>
 
               <div className="flex items-center">
-                <Phone className="w-5 h-5 mr-3 text-[rgb(203,255,0)]" strokeWidth={2} />
+                <Phone className="w-5 h-5 mr-3 text-[rgb(203,255,0)] flex-shrink-0" strokeWidth={2} />
                 <a
                   href="tel:+13072841045"
                   className="text-gray-300 hover:text-yellow-400 transition-colors duration-300"
@@ -200,7 +189,6 @@ const Footer = () => {
                   className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:text-black hover:bg-[rgb(203,255,0)] transition-all duration-300"
                   title="Instagram"
                 >
-                  {/* keep your existing glyph here if you like, or swap to lucide/Instagram */}
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5 5 0 1 1 0 10.001 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7.001 3.5 3.5 0 0 0 0-7.001zm5-2.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
                   </svg>
@@ -214,20 +202,7 @@ const Footer = () => {
                   className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:text-black hover:bg-[rgb(203,255,0)] transition-all duration-300"
                   title="Email"
                 >
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
+                  <MailIcon className="w-5 h-5" strokeWidth={2} />
                 </button>
 
                 {/* Phone button */}

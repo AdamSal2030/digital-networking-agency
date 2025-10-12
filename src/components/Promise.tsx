@@ -45,7 +45,7 @@ const Promise = () => {
         }`}>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span style={{color: 'rgb(203, 255, 0)'}}>
-              our promise
+              OUR PROMISE
             </span>
           </h2>
           <p className="text-2xl sm:text-3xl text-gray-100 font-bold max-w-4xl mx-auto">

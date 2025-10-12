@@ -67,11 +67,11 @@ const HowItWorks = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-100 mb-6">
-            How to get{' '}
+            HOW TO GET{' '}
             <span style={{color: 'rgb(203, 255, 0)'}}>
-              featured
+              FEATURED
             </span>{' '}
-            in 2025
+            IN 2025
           </h2>
           <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto">
             <strong>Top-tier media coverage in 3 simple steps.</strong> We handle the entire process:
