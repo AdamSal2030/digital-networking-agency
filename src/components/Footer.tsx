@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Phone } from "lucide-react"; // ✅ crisp phone icon
+import { Phone } from "lucide-react";
 
 const Footer = () => {
   const MAILTO = "mailto:sam@digitalnetworkingagency.com";
@@ -174,7 +174,6 @@ const Footer = () => {
               </div>
 
               <div className="flex items-center">
-                {/* ✅ Replaced weird handset with Lucide Phone */}
                 <Phone className="w-5 h-5 mr-3 text-[rgb(203,255,0)]" strokeWidth={2} />
                 <a
                   href="tel:+13072841045"
