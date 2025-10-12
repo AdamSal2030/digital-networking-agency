@@ -1,12 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import Footer from "@/components/Footer";
 import { Shield, Lock, CheckCircle, Clock } from "lucide-react";
 
+import { useForm, Controller } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
+
 type ProductKey = "ONE" | "TWO";
 
-const PRODUCT_COPY: Record<ProductKey, { title: string; price: number; priceText: string; normal: string }> = {
+const PRODUCT_COPY: Record<
+  ProductKey,
+  { title: string; price: number; priceText: string; normal: string }
+> = {
   ONE: {
     title: "One Top-Tier Article Written & Featured For You",
     price: 147,
@@ -57,29 +66,78 @@ const PUBLICATIONS = [
   "World Reporter",
 ];
 
+// ----- Validation -----
+const phoneRegex = /^\+\d{7,15}$/;
+
+const makeSchema = (product: ProductKey) =>
+  z
+    .object({
+      firstName: z.string().min(1, "First name is required"),
+      lastName: z.string().min(1, "Last name is required"),
+      email: z.string().email("Enter a valid email address"),
+      phone: z
+        .string()
+        .min(1, "Phone is required")
+        .regex(phoneRegex, "Include country code (e.g., +1 555 555 5555)"),
+      publication1: z.string().min(1, "Select a publication"),
+      publication2: z.string().optional(), // only required for TWO
+    })
+    .superRefine((values, ctx) => {
+      if (product === "TWO") {
+        if (!values.publication2 || values.publication2.length === 0) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            path: ["publication2"],
+            message: "Select your second publication",
+          });
+        }
+        if (
+          values.publication1 &&
+          values.publication2 &&
+          values.publication1 === values.publication2
+        ) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            path: ["publication2"],
+            message: "Choose two different publications",
+          });
+        }
+      }
+    });
+
+type FormValues = z.infer<ReturnType<typeof makeSchema>>;
 
 export default function CheckoutPage() {
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState<ProductKey>("ONE");
-  const [publication1, setPublication1] = useState("");
-  const [publication2, setPublication2] = useState("");
-  const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    company: "",
-    website: "",
-    city: "",
-    state: "",
-    zipCode: "",
+
+  // dynamic schema based on selected product
+  const schema = useMemo(() => makeSchema(product), [product]);
+
+  const {
+    handleSubmit,
+    control,
+    register,
+    setValue,
+    watch,
+    formState: { errors, isSubmitting },
+  } = useForm<FormValues>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      publication1: "",
+      publication2: "",
+    },
   });
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
-  };
+  const selected = PRODUCT_COPY[product];
+  const pub1 = watch("publication1");
+  const pub2 = watch("publication2");
 
-  const onBuy = async () => {
+  const onSubmit = async (data: FormValues) => {
     // Require agreement checkbox
     const agreeEl = document.getElementById("agree") as HTMLInputElement | null;
     if (!agreeEl?.checked) {
@@ -89,33 +147,24 @@ export default function CheckoutPage() {
       return;
     }
 
-    // Basic validations
-    if (!form.firstName || !form.lastName || !form.email || !form.phone) {
-      alert("Please fill first name, last name, phone, and email.");
-      return;
-    }
-
-    if (product === "ONE" && !publication1) {
-      alert("Please select a publication before continuing.");
-      return;
-    }
-
-    if (product === "TWO" && (!publication1 || !publication2)) {
-      alert("Please select both publications before continuing.");
-      return;
-    }
-
     const selectedPublications =
-      product === "ONE"
-        ? [publication1]
-        : [publication1, publication2].filter(Boolean);
+      product === "ONE" ? [data.publication1] : [data.publication1, data.publication2!];
 
     setLoading(true);
     try {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ product, publications: selectedPublications, customer: form }),
+        body: JSON.stringify({
+          product,
+          publications: selectedPublications,
+          customer: {
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            phone: data.phone,
+          },
+        }),
       });
 
       if (!res.ok) {
@@ -131,20 +180,13 @@ export default function CheckoutPage() {
     }
   };
 
-  const selected = PRODUCT_COPY[product];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-      {/* ===== Top Logo Bar (Logo left, single button right) ===== */}
+      {/* ===== Top Logo Bar ===== */}
       <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-black/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-          {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img
-              src="/logo.png"
-              alt="Digital Networking Agency"
-              className="h-10 w-auto"
-            />
+            <img src="/logo.png" alt="Digital Networking Agency" className="h-10 w-auto" />
           </div>
         </div>
       </header>
@@ -205,7 +247,10 @@ export default function CheckoutPage() {
                         type="radio"
                         className="mr-3"
                         checked={product === key}
-                        onChange={() => setProduct(key as ProductKey)}
+                        onChange={() => {
+                          setProduct(key as ProductKey);
+                          if (key === "ONE") setValue("publication2", "");
+                        }}
                       />
                       <span className="text-gray-100 font-medium">{item.title}</span>
                     </div>
@@ -222,33 +267,43 @@ export default function CheckoutPage() {
               </h4>
 
               {/* First Dropdown */}
-              <select
-                value={publication1}
-                onChange={(e) => setPublication1(e.target.value)}
-                className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400 mb-4"
-              >
-                <option value="">Select 1st publication</option>
-                {PUBLICATIONS.map((pub) => (
-                  <option key={pub} value={pub}>
-                    {pub}
-                  </option>
-                ))}
-              </select>
-
-              {/* Second Dropdown (only for Two-Tier) */}
-              {product === "TWO" && (
+              <div className="mb-4">
                 <select
-                  value={publication2}
-                  onChange={(e) => setPublication2(e.target.value)}
                   className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400"
+                  {...register("publication1")}
+                  defaultValue=""
                 >
-                  <option value="">Select 2nd publication</option>
+                  <option value="">Select 1st publication</option>
                   {PUBLICATIONS.map((pub) => (
                     <option key={pub} value={pub}>
                       {pub}
                     </option>
                   ))}
                 </select>
+                {errors.publication1 && (
+                  <p className="text-red-400 text-sm mt-1">{errors.publication1.message}</p>
+                )}
+              </div>
+
+              {/* Second Dropdown (only for Two-Tier) */}
+              {product === "TWO" && (
+                <div>
+                  <select
+                    className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400"
+                    {...register("publication2")}
+                    defaultValue=""
+                  >
+                    <option value="">Select 2nd publication</option>
+                    {PUBLICATIONS.map((pub) => (
+                      <option key={pub} value={pub}>
+                        {pub}
+                      </option>
+                    ))}
+                  </select>
+                  {errors.publication2 && (
+                    <p className="text-red-400 text-sm mt-1">{errors.publication2.message}</p>
+                  )}
+                </div>
               )}
             </div>
 
@@ -271,77 +326,62 @@ export default function CheckoutPage() {
             </div>
 
             {/* Customer Info */}
-            <div className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <h4 className="text-xl font-bold text-gray-100 mb-4">Customer Information</h4>
                 <div className="grid grid-cols-2 gap-4">
-                  <input
-                    name="firstName"
-                    placeholder="First Name *"
-                    value={form.firstName}
-                    onChange={onChange}
-                    className="bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400"
-                  />
-                  <input
-                    name="lastName"
-                    placeholder="Last Name *"
-                    value={form.lastName}
-                    onChange={onChange}
-                    className="bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400"
-                  />
+                  <div>
+                    <input
+                      placeholder="First Name *"
+                      className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400"
+                      {...register("firstName")}
+                    />
+                    {errors.firstName && (
+                      <p className="text-red-400 text-sm mt-1">{errors.firstName.message}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <input
+                      placeholder="Last Name *"
+                      className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400"
+                      {...register("lastName")}
+                    />
+                    {errors.lastName && (
+                      <p className="text-red-400 text-sm mt-1">{errors.lastName.message}</p>
+                    )}
+                  </div>
                 </div>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address *"
-                  value={form.email}
-                  onChange={onChange}
-                  className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400 mt-4"
-                />
-                <input
-                  name="phone"
-                  placeholder="Phone Number *"
-                  value={form.phone}
-                  onChange={onChange}
-                  className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400 mt-4"
-                />
-                <input
-                  name="company"
-                  placeholder="Company Name"
-                  value={form.company}
-                  onChange={onChange}
-                  className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400 mt-4"
-                />
-                <input
-                  type="url"
-                  name="website"
-                  placeholder="Website URL"
-                  value={form.website}
-                  onChange={onChange}
-                  className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400 mt-4"
-                />
-                <div className="grid grid-cols-3 gap-4 mt-4">
+
+                <div className="mt-4">
                   <input
-                    name="city"
-                    placeholder="City"
-                    value={form.city}
-                    onChange={onChange}
-                    className="bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400"
+                    type="email"
+                    placeholder="Email Address *"
+                    className="w-full bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400"
+                    {...register("email")}
                   />
-                  <input
-                    name="state"
-                    placeholder="State"
-                    value={form.state}
-                    onChange={onChange}
-                    className="bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400"
+                  {errors.email && (
+                    <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
+                  )}
+                </div>
+
+                {/* ✅ International Phone with Country Code */}
+                <div className="mt-4">
+                  <Controller
+                    name="phone"
+                    control={control}
+                    render={({ field }) => (
+                      <PhoneInput
+                        {...field}
+                        defaultCountry="us"
+                        placeholder="Phone Number with country code *"
+                        className="w-full [&_.PhoneInputInput]:bg-gray-700 [&_.PhoneInputInput]:border [&_.PhoneInputInput]:border-gray-600 [&_.PhoneInputInput]:rounded-lg [&_.PhoneInputInput]:p-3 [&_.PhoneInputInput]:text-gray-100 [&_.PhoneInputInput]:placeholder-gray-400"
+                      />
+                    )}
                   />
-                  <input
-                    name="zipCode"
-                    placeholder="Zip Code"
-                    value={form.zipCode}
-                    onChange={onChange}
-                    className="bg-gray-700 border border-gray-600 rounded-lg p-3 text-gray-100 placeholder-gray-400"
-                  />
+                  {errors.phone && (
+                    <p className="text-red-400 text-sm mt-1">{errors.phone.message}</p>
+                  )}
                 </div>
               </div>
 
@@ -353,10 +393,7 @@ export default function CheckoutPage() {
                   className="mt-1 w-5 h-5 accent-lime-400 cursor-pointer"
                   required
                 />
-                <label
-                  htmlFor="agree"
-                  className="text-gray-300 text-sm leading-relaxed"
-                >
+                <label htmlFor="agree" className="text-gray-300 text-sm leading-relaxed">
                   By proceeding, I confirm that I have read and agree to the{" "}
                   <a
                     href="/terms"
@@ -390,22 +427,26 @@ export default function CheckoutPage() {
 
               {/* Pay Button */}
               <button
-                onClick={onBuy}
-                disabled={loading}
+                type="submit"
+                disabled={loading || isSubmitting}
                 className="w-full text-black px-8 py-4 rounded-lg font-bold text-xl hover:shadow-xl transition-all duration-300 transform hover:scale-105 uppercase tracking-wide disabled:opacity-70"
                 style={{
                   backgroundColor: "rgb(203, 255, 0)",
                   boxShadow: "0 10px 25px rgba(203, 255, 0, 0.2)",
                 }}
               >
-                {loading ? "Redirecting..." : `Pay with Stripe — ${selected.priceText}`}
+                {loading || isSubmitting
+                  ? "Redirecting..."
+                  : `Pay with Stripe — ${selected.priceText}`}
               </button>
 
               <div className="text-center space-y-2">
-                <p className="text-gray-300 font-medium">Backed by Our 100% Money Back Guarantee</p>
+                <p className="text-gray-300 font-medium">
+                  Backed by Our 100% Money Back Guarantee
+                </p>
                 <p className="text-gray-400 text-sm">* 100% Secure & Safe Payments *</p>
               </div>
-            </div>
+            </form>
           </div>
 
           {/* Right Side */}
@@ -431,9 +472,7 @@ export default function CheckoutPage() {
             </div>
 
             <div className="mt-12 text-center bg-gray-700 rounded-lg p-6 border border-gray-600">
-              <div className="text-gray-400 line-through text-xl mb-2">
-                Normally: {selected.normal}
-              </div>
+              <div className="text-gray-400 line-through text-xl mb-2">Normally: {selected.normal}</div>
               <div className="text-4xl font-bold mb-2" style={{ color: "rgb(203, 255, 0)" }}>
                 {product === "ONE" ? "Today Only $147" : "Today Only $247"}
               </div>

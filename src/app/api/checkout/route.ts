@@ -24,21 +24,29 @@ type ProductKey = keyof typeof PRODUCTS;
 
 type Payload = {
   product: ProductKey; // "ONE" | "TWO"
-  publications: string[]; // 1 or 2 publication names
+  publications: string[];
   customer: {
     firstName: string;
     lastName: string;
     email: string;
-    phone?: string;
-    company?: string;
-    website?: string;
-    city?: string;
-    state?: string;
-    zipCode?: string;
+    phone: string;
   };
 };
 
-async function sendCustomerEmail(product: ProductKey, c: Payload["customer"], publications: string[]) {
+function sanitizePhone(raw: string) {
+  const cleaned = raw.trim().replace(/[^\d+]/g, "");
+  return cleaned;
+}
+
+function isE164ish(phone: string) {
+  return /^\+\d{7,15}$/.test(phone);
+}
+
+async function sendCustomerEmail(
+  product: ProductKey,
+  c: Payload["customer"],
+  publications: string[]
+) {
   const fromAddress =
     process.env.FROM_EMAIL && process.env.FROM_EMAIL.trim().length > 0
       ? process.env.FROM_EMAIL
@@ -59,10 +67,7 @@ async function sendCustomerEmail(product: ProductKey, c: Payload["customer"], pu
     <hr/>
     <p><b>Name:</b> ${c.firstName} ${c.lastName}</p>
     <p><b>Email:</b> ${c.email}</p>
-    ${c.phone ? `<p><b>Phone:</b> ${c.phone}</p>` : ""}
-    ${c.company ? `<p><b>Company:</b> ${c.company}</p>` : ""}
-    ${c.website ? `<p><b>Website:</b> ${c.website}</p>` : ""}
-    ${c.city || c.state || c.zipCode ? `<p><b>Location:</b> ${[c.city, c.state, c.zipCode].filter(Boolean).join(", ")}</p>` : ""}
+    <p><b>Phone:</b> ${c.phone}</p>
     <hr/>
     <p>Customer is being redirected to Stripe Checkout for payment.</p>
   `;
@@ -76,7 +81,7 @@ async function sendCustomerEmail(product: ProductKey, c: Payload["customer"], pu
 
   if (error) {
     console.error("Resend email error:", error);
-    throw new Error(typeof error === "string" ? error : error.message ?? "Unknown Resend error");
+    throw new Error(typeof error === "string" ? error : (error as any).message ?? "Unknown Resend error");
   }
 
   console.log("✅ Email sent via Resend. id =", data?.id);
@@ -89,34 +94,59 @@ export async function POST(req: Request) {
     if (!product || !(product in PRODUCTS)) {
       return NextResponse.json({ error: "Invalid product" }, { status: 400 });
     }
-    if (!customer?.firstName || !customer?.lastName || !customer?.email) {
+    if (!customer?.firstName || !customer?.lastName || !customer?.email || !customer?.phone) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
-    if (!Array.isArray(publications) || publications.length === 0) {
-      return NextResponse.json({ error: "Please select at least one publication" }, { status: 400 });
+
+    const phone = sanitizePhone(customer.phone);
+    if (!isE164ish(phone)) {
+      return NextResponse.json(
+        { error: "Phone must include a country code (e.g., +15551234567)" },
+        { status: 400 }
+      );
+    }
+
+    const cleanedPubs = Array.isArray(publications)
+      ? publications.map((p) => String(p).trim()).filter(Boolean)
+      : [];
+    const uniquePubs = Array.from(new Set(cleanedPubs));
+
+    if (uniquePubs.length === 0) {
+      return NextResponse.json(
+        { error: "Please select at least one publication" },
+        { status: 400 }
+      );
+    }
+    if (product === "ONE" && uniquePubs.length !== 1) {
+      return NextResponse.json(
+        { error: "Please select exactly one publication for this package" },
+        { status: 400 }
+      );
+    }
+    if (product === "TWO" && uniquePubs.length !== 2) {
+      return NextResponse.json(
+        { error: "Please select exactly two publications for this package (no duplicates)" },
+        { status: 400 }
+      );
     }
 
     const p = PRODUCTS[product];
 
-    // Send notification email
-    await sendCustomerEmail(product, customer, publications);
+    await sendCustomerEmail(product, { ...customer, phone }, uniquePubs);
 
     // Create Stripe checkout session
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       line_items: [{ price: p.priceId, quantity: 1 }],
       customer_email: customer.email,
+      // Optional: also collect phone in Stripe UI (stored with the Checkout session/customer)
+      phone_number_collection: { enabled: true },
       metadata: {
         product: p.label,
-        publications: publications.join(", "),
+        publications: uniquePubs.join(", "),
         firstName: customer.firstName,
         lastName: customer.lastName,
-        phone: customer.phone || "",
-        company: customer.company || "",
-        website: customer.website || "",
-        city: customer.city || "",
-        state: customer.state || "",
-        zipCode: customer.zipCode || "",
+        phone,
       },
       success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/cancel`,
