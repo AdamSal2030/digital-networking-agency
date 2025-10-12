@@ -371,7 +371,7 @@ export default function ServicesPage() {
                 onClick={() => goToCheckout()}
                 className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-base sm:text-lg font-extrabold bg-lime-400/95 text-black hover:bg-lime-300 transition shadow-lg hover:shadow-xl"
               >
-                GET FEATURED $147 each
+                Book Your Feature - $147/article
               </button>
             </div>
 
