@@ -2,10 +2,15 @@
 "use client";
 
 import React, { useState } from "react";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "800", "900"],
+});
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const toggleMobileMenu = () => setIsMobileMenuOpen((s) => !s);
 
   function openCTAChat() {
@@ -13,50 +18,27 @@ const Header = () => {
     const w = (window as any).LiveChatWidget;
     const legacy = (window as any).LC_API;
     const message = "Hi I want to get featured.";
-
     try {
       w?.call?.("set_session_variables", {
         page: typeof window !== "undefined" ? window.location.pathname : "/",
         source: "header_get_started",
       });
     } catch {}
-
     try {
       w?.call?.("maximize", { messageDraft: message });
     } catch {
-      try {
-        legacy?.open_chat_window?.();
-      } catch {}
+      try { legacy?.open_chat_window?.(); } catch {}
     }
   }
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 border-b border-black/10 backdrop-blur-sm backdrop-saturate-150 shadow-[0_6px_24px_rgba(203,255,0,.15)]"
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-black/10 bg-[#ccff00] ${montserrat.className}`}
     >
-      {/* Animated multi-stop gradient background */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="h-full w-full header-gradient" />
-        {/* soft highlights for depth */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.12] mix-blend-overlay">
-          <div className="absolute -top-1/2 -left-1/3 w-[120%] h-[140%] rounded-full"
-               style={{
-                 background:
-                   "radial-gradient(60% 45% at 15% 20%, rgba(255,255,255,.7), rgba(255,255,255,0) 60%)",
-               }} />
-          <div className="absolute -bottom-1/2 -right-1/3 w-[120%] h-[140%] rounded-full"
-               style={{
-                 background:
-                   "radial-gradient(60% 45% at 85% 80%, rgba(255,255,255,.6), rgba(255,255,255,0) 60%)",
-               }} />
-        </div>
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* ⬆️ increased header height to fit larger logo */}
-        <div className="flex justify-between items-center h-20">
-          {/* Logo and Company Name */}
-          <div className="flex items-center space-x-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center h-20">
+          {/* Left: Logo + Brand */}
+          <div className="flex items-center gap-3">
             <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center overflow-hidden">
               <img
                 src="/logo.png"
@@ -64,55 +46,50 @@ const Header = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="flex flex-col">
-              <h2 className="text-base md:text-lg font-bold text-black leading-tight tracking-wide">
-                Digital Networking Agency
-              </h2>
-            </div>
+
+            <h1 className="leading-tight tracking-[0.14em] uppercase">
+              <span className="text-black font-extrabold">Digital </span>
+              <span className="text-black/90 font-medium">Networking Agency</span>
+            </h1>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8 items-center">
-            <a
-              href="/"
-              className="text-black font-semibold hover:bg-black/10 px-3 py-2 rounded-md transition-colors"
-            >
-              Home
-            </a>
-            <a
-              href="/service"
-              className="text-black font-semibold hover:bg-black/10 px-3 py-2 rounded-md transition-colors"
-            >
-              Service
-            </a>
-            <a
-              href="/about"
-              className="text-black font-semibold hover:bg-black/10 px-3 py-2 rounded-md transition-colors"
-            >
-              About
-            </a>
-          </nav>
+          {/* Right: Nav + CTA */}
+          <div className="ml-auto flex items-center gap-2 md:gap-3">
+            {/* Desktop nav */}
+            <nav className="hidden md:flex items-center gap-2">
+              <a href="/" className="btn btn-black text-sm inline-flex">Home</a>
+              <a href="/service" className="btn btn-black text-sm inline-flex">Services</a>
+              <a href="/about" className="btn btn-black text-sm inline-flex">About</a>
+            </nav>
 
-          {/* CTA + Mobile toggle */}
-          <div className="flex items-center space-x-4">
+            {/* Desktop-only CTA (now black too) */}
             <button
               onClick={openCTAChat}
-              className="hidden sm:inline-flex text-black px-6 py-2 rounded-lg font-semibold hover:bg-black/10 transition-all duration-300 transform hover:scale-105"
+              className="hidden md:inline-flex btn btn-black text-sm md:text-base px-5 md:px-6 py-2.5 md:py-3 font-extrabold"
             >
-              Get Started
+              <span>Get Started</span>
+              <svg
+                className="w-5 h-5 -mr-0.5 arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </button>
 
+            {/* Mobile burger */}
             <button
               onClick={toggleMobileMenu}
-              className="md:hidden p-2 text-black hover:bg-black/10 rounded-lg transition-colors"
+              className="md:hidden btn btn-black p-2"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="black" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg className="w-6 h-6" fill="none" stroke="black" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
@@ -120,93 +97,93 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden rounded-b-lg shadow-lg border-t border-black/10 overflow-hidden">
-            <div className="mobile-gradient px-2 pt-2 pb-3 space-y-1">
+          <div className="md:hidden overflow-hidden rounded-b-xl border-t border-black/10">
+            <div className="p-2 space-y-2 bg-[#ccff00]">
               <a
                 href="/"
-                className="block px-3 py-2 text-black font-semibold hover:bg-black/10 rounded-md transition-colors"
+                className="btn btn-black inline-flex w-full justify-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
               </a>
               <a
                 href="/service"
-                className="block px-3 py-2 text-black font-semibold hover:bg-black/10 rounded-md transition-colors"
+                className="btn btn-black inline-flex w-full justify-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Service
               </a>
               <a
                 href="/about"
-                className="block px-3 py-2 text-black font-semibold hover:bg-black/10 rounded-md transition-colors"
+                className="btn btn-black inline-flex w-full justify-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </a>
-              <div className="pt-2">
-                <button
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    openCTAChat();
-                  }}
-                  className="w-full text-black font-semibold px-6 py-2 rounded-lg hover:bg-black/10 transition-colors"
-                >
-                  Get Started
-                </button>
-              </div>
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  openCTAChat();
+                }}
+                className="btn btn-black inline-flex w-full justify-center font-extrabold"
+              >
+                <span>Get Started</span>
+                <svg className="w-5 h-5 -mr-0.5 arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
           </div>
         )}
       </div>
 
-      {/* Animated gradient styles */}
+      {/* Styles */}
       <style jsx>{`
-        .header-gradient {
-          /* multi-stop neon-lime sweep */
-          background: linear-gradient(
-            120deg,
-            #cbff00 0%,
-            #c6ff00 12%,
-            #bfff00 24%,
-            #b2ff00 36%,
-            #a4ff00 48%,
-            #96ff1e 60%,
-            #a9ff00 72%,
-            #bfff00 84%,
-            #cbff00 100%
-          );
-          background-size: 240% 240%;
-          animation: headerShift 16s ease-in-out infinite;
+        :root { --brand: #ccff00; }
+
+        .btn {
+          /* don't set display; keep Tailwind breakpoints working */
+          align-items: center;
+          gap: .6rem;
+          border-radius: 9999px;
+          padding: .55rem .95rem;
+          font-weight: 800;
+          line-height: 1;
+          transition:
+            transform .2s ease,
+            box-shadow .25s ease,
+            background .2s ease,
+            color .2s ease,
+            border-color .2s ease;
+          will-change: transform, box-shadow;
+        }
+        .btn:active { transform: translateY(1px) scale(.99); }
+
+        /* 🔥 Black pill + neon hover */
+        .btn-black {
+          background: #0a0a0a;
+          color: #fff;
+          border: 1.5px solid #0a0a0a;
+          box-shadow:
+            0 1px 0 rgba(255,255,255,.06) inset,
+            0 8px 18px rgba(0,0,0,.25);
+        }
+        .btn-black:hover {
+          color: var(--brand);
+          border-color: var(--brand);
+          transform: translateY(-1px) scale(1.02);
+          box-shadow:
+            0 0 0 2px rgba(204,255,0,.25),
+            0 10px 28px rgba(204,255,0,.35),
+            0 1px 0 rgba(255,255,255,.08) inset;
         }
 
-        .mobile-gradient {
-          background: linear-gradient(
-            180deg,
-            #cbff00 0%,
-            #bfff00 40%,
-            #adff00 75%,
-            #9dff00 100%
-          );
-        }
-
-        @keyframes headerShift {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .header-gradient {
-            animation: none;
-          }
+        /* little arrow nudge on hover */
+        .btn:hover .arrow {
+          transform: translateX(2px);
+          transition: transform .2s ease;
         }
       `}</style>
     </header>
