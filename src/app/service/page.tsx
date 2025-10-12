@@ -18,7 +18,6 @@ import {
   Gem,
   Newspaper,
   ExternalLink,
-  MessageCircle,
   Star,
   Award,
   TrendingUp,
@@ -26,13 +25,16 @@ import {
 } from "lucide-react";
 
 import {
-  publications,          
-  type Publication,      
+  publications,
+  type Publication,
   type Category,
 } from "@/data/publications";
 
-// getting logos
+/* ---------------------------
+   LOGOS
+----------------------------*/
 const LOGO_MAP: Record<string, string> = {
+  // existing entries…
   "Allure": "https://s99pr.com/wp-content/uploads/2025/04/logo-seo-2.png",
   "Apple News": "https://s99pr.com/wp-content/uploads/2025/03/Apple-News-Grit-Daily-1.png",
   "Architectural Digest": "https://s99pr.com/wp-content/uploads/2025/04/mms-architectural-digest-1.png",
@@ -165,8 +167,42 @@ const LOGO_MAP: Record<string, string> = {
   "The Biz Journals New York": "https://s99pr.com/wp-content/uploads/2025/03/BizJournals.com-Chicago-1-1.png",
   "The Biz Journals Los Angeles": "https://s99pr.com/wp-content/uploads/2025/03/BizJournals.com-Chicago-1-1.png",
   "The Biz Journals Miami": "https://s99pr.com/wp-content/uploads/2025/03/BizJournals.com-Chicago-1-1.png",
-};
 
+  // $147 section logos
+  "New York Weekly": "https://newsanchored.com/wp-content/uploads/2025/06/ny-weekly-hq-2025.png",
+  "US Reporter": "https://newsanchored.com/wp-content/uploads/2025/06/us-reporter-white.png",
+  "Los Angeles Wire": "https://newsanchored.com/wp-content/uploads/2025/06/la-wire-with-tm.png",
+  "CEO Weekly": "https://newsanchored.com/wp-content/uploads/2025/07/CEO-Weekly-2025-Black.png",
+  "Kivo Daily": "https://newsanchored.com/wp-content/uploads/2024/08/8-1.png",
+  "US Insider": "https://newsanchored.com/wp-content/uploads/2025/04/us-insider-white.png",
+  "US Business News": "https://newsanchored.com/wp-content/uploads/2025/06/us-busines-news-white.png",
+  "World Reporter": "https://newsanchored.com/wp-content/uploads/2024/08/30.png",
+  "The American News": "https://newsanchored.com/wp-content/uploads/2024/12/american-news-1-768x87-1.webp",
+  "Market Daily": "https://newsanchored.com/wp-content/uploads/2024/08/23.png",
+  "Economic Insider": "https://newsanchored.com/wp-content/uploads/2024/12/Economic-Insider-3.png",
+  "Wall Street Times": "https://newsanchored.com/wp-content/uploads/2025/04/gqbnqgi.png",
+  "Real Estate Today": "https://newsanchored.com/wp-content/uploads/2024/12/Real-Estate-Today-1.png",
+  "Portland News": "https://newsanchored.com/wp-content/uploads/2025/05/pnews_white-all.png",
+  "Miami Wire": "https://newsanchored.com/wp-content/uploads/2025/05/New-logos-5.png",
+  "New York Wire": "https://newsanchored.com/wp-content/uploads/2025/05/New-logos-6.png",
+  "Atlanta Wire": "https://newsanchored.com/wp-content/uploads/2025/05/New-logos-4.png",
+  "Texas Today": "https://newsanchored.com/wp-content/uploads/2025/06/texas-today-white.png",
+  "San Francisco Post": "https://newsanchored.com/wp-content/uploads/2025/06/sfp-with-tm.png",
+  "California Gazette": "https://newsanchored.com/wp-content/uploads/2024/08/31.png",
+  "California Observer": "https://newsanchored.com/wp-content/uploads/2023/01/California-observer-white-2.svg",
+  "The Chicago Journal": "https://newsanchored.com/wp-content/uploads/2025/06/CHICAGO-JOURNAL-WHITE.png",
+  "Voyage New York": "https://newsanchored.com/wp-content/uploads/2024/08/27.png",
+  "Women's Journal": "https://newsanchored.com/wp-content/uploads/2025/06/wj-new-2025.png",
+  "BLK News": "https://newsanchored.com/wp-content/uploads/2024/12/BLK-1-white.png",
+  "Influencer Daily": "https://newsanchored.com/wp-content/uploads/2024/08/7-1.png",
+  "Artist Weekly": "https://newsanchored.com/wp-content/uploads/2024/08/2-2.png",
+  "Entertainment Post": "https://newsanchored.com/wp-content/uploads/2025/03/ent2.png",
+  "Music Observer": "https://newsanchored.com/wp-content/uploads/2025/06/2sagagag.png",
+  "Famous Times": "https://newsanchored.com/wp-content/uploads/2025/06/famous-times-white.png",
+  "Celebrity News": "https://newsanchored.com/wp-content/uploads/2024/08/4-3.png",
+  "Net Worth": "https://newsanchored.com/wp-content/uploads/2024/08/9-1.png",
+  "Entertainment Monthly News": "https://newsanchored.com/wp-content/uploads/2025/07/e-monthly-news-white.png",
+};
 
 // Build a logo URL (uses LOGO_MAP first; otherwise attempts a predictable path on s99pr)
 function getLogoUrl(name: string, customLogo?: string) {
@@ -176,15 +212,84 @@ function getLogoUrl(name: string, customLogo?: string) {
   return `https://s99pr.com/wp-content/uploads/2025/03/${safeName}.png`;
 }
 
-// UI-only type for filter bar
+/* ---------------------------
+   TYPES
+----------------------------*/
 type UiCategory = Category | "all";
 
-// Category bar (icons + labels)
-const CATEGORIES: {
-  key: UiCategory;
-  label: string;
-  icon: React.ElementType;
-}[] = [
+type Top147Item = {
+  name: string;
+  dr: number | string; // not shown
+  link?: string | null;
+  logo?: string | null;
+};
+
+type Top147Group = { title: string; items: Top147Item[] };
+
+/* ---------------------------
+   $147 DATA (flattened into one list)
+----------------------------*/
+const TOP147_GROUPS: Top147Group[] = [
+  {
+    title: "Power Network",
+    items: [
+      { name: "New York Weekly", dr: 74, logo: LOGO_MAP["New York Weekly"] },
+      { name: "US Reporter", dr: 59, logo: LOGO_MAP["US Reporter"] },
+      { name: "Los Angeles Wire", dr: 64, logo: LOGO_MAP["Los Angeles Wire"] },
+      { name: "CEO Weekly", dr: 62, logo: LOGO_MAP["CEO Weekly"] },
+      { name: "Kivo Daily", dr: 62, logo: LOGO_MAP["Kivo Daily"] },
+    ],
+  },
+  {
+    title: "National Publications",
+    items: [
+      { name: "US Insider", dr: 49, logo: LOGO_MAP["US Insider"] },
+      { name: "US Business News", dr: 52, logo: LOGO_MAP["US Business News"] },
+      { name: "World Reporter", dr: 51, logo: LOGO_MAP["World Reporter"] },
+      { name: "The American News", dr: 18, logo: LOGO_MAP["The American News"] },
+      { name: "Market Daily", dr: 59, logo: LOGO_MAP["Market Daily"] },
+      { name: "Economic Insider", dr: 53, logo: LOGO_MAP["Economic Insider"] },
+      { name: "Wall Street Times", dr: 52, logo: LOGO_MAP["Wall Street Times"] },
+      { name: "Real Estate Today", dr: 50, logo: LOGO_MAP["Real Estate Today"] },
+    ],
+  },
+  {
+    title: "Regional Publications",
+    items: [
+      { name: "Portland News", dr: 53, logo: LOGO_MAP["Portland News"] },
+      { name: "Miami Wire", dr: 57, logo: LOGO_MAP["Miami Wire"] },
+      { name: "New York Wire", dr: 49, logo: LOGO_MAP["New York Wire"] },
+      { name: "Atlanta Wire", dr: 56, logo: LOGO_MAP["Atlanta Wire"] },
+      { name: "Texas Today", dr: 53, logo: LOGO_MAP["Texas Today"] },
+      { name: "San Francisco Post", dr: 57, logo: LOGO_MAP["San Francisco Post"] },
+      { name: "California Gazette", dr: 27, logo: LOGO_MAP["California Gazette"] },
+      { name: "California Observer", dr: 27, logo: LOGO_MAP["California Observer"] },
+      { name: "The Chicago Journal", dr: 54, logo: LOGO_MAP["The Chicago Journal"] },
+      { name: "Voyage New York", dr: 58, logo: LOGO_MAP["Voyage New York"] },
+    ],
+  },
+  {
+    title: "Niche & Specialty Publications",
+    items: [
+      { name: "Women's Journal", dr: 58, logo: LOGO_MAP["Women's Journal"] },
+      { name: "BLK News", dr: 51, logo: LOGO_MAP["BLK News"] },
+      { name: "Influencer Daily", dr: 48, logo: LOGO_MAP["Influencer Daily"] },
+      { name: "Artist Weekly", dr: 54, logo: LOGO_MAP["Artist Weekly"] },
+      { name: "Entertainment Post", dr: 55, logo: LOGO_MAP["Entertainment Post"] },
+      { name: "Music Observer", dr: 54, logo: LOGO_MAP["Music Observer"] },
+      { name: "Famous Times", dr: 52, logo: LOGO_MAP["Famous Times"] },
+      { name: "Celebrity News", dr: 53, logo: LOGO_MAP["Celebrity News"] },
+      { name: "Net Worth", dr: 51, logo: LOGO_MAP["Net Worth"] },
+      { name: "Entertainment Monthly News", dr: 49, logo: LOGO_MAP["Entertainment Monthly News"] },
+    ],
+  },
+];
+const TOP147_ALL: Top147Item[] = TOP147_GROUPS.flatMap((g) => g.items);
+
+/* ---------------------------
+   CATEGORY FILTER CONFIG (unchanged)
+----------------------------*/
+const CATEGORIES: { key: UiCategory; label: string; icon: React.ElementType }[] = [
   { key: "all", label: "All", icon: LayoutGrid },
   { key: "best-sellers", label: "Best Seller", icon: List },
   { key: "business", label: "Business", icon: Building },
@@ -196,15 +301,16 @@ const CATEGORIES: {
   { key: "news", label: "News", icon: Newspaper },
 ];
 
-type PublicationItem = Publication;
-
+/* ======================================================================
+   PAGE
+====================================================================== */
 export default function ServicesPage() {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const [active, setActive] = useState<UiCategory>("all");
 
-  // Fade-in for the section (safe—no SSR variance)
+  // Fade-in
   useEffect(() => {
     const obs = new IntersectionObserver(
       ([entry]) => entry.isIntersecting && setIsVisible(true),
@@ -220,7 +326,7 @@ export default function ServicesPage() {
     return publications.filter((p) => p.categories.includes(active));
   }, [active]);
 
-  // ⬇️ Add this helper: open chat with draft “Hi I want to get featured.”
+  // CTA: open chat for the other publications (unchanged)
   function openCTAChat() {
     if (typeof window === "undefined") return;
     const w = (window as any).LiveChatWidget;
@@ -233,7 +339,6 @@ export default function ServicesPage() {
         source: "cta_get_featured",
       });
     } catch {}
-
     try {
       w?.call?.("maximize", { messageDraft: message });
     } catch {
@@ -241,27 +346,52 @@ export default function ServicesPage() {
     }
   }
 
+  // $147 checkout (no chat)
+  const CHECKOUT_BASE = process.env.NEXT_PUBLIC_CHECKOUT_PATH || "/checkout";
+  function goToCheckout(publicationName?: string) {
+    const url = publicationName
+      ? `${CHECKOUT_BASE}?publication=${encodeURIComponent(publicationName)}&price=147`
+      : `${CHECKOUT_BASE}?price=147`;
+    router.push(url);
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <Header />
 
-      {/* Hero */}
-      <section className="pt-24 pb-10 bg-gradient-to-br from-gray-900 via-black to-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-100 mb-6">
-            <span style={{ color: "rgb(203, 255, 0)" }}>Elevate Your Brand Authority</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-6">
-            At DNA, we leverage a robust network of top-tier journalists, editors, and media platforms
-            to secure high-impact coverage for our clients. With features in renowned outlets like The Times,
-            Vogue, and Yahoo Finance, we ensure your brand earns the recognition it merits.
-          </p>
+      {/* VALUE PUBLICATIONS — one box, plain logos, single button */}
+      <section className="pt-24 pb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-gray-700 bg-gray-800/70 px-6 sm:px-8 py-6">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-gray-100">
+                Value Publication — <span className="sr-only">$147 each</span>
+              </h2>
+              <button
+                onClick={() => goToCheckout()}
+                className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-base sm:text-lg font-extrabold bg-lime-400/95 text-black hover:bg-lime-300 transition shadow-lg hover:shadow-xl"
+              >
+                $147 each
+              </button>
+            </div>
+
+            {/* unified grid of logos (no white background) */}
+            <div className="grid gap-y-6 gap-x-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+              {TOP147_ALL.map((it) => (
+                <LogoButton key={it.name} item={it} onClick={() => goToCheckout(it.name)} />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Category filter + Logo grid */}
+      {/* ALL PUBLICATIONS (unchanged visuals; just add header) */}
       <section className="py-8" ref={sectionRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-gray-100 mb-6">
+            Premium Publications
+          </h2>
+
           {/* Filters */}
           <div className="flex flex-wrap gap-3 justify-center mb-8">
             {CATEGORIES.map((c) => {
@@ -293,7 +423,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Why Choose Us */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gray-800 rounded-2xl border border-gray-600 p-12 mb-16">
@@ -310,7 +440,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Success Stories / Proven Results Section */}
+      {/* Results */}
       <section className="py-20 bg-gradient-to-br from-gray-800 via-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -345,7 +475,7 @@ export default function ServicesPage() {
               style={{ backgroundColor: "rgb(203, 255, 0)", boxShadow: "0 10px 25px rgba(203, 255, 0, 0.2)" }}
               onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 20px 40px rgba(203, 255, 0, 0.3)")}
               onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 10px 25px rgba(203, 255, 0, 0.2)")}
-              onClick={openCTAChat} // ⬅️ now opens chat with draft
+              onClick={openCTAChat}
             >
               Get Started Today
             </button>
@@ -355,6 +485,45 @@ export default function ServicesPage() {
 
       <Footer />
     </div>
+  );
+}
+
+/* ======================================================================
+   COMPONENTS
+====================================================================== */
+
+// $147 logo button — plain logo (no card/plate). Subtle glow only for very dark assets like CEO Weekly.
+function LogoButton({ item, onClick }: { item: Top147Item; onClick: () => void }) {
+  const [broken, setBroken] = useState(false);
+  const src = getLogoUrl(item.name, item.logo ?? undefined);
+
+  // glow only for specific dark-on-transparent marks
+  const extra =
+    item.name === "CEO Weekly"
+      ? "drop-shadow-[0_0_10px_rgba(255,255,255,0.35)]"
+      : "";
+
+  return (
+    <button
+      onClick={onClick}
+      className="group inline-flex flex-col items-center justify-center"
+      title={`Get featured in ${item.name} for $147`}
+      aria-label={`Get featured in ${item.name} for $147`}
+    >
+      {broken ? (
+        <span className="text-[11px] tracking-wide text-gray-400">{item.name}</span>
+      ) : (
+        <Image
+          src={src}
+          alt={item.name}
+          width={220}
+          height={80}
+          className={`max-h-14 w-auto object-contain transition-transform group-hover:scale-105 ${extra}`}
+          onError={() => setBroken(true)}
+          unoptimized
+        />
+      )}
+    </button>
   );
 }
 
@@ -388,7 +557,6 @@ function PublicationTile({ item }: { item: Publication }) {
   const [broken, setBroken] = useState(false);
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
-
   const src = getLogoUrl(item.name, (item as any).logo);
 
   useEffect(() => {
@@ -409,12 +577,9 @@ function PublicationTile({ item }: { item: Publication }) {
 
   function openQuoteChat(item: Publication) {
     if (typeof window === "undefined") return;
-
     const w = (window as any).LiveChatWidget;
-    const legacy = (window as any).LC_API; // some older installs expose this
-
+    const legacy = (window as any).LC_API;
     const message = `Hi, I want to get featured in ${item.name}`;
-
     try {
       w?.call?.("set_session_variables", {
         publication: item.name,
@@ -425,7 +590,6 @@ function PublicationTile({ item }: { item: Publication }) {
         source: "services_page_get_quote",
       });
     } catch {}
-
     try {
       w?.call?.("maximize", { messageDraft: message });
     } catch {
@@ -450,7 +614,6 @@ function PublicationTile({ item }: { item: Publication }) {
       title={`${item.name}${item.bestSeller ? " • Best Seller" : ""}`}
       data-publication={item.slug}
     >
-      {/* BEST SELLER badge */}
       {item.bestSeller && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
           <div className="px-3 py-1 text-[10px] font-bold uppercase rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400 text-black shadow-sm">
@@ -459,7 +622,6 @@ function PublicationTile({ item }: { item: Publication }) {
         </div>
       )}
 
-      {/* White logo panel */}
       <div className="mt-3 flex items-center justify-center">
         <div className="w-[200px] h-[72px] rounded-md bg-white border border-gray-200 shadow-sm flex items-center justify-center p-3">
           {broken ? (
@@ -478,12 +640,10 @@ function PublicationTile({ item }: { item: Publication }) {
         </div>
       </div>
 
-      {/* Name */}
       <div className="mt-3 text-sm sm:text-[15px] text-gray-200 text-center leading-tight line-clamp-2">
         {item.name}
       </div>
 
-      {/* Actions */}
       <div className="mt-4 flex items-center gap-3">
         {item.link && (
           <a
