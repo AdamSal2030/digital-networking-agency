@@ -9,6 +9,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
+import Link from "next/link";
 
 type ProductKey = "ONE" | "TWO";
 
@@ -186,7 +187,9 @@ export default function CheckoutPage() {
       <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-black/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
           <div className="flex items-center space-x-3">
-            <img src="/logo.png" alt="Digital Networking Agency" className="h-10 w-auto" />
+            <Link href="/" aria-label="Go to homepage" className="block cursor-pointer">
+              <img src="/logo.png" alt="Digital Networking Agency" className="h-10 w-auto" />
+            </Link>
           </div>
         </div>
       </header>

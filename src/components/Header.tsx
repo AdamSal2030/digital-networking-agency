@@ -3,6 +3,7 @@
 
 import React, { useState } from "react";
 import { Montserrat } from "next/font/google";
+import Link from "next/link";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -40,16 +41,21 @@ const Header = () => {
           {/* Left: Logo + Brand */}
           <div className="flex items-center gap-3">
             <div className="shrink-0 w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center overflow-hidden">
-              <img
-                src="/logo.png"
-                alt="Digital Networking Agency Logo"
-                className="w-full h-full object-contain"
-              />
+              {/* ✅ Proper Link wrapping around the image */}
+              <Link href="/" aria-label="Go to homepage" className="block w-full h-full">
+                <img
+                  src="/logo.png"
+                  alt="Digital Networking Agency Logo"
+                  className="w-full h-full object-contain"
+                />
+              </Link>
             </div>
 
             <h1 className="leading-tight tracking-[0.14em] uppercase">
+              <Link href="/" aria-label="Go to homepage" className="block w-full h-full">
               <span className="text-black font-extrabold">Digital </span>
               <span className="text-black/90 font-medium">Networking Agency</span>
+              </Link>
             </h1>
           </div>
 
@@ -144,7 +150,6 @@ const Header = () => {
         :root { --brand: #ccff00; }
 
         .btn {
-          /* don't set display; keep Tailwind breakpoints working */
           align-items: center;
           gap: .6rem;
           border-radius: 9999px;
@@ -161,7 +166,6 @@ const Header = () => {
         }
         .btn:active { transform: translateY(1px) scale(.99); }
 
-        /* 🔥 Black pill + neon hover */
         .btn-black {
           background: #0a0a0a;
           color: #fff;
@@ -179,8 +183,6 @@ const Header = () => {
             0 10px 28px rgba(204,255,0,.35),
             0 1px 0 rgba(255,255,255,.08) inset;
         }
-
-        /* little arrow nudge on hover */
         .btn:hover .arrow {
           transform: translateX(2px);
           transition: transform .2s ease;
