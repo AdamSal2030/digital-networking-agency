@@ -8,7 +8,7 @@ export function HeroSection() {
       <div className="hero-grid" />
       <div className="hero-wm">DNA</div>
       <div className="hero-left">
-        <div className="hero-eyebrow">2026 Media Kit</div>
+        <div className="hero-eyebrow">PR FIRM</div>
         <div>
           <div className="hero-word" style={{ animationDelay: ".3s" }}>
             <span className="word-fill">DIGITAL</span>
