@@ -1,23 +1,35 @@
-import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import HowItWorks from '@/components/HowItWorks';
-import Promise from '@/components/Promise';
-import GetStarted from '@/components/GetStarted';
-import FAQ from '@/components/FAQ';
-import Footer from '@/components/Footer';
+import { LandingEffects } from "@/components/landing/effects";
+import { NavMenu } from "@/components/landing/NavMenu";
+import {
+  AboutSection,
+  AlaCarteSection,
+  BrandingSection,
+  CtaFooterSection,
+  HeroSection,
+  PackagesSection,
+  PrimeSection,
+  ProofSection,
+  StatsSection
+} from "@/components/landing/sections";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <Hero />
-      <About />
-      <HowItWorks />
-      <Promise />
-      <GetStarted />
-      <FAQ />
-      <Footer />
-    </main>
+    <>
+      <div className="cursor" id="cur" />
+      <div className="cursor-ring" id="curR" />
+      <div id="progress" />
+
+      <NavMenu />
+      <HeroSection />
+      <StatsSection />
+      <AboutSection />
+      <PackagesSection />
+      <AlaCarteSection />
+      <PrimeSection />
+      <BrandingSection />
+      <ProofSection />
+      <CtaFooterSection />
+      <LandingEffects />
+    </>
   );
 }
