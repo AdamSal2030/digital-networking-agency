@@ -388,7 +388,7 @@ export function CtaFooterSection() {
         </div>
         <div className="cta-sub reveal">Trust us with your story. Let&apos;s build your legacy together.</div>
         <div className="cta-btns reveal">
-          <a href="mailto:info@dnapr.com" className="btn-p">
+          <a href="mailto:sam@digitalnetworkingagency.com" className="btn-p">
             <span>Book a Consultation</span>
           </a>
           <a href="#packages" className="btn-g">View Packages</a>
