@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DNA PR — Digital Networking Agency 2026",
-  description: "DNA PR media kit website."
+  title: "DNA PR – Digital Networking Agency 2026",
+  description: "DNA PR media kit website.",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
-
 export default function RootLayout({
   children
 }: Readonly<{
