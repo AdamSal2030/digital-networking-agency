@@ -32,12 +32,12 @@ export function HeroSection() {
         <div className="ticker-wrap">
           <div className="ticker">
             <span>Forbes</span><span className="dot">·</span><span>NY Times</span><span className="dot">·</span>
-            <span>USA Today</span><span className="dot">·</span><span>FOX</span><span className="dot">·</span>
+            <span>The Rolling Stones</span><span className="dot">·</span><span>FOX</span><span className="dot">·</span>
             <span>Entrepreneur</span><span className="dot">·</span><span>Billboard</span><span className="dot">·</span>
             <span>Yahoo Finance</span><span className="dot">·</span><span>Elle</span><span className="dot">·</span>
             <span>Benzinga</span><span className="dot">·</span><span>CEO Weekly</span><span className="dot">·</span>
             <span>Forbes</span><span className="dot">·</span><span>NY Times</span><span className="dot">·</span>
-            <span>USA Today</span><span className="dot">·</span><span>FOX</span><span className="dot">·</span>
+            <span>The Rolling Stones</span><span className="dot">·</span><span>FOX</span><span className="dot">·</span>
             <span>Entrepreneur</span><span className="dot">·</span><span>Billboard</span><span className="dot">·</span>
             <span>Yahoo Finance</span><span className="dot">·</span><span>Elle</span><span className="dot">·</span>
             <span>Benzinga</span><span className="dot">·</span><span>CEO Weekly</span><span className="dot">·</span>
