@@ -332,7 +332,7 @@ export function ProofSection() {
           <div className="ph">The VRDO Rate-Rigging Scandal: How Wall Street Bilked Taxpayers</div>
           <div className="pm">June 3, 2025</div>
           <img
-            src="/beverly-removebg-preview.png"
+            src="/fox-scg-logo.svg"
             alt="Fox Interviewer"
             className="pc-outlet-logo pc-outlet-logo--white"
           />
