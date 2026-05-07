@@ -250,12 +250,14 @@ a.pc:focus-visible{outline:2px solid var(--lime);outline-offset:3px;}
 
 /* FOOTER */
 footer{padding:40px 60px;background:var(--black);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-left{display:flex;flex-direction:column;gap:6px;}
 .flogo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:5px;color:var(--lime);}
-.fcontact{display:flex;flex-wrap:wrap;align-items:center;gap:16px;}
-.fcontact-btn{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--black);background:var(--lime);padding:10px 20px;text-decoration:none;transition:background .3s,color .3s;white-space:nowrap;}
-.fcontact-btn:hover{background:#fff;}
-.fcontact-link{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:var(--muted);text-decoration:none;white-space:nowrap;transition:color .3s;}
-a.fcontact-link:hover{color:var(--lime);}
+.fcontact{display:flex;flex-wrap:wrap;align-items:center;gap:10px;}
+.fcontact-email{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:var(--lime);text-decoration:none;transition:color .3s;white-space:nowrap;}
+.fcontact-email:hover{color:#fff;}
+.fcontact-item{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:var(--muted);text-decoration:none;white-space:nowrap;transition:color .3s;}
+a.fcontact-item:hover{color:var(--lime);}
+.fcontact-divider{font-family:'DM Mono',monospace;font-size:10px;color:var(--border);user-select:none;}
 .fcopy{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
 
 /* KEYFRAMES */
@@ -391,7 +393,8 @@ a.fcontact-link:hover{color:var(--lime);}
   .cta-btns{flex-direction:column;}
 
   footer{padding-top:24px;padding-bottom:24px;flex-direction:column;gap:16px;align-items:flex-start;}
-  .fcontact{flex-direction:column;align-items:flex-start;gap:10px;}
+  .fcontact{flex-direction:column;align-items:flex-start;gap:8px;}
+  .fcontact-divider{display:none;}
 }
 
 /* About + Why block: extra rhythm (does not change desktop look much) */
