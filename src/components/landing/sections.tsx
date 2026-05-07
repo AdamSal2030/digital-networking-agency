@@ -396,6 +396,17 @@ export function CtaFooterSection() {
       </section>
       <footer>
         <div className="flogo">DNA PR</div>
+        <div className="fcontact">
+          <a href="mailto:sam@digitalnetworkingagency.com" className="fcontact-btn">
+            ✉ sam@digitalnetworkingagency.com
+          </a>
+          <a href="tel:+13072841045" className="fcontact-link">
+            📞 +1 (307) 284-1045
+          </a>
+          <span className="fcontact-link">
+            📍 6545 Market Ave Ste 100, Canton, OH 44721
+          </span>
+        </div>
         <div className="fcopy">© 2026 Digital Networking Agency — It&apos;s in our DNA</div>
       </footer>
     </>
