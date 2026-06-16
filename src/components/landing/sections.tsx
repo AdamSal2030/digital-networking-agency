@@ -292,6 +292,16 @@ export function ProofSection() {
       logoWhite: true
     },
     {
+      outlet: "Women's Journal",
+      headline:
+        "Shermel A. Jeffers Chandwani: Influencing Real Estate in St. Kitts & Nevis",
+      meta: "October 15, 2025",
+      href: "https://womensjournal.com/shermel-a-jeffers-chandwani-influencing-real-estate-in-st-kitts-nevis/",
+      img: "/placement-shermel.jpg",
+      logo: null,
+      logoWhite: true
+    },
+    {
       outlet: "Wall Street Times",
       headline:
         "From Mario Kart to the Supreme Court: How Matthew Brick Built a Law Firm That Puts Clients First",
@@ -340,9 +350,9 @@ export function ProofSection() {
     {
       outlet: "Benzinga",
       headline:
-        "Vaya Vaya Announces New Album Launch ‘Elusive Thugs,’ a Powerful Exploration of Music and Identity",
-      meta: "September 5, 2025",
-      href: "https://www.benzinga.com/pressreleases/25/09/ab47534302/vaya-vaya-announces-new-album-launch-elusive-thugs-a-powerful-exploration-of-music-and-identity",
+        "Mark Manderson: Elevating Standards of Mental Health and Addiction Care with Pacific Shores Recovery",
+      meta: "July 2025",
+      href: "https://www.benzinga.com/pressreleases/25/07/ab46479680/mark-manderson-elevating-standards-of-mental-health-and-addiction-care-with-pacific-shores-recove",
       img: null,
       logo: "/Benzinga-Logo-removebg-preview.png",
       logoWhite: true
