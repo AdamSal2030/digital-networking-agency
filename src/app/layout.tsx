@@ -3,10 +3,27 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DNA PR – Digital Networking Agency 2026",
-  description: "DNA PR media kit website.",
+  metadataBase: new URL("https://www.digitalnetworkingagency.com"),
+  title: "DNA PR — Get Featured in Forbes, Rolling Stone & 100+ Top Outlets",
+  description:
+    "DNA is a results-driven PR agency that gets founders and brands featured in the world's most trusted publications — guaranteed media coverage that builds lasting authority.",
   icons: {
-    icon: '/favicon.ico',
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "DNA PR — Get Featured in the World's Most Trusted Publications",
+    description:
+      "Results-driven PR & media relations. Guaranteed coverage in Forbes, Rolling Stone, FOX & 100+ top outlets — because it's in your DNA.",
+    url: "https://www.digitalnetworkingagency.com",
+    siteName: "Digital Networking Agency",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DNA PR — Get Featured in the World's Most Trusted Publications",
+    description:
+      "Results-driven PR & media relations. Guaranteed coverage in Forbes, Rolling Stone, FOX & 100+ top outlets.",
   },
 };
 export default function RootLayout({

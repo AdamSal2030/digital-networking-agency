@@ -15,11 +15,11 @@ function scrollToSection(id: string, e: MouseEvent<HTMLAnchorElement>) {
 export function HeroCtas() {
   return (
     <div className="hero-subcta">
-      <a href="#packages" className="btn-p" onClick={(e) => scrollToSection("packages", e)}>
-        <span>View Packages</span>
+      <a href="#contact" className="btn-p btn-glow" onClick={(e) => scrollToSection("contact", e)}>
+        <span>Book a Free Consultation →</span>
       </a>
-      <a href="#about" className="btn-g" onClick={(e) => scrollToSection("about", e)}>
-        Our Story
+      <a href="#packages" className="btn-g" onClick={(e) => scrollToSection("packages", e)}>
+        View Packages
       </a>
     </div>
   );

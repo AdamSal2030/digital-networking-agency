@@ -1,52 +1,49 @@
 import { HeroCtas } from "@/components/landing/HeroCtas";
+import { TestimonialsCarousel } from "@/components/landing/TestimonialsCarousel";
 
 export function HeroSection() {
   return (
     <section className="hero" id="top">
       <div className="hero-orb1" />
       <div className="hero-orb2" />
+      <div className="hero-orb3" />
       <div className="hero-grid" />
+      <div className="hero-sweep" />
       <div className="hero-wm">DNA</div>
       <div className="hero-left">
-        <div className="hero-eyebrow">PR FIRM</div>
-        <div>
-          <div className="hero-word" style={{ animationDelay: ".3s" }}>
+        <div className="hero-eyebrow">Public Relations · Done Differently</div>
+        <div className="hero-head-words">
+          <div className="hero-word" style={{ animationDelay: ".25s" }}>
             <span className="word-fill">DIGITAL</span>
           </div>
-          <div className="hero-word" style={{ animationDelay: ".55s" }}>
+          <div className="hero-word" style={{ animationDelay: ".45s" }}>
             <span className="word-fill">NETWORKING</span>
           </div>
-          <div className="hero-word" style={{ animationDelay: ".8s" }}>
+          <div className="hero-word" style={{ animationDelay: ".65s" }}>
             <span className="word-fill lime-word">AGENCY</span>
           </div>
         </div>
+        <p className="hero-vp">
+          We turn founders &amp; brands into household names &mdash; with{" "}
+          <strong>guaranteed coverage</strong> in the world&apos;s most trusted
+          publications.
+        </p>
         <HeroCtas />
       </div>
       <div className="hero-right">
-        <div className="tagline-block">
-          <div className="its-label">Our Promise</div>
-          <div className="hero-tagline">
-            Authority isn&apos;t built overnight. But it can be built <em>deliberately.</em>
+        <div className="hero-visual reveal-r">
+          <div className="hero-visual-frame">
+            <img src="/hero-media.jpg" alt="DNA PR — premium media coverage" />
+            <div className="hero-visual-grad" />
           </div>
-        </div>
-        <div className="ticker-wrap">
-          <div className="ticker">
-            <span>Forbes</span><span className="dot">·</span><span>NY Times</span><span className="dot">·</span>
-            <span>The Rolling Stones</span><span className="dot">·</span><span>FOX</span><span className="dot">·</span>
-            <span>Entrepreneur</span><span className="dot">·</span><span>Billboard</span><span className="dot">·</span>
-            <span>Yahoo Finance</span><span className="dot">·</span><span>Elle</span><span className="dot">·</span>
-            <span>Benzinga</span><span className="dot">·</span><span>CEO Weekly</span><span className="dot">·</span>
-            <span>Forbes</span><span className="dot">·</span><span>NY Times</span><span className="dot">·</span>
-            <span>The Rolling Stones</span><span className="dot">·</span><span>FOX</span><span className="dot">·</span>
-            <span>Entrepreneur</span><span className="dot">·</span><span>Billboard</span><span className="dot">·</span>
-            <span>Yahoo Finance</span><span className="dot">·</span><span>Elle</span><span className="dot">·</span>
-            <span>Benzinga</span><span className="dot">·</span><span>CEO Weekly</span><span className="dot">·</span>
+          <div className="hero-badge hero-badge--a">
+            <div className="hero-badge-num">100+</div>
+            <div className="hero-badge-lbl">Top-Tier Placements</div>
           </div>
-        </div>
-        <div className="dna-breakdown">
-          <div className="dna-row"><div className="dna-ltr">D</div><div className="dna-desc">igital — Media that moves</div></div>
-          <div className="dna-row"><div className="dna-ltr">N</div><div className="dna-desc">etworking — Relationships that last</div></div>
-          <div className="dna-row"><div className="dna-ltr">A</div><div className="dna-desc">gency — Results that compound</div></div>
+          <div className="hero-badge hero-badge--b">
+            <span className="hero-stars">★★★★★</span>
+            <div className="hero-badge-lbl">Rated 5.0 by Clients</div>
+          </div>
         </div>
       </div>
       <div className="hero-line" />
@@ -82,9 +79,16 @@ export function AboutSection() {
             <div className="about-body"><p>DNA PR has secured coverage for clients in Forbes, NY Times, Rolling Stone, FOX, NY Weekly, Entrepreneur, and over 100 top-tier media outlets and networks.</p></div>
           </div>
           <div className="reveal-r">
-            <div className="mlabel">As seen in</div>
-            <div className="mlist">
-              <div className="mtag">Forbes</div><div className="mtag">NY Times</div><div className="mtag">Rolling Stone</div><div className="mtag">FOX</div><div className="mtag">NY Weekly</div><div className="mtag">Entrepreneur</div><div className="mtag">Benzinga</div><div className="mtag">Yahoo Finance</div><div className="mtag">Billboard</div><div className="mtag">Elle</div><div className="mtag">OK! Magazine</div><div className="mtag">CEO Weekly</div><div className="mtag">Business Insider</div><div className="mtag">Digital Journal</div><div className="mtag">Wall Street Times</div><div className="mtag">CEO Official Mag</div>
+            <div className="about-visual">
+              <img
+                src="/about-media.jpg"
+                alt="DNA PR — modern media across digital, TV, podcast and print"
+                loading="lazy"
+              />
+              <div className="about-visual-cap">
+                <span className="about-visual-eyebrow">How we tell your story</span>
+                <span className="about-visual-modes">Digital · TV · Podcast · Print · Speaking</span>
+              </div>
             </div>
           </div>
         </div>
@@ -223,7 +227,7 @@ export function BrandingSection() {
             {
               src: "/techcon-removebg-preview.png",
               alt: "TechCon SoCal",
-              name: "Techon SoCal"
+              name: "TechCon SoCal"
             },
             {
               src: "/grit-brokerage-logo-Picsart-BackgroundRemover.jpg",
@@ -266,111 +270,125 @@ export function BrandingSection() {
 }
 
 export function ProofSection() {
+  const placements = [
+    {
+      outlet: "Wall Street Times",
+      headline:
+        "From Mario Kart to the Supreme Court: How Matthew Brick Built a Law Firm That Puts Clients First",
+      meta: "April 23, 2026",
+      href: "https://wallstreettimes.com/from-mario-kart-to-the-supreme-court-how-matthew-brick-built-a-law-firm-that-puts-clients-first/",
+      img: "/placement-brick.jpg",
+      logo: "/WST%20.jpeg",
+      logoWhite: false
+    },
+    {
+      outlet: "New York Weekly",
+      headline: "Leaving a Mark: Andréa Albright and the Future of Legacy Publishing",
+      meta: "Entrepreneur Feature",
+      href: "https://nyweekly.com/entrepreneur/leaving-a-mark-andrea-albright-and-the-future-of-legacy-publishing/",
+      img: "/placement-albright.jpg",
+      logo: "/NY-Weekly-removebg-preview.png",
+      logoWhite: true
+    },
+    {
+      outlet: "Fox Interviewer",
+      headline: "The VRDO Rate-Rigging Scandal: How Wall Street Bilked Taxpayers",
+      meta: "June 3, 2025",
+      href: "https://foxinterviewer.com/business/the-vrdo-rate-rigging-scandal-how-wall-street-bilked-taxpayers/",
+      img: "/placement-vrdo.jpg",
+      logo: "/fox-scg-logo.svg",
+      logoWhite: true
+    },
+    {
+      outlet: "CEO Weekly",
+      headline: "Patrick Kelly: Giving Fresh Produce a Global Voice Through Storytelling and Innovation",
+      meta: "September 18, 2025",
+      href: "https://ceoweekly.com/patrick-kelly-giving-fresh-produce-a-global-voice-through-storytelling-and-innovation/",
+      img: "/placement-kelly.jpg",
+      logo: "/CEO_Weekly-removebg-preview.png",
+      logoWhite: true
+    },
+    {
+      outlet: "Real Estate Today",
+      headline: "From Groundbreaking to Code-Breaking: How Daniel Sharpe Is Redefining Real Estate with AI",
+      meta: "October 29, 2025",
+      href: "https://realestatetoday.com/from-groundbreaking-to-code-breaking-how-daniel-sharpe-is-redefining-real-estate-with-ai/",
+      img: "/placement-sharpe.jpg",
+      logo: null,
+      logoWhite: true
+    },
+    {
+      outlet: "Benzinga",
+      headline:
+        "Vaya Vaya Announces New Album Launch ‘Elusive Thugs,’ a Powerful Exploration of Music and Identity",
+      meta: "September 5, 2025",
+      href: "https://www.benzinga.com/pressreleases/25/09/ab47534302/vaya-vaya-announces-new-album-launch-elusive-thugs-a-powerful-exploration-of-music-and-identity",
+      img: null,
+      logo: "/Benzinga-Logo-removebg-preview.png",
+      logoWhite: true
+    }
+  ];
   return (
     <section className="proof-section">
       <div className="stag reveal">Proof of Authority</div>
       <div className="stitle reveal">Client Placements</div>
       <div className="sdiv reveal" />
       <div className="proof-grid">
-        <a
-          href="https://wallstreettimes.com/from-mario-kart-to-the-supreme-court-how-matthew-brick-built-a-law-firm-that-puts-clients-first/"
-          className="pc pc-corner-logo reveal"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="pc-bar" />
-          <div className="po">Wall Street Times</div>
-          <div className="ph">From Mario Kart to the Supreme Court: How Matthew Brick Built a Law Firm That Puts Clients First</div>
-          <div className="pm">April 23, 2026</div>
-          <img src={`/${encodeURIComponent("WST .jpeg")}`} alt="WST" className="pc-outlet-logo" />
-        </a>
-        <a
-          href="https://nyweekly.com/entrepreneur/leaving-a-mark-andrea-albright-and-the-future-of-legacy-publishing/"
-          className="pc pc-corner-logo reveal"
-          style={{ transitionDelay: ".1s" }}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="pc-bar" />
-          <div className="po">New York Weekly</div>
-          <div className="ph">Leaving a Mark: Andréa Albright and the Future of Legacy Publishing</div>
-          <div className="pm">Entrepreneur Feature</div>
-          <img
-            src="/NY-Weekly-removebg-preview.png"
-            alt="New York Weekly"
-            className="pc-outlet-logo pc-outlet-logo--white"
-          />
-        </a>
-        <a
-          href="https://www.benzinga.com/pressreleases/25/09/ab47534302/vaya-vaya-announces-new-album-launch-elusive-thugs-a-powerful-exploration-of-music-and-identity"
-          className="pc pc-corner-logo reveal"
-          style={{ transitionDelay: ".2s" }}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="pc-bar" />
-          <div className="po">Benzinga</div>
-          <div className="ph">
-            Vaya Vaya Announces New Album Launch &apos;Elusive Thugs,&apos; a Powerful Exploration of Music and Identity
-          </div>
-          <div className="pm">September 5, 2025</div>
-          <img
-            src="/Benzinga-Logo-removebg-preview.png"
-            alt="Benzinga"
-            className="pc-outlet-logo pc-outlet-logo--white"
-          />
-        </a>
-        <a
-          href="https://foxinterviewer.com/business/the-vrdo-rate-rigging-scandal-how-wall-street-bilked-taxpayers/"
-          className="pc pc-corner-logo reveal"
-          style={{ transitionDelay: ".05s" }}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="pc-bar" />
-          <div className="po">Fox Interviewer</div>
-          <div className="ph">The VRDO Rate-Rigging Scandal: How Wall Street Bilked Taxpayers</div>
-          <div className="pm">June 3, 2025</div>
-          <img
-            src="/fox-scg-logo.svg"
-            alt="Fox Interviewer"
-            className="pc-outlet-logo pc-outlet-logo--white"
-          />
-        </a>
-        <a
-          href="https://ceoweekly.com/patrick-kelly-giving-fresh-produce-a-global-voice-through-storytelling-and-innovation/"
-          className="pc pc-corner-logo reveal"
-          style={{ transitionDelay: ".15s" }}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="pc-bar" />
-          <div className="po">CEO Weekly</div>
-          <div className="ph">Patrick Kelly: Giving Fresh Produce a Global Voice Through Storytelling and Innovation</div>
-          <div className="pm">September 18, 2025</div>
-          <img
-            src="/CEO_Weekly-removebg-preview.png"
-            alt="CEO Weekly"
-            className="pc-outlet-logo pc-outlet-logo--white"
-          />
-        </a>
-        <a
-          href="https://realestatetoday.com/from-groundbreaking-to-code-breaking-how-daniel-sharpe-is-redefining-real-estate-with-ai/"
-          className="pc pc-corner-logo reveal"
-          style={{ transitionDelay: ".25s" }}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="pc-bar" />
-          <div className="po">Real Estate Today</div>
-          <div className="ph">From Groundbreaking to Code-Breaking: How Daniel Sharpe Is Redefining Real Estate with AI</div>
-          <div className="pm">October 29, 2025</div>
-          <img
-            src="/Real-Estate-Today-removebg-preview.png"
-            alt="Real Estate Today"
-            className="pc-outlet-logo pc-outlet-logo--white"
-          />
-        </a>
+        {placements.map((p, i) => (
+          <a
+            key={p.href}
+            href={p.href}
+            className="pc pc-photo-card reveal"
+            style={{ transitionDelay: `${(i % 3) * 0.1}s` }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="pc-bar" />
+            {p.img ? (
+              <div className="pc-photo">
+                <img src={p.img} alt={p.headline} loading="lazy" />
+                {p.logo ? (
+                  <img
+                    src={p.logo}
+                    alt={p.outlet}
+                    className={
+                      p.logoWhite
+                        ? "pc-photo-logo pc-photo-logo--white"
+                        : "pc-photo-logo"
+                    }
+                    loading="lazy"
+                  />
+                ) : (
+                  <span className="pc-photo-logo pc-photo-logo--text">
+                    {p.outlet}
+                  </span>
+                )}
+              </div>
+            ) : (
+              <div className="pc-photo pc-photo--logo">
+                {p.logo ? (
+                  <img
+                    src={p.logo}
+                    alt={p.outlet}
+                    className={
+                      p.logoWhite
+                        ? "pc-panel-logo pc-panel-logo--white"
+                        : "pc-panel-logo"
+                    }
+                    loading="lazy"
+                  />
+                ) : (
+                  <span className="pc-panel-text">{p.outlet}</span>
+                )}
+              </div>
+            )}
+            <div className="pc-body">
+              <div className="po">{p.outlet}</div>
+              <div className="ph">{p.headline}</div>
+              <div className="pm">{p.meta}</div>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
   );
@@ -394,72 +412,223 @@ export function CtaFooterSection() {
           <a href="#packages" className="btn-g">View Packages</a>
         </div>
       </section>
-      <footer style={{ background: "#0a0a0a", borderTop: "2px solid #ccff00", padding: "5rem 3rem 2rem" }}>
-        <div style={{ maxWidth: "1300px", margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-            <div style={{ fontSize: "48px", fontWeight: 900, color: "#fff", letterSpacing: "0.05em", lineHeight: 1, textTransform: "uppercase" }}>
-              It&apos;s In Our <span style={{ color: "#ccff00" }}>DNA.</span>
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <div className="footer-brand">
+            <img src="/black_logo.png" alt="DNA PR" className="footer-logo" />
+            <p className="footer-tag">
+              Results-driven PR &amp; media relations. We secure meaningful coverage
+              that turns brands into authorities &mdash; because it&apos;s in your DNA.
+            </p>
+            <div className="footer-social">
+              <a href="https://instagram.com/dnateams" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <a href="mailto:sam@digitalnetworkingagency.com" aria-label="Email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+              <a href="tel:+13072841045" aria-label="Phone">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              </a>
             </div>
-            <div style={{ color: "#555", fontSize: "15px", marginTop: "0.75rem", letterSpacing: "0.05em" }}>Digital Networking Agency LLC — Canton, OH</div>
+            <a
+              className="hero-tp footer-tp"
+              href="https://www.trustpilot.com/review/digitalnetworkingagency.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Read our reviews on Trustpilot"
+            >
+              <span className="hero-tp-stars">
+                <span className="tp-tile"><img src="/tp-star-white.svg" alt="" /></span>
+                <span className="tp-tile"><img src="/tp-star-white.svg" alt="" /></span>
+                <span className="tp-tile"><img src="/tp-star-white.svg" alt="" /></span>
+                <span className="tp-tile"><img src="/tp-star-white.svg" alt="" /></span>
+                <span className="tp-tile"><img src="/tp-star-white.svg" alt="" /></span>
+              </span>
+              <span className="hero-tp-brand">
+                <img src="/tp-star-green.svg" alt="" className="tp-mark" />
+                Trustpilot
+              </span>
+            </a>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "3rem", marginBottom: "4rem" }}>
-            <div>
-              <div style={{ fontSize: "28px", fontWeight: 900, color: "#ccff00", letterSpacing: "0.1em", marginBottom: "1rem", textTransform: "uppercase" }}>DNA PR</div>
-              <div style={{ color: "#aaa", fontSize: "15px", lineHeight: "2" }}>
-                Digital Networking Agency LLC<br />
-                6545 Market Ave N Suite 100<br />
-                Canton, OH 44721<br />
-                United States
-              </div>
-            </div>
-            <div>
-              <div style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#ccff00", marginBottom: "1.5rem" }}>Contact Us</div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-                <a href="mailto:sam@digitalnetworkingagency.com" style={{ display: "flex", alignItems: "center", gap: "14px", color: "#aaa", fontSize: "15px", textDecoration: "none" }}>
-                  <span style={{ width: "40px", height: "40px", borderRadius: "10px", background: "#141414", border: "1px solid #2a2a2a", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <svg width="18" height="18" fill="#ccff00" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                  </span>
-                  sam@digitalnetworkingagency.com
-                </a>
-                <a href="https://instagram.com/dnateams" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: "14px", color: "#aaa", fontSize: "15px", textDecoration: "none" }}>
-                  <span style={{ width: "40px", height: "40px", borderRadius: "10px", background: "#141414", border: "1px solid #2a2a2a", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <svg width="18" height="18" fill="#ccff00" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                  </span>
-                  @dnateams
-                </a>
-                <a href="tel:+13072841045" style={{ display: "flex", alignItems: "center", gap: "14px", color: "#aaa", fontSize: "15px", textDecoration: "none" }}>
-                  <span style={{ width: "40px", height: "40px", borderRadius: "10px", background: "#141414", border: "1px solid #2a2a2a", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <svg width="18" height="18" fill="#ccff00" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                  </span>
-                  +1 (307) 284-1045
-                </a>
-              </div>
-            </div>
-            <div>
-              <div style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#ccff00", marginBottom: "1.5rem" }}>Get Started</div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                <a href="mailto:sam@digitalnetworkingagency.com" className="btn-p" style={{ textAlign: "center", fontSize: "15px", padding: "16px 24px" }}>
-                  <span>Book a Consultation</span>
-                </a>
-                <a href="https://instagram.com/dnateams" target="_blank" rel="noopener noreferrer" className="btn-g" style={{ textAlign: "center", fontSize: "15px", padding: "16px 24px" }}>
-                  Follow @dnateams
-                </a>
-                <a href="https://onboarding.digitalnetworkingagency.com" target="_blank" rel="noopener noreferrer"
-                  style={{ textAlign: "center", fontSize: "15px", padding: "16px 24px", display: "block", border: "1px solid #ccff00", color: "#ccff00", borderRadius: "8px", textDecoration: "none", background: "transparent", transition: "all 0.2s" }}>
-                  Client Onboarding →
-                </a>
-              </div>
-            </div>
+
+          <div className="footer-col">
+            <div className="footer-h">Contact</div>
+            <a href="mailto:sam@digitalnetworkingagency.com">sam@digitalnetworkingagency.com</a>
+            <a href="tel:+13072841045">+1 (307) 284-1045</a>
+            <a href="https://instagram.com/dnateams" target="_blank" rel="noopener noreferrer">@dnateams</a>
           </div>
-          <div style={{ borderTop: "1px solid #1a1a1a", paddingTop: "1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "0.75rem" }}>
-            <div style={{ color: "#444", fontSize: "13px" }}>© 2026 Digital Networking Agency LLC — It&apos;s in our DNA</div>
-            <div style={{ display: "flex", gap: "1.5rem" }}>
-              <a href="https://onboarding.digitalnetworkingagency.com" style={{ color: "#444", fontSize: "13px", textDecoration: "none" }}>Terms & Conditions</a>
-              <a href="mailto:sam@digitalnetworkingagency.com" style={{ color: "#444", fontSize: "13px", textDecoration: "none" }}>Privacy Policy</a>
-            </div>
+
+          <div className="footer-col">
+            <div className="footer-h">Office</div>
+            <p className="footer-addr">
+              Digital Networking Agency LLC<br />
+              6545 Market Ave N, Suite 100<br />
+              Canton, OH 44721<br />
+              United States
+            </p>
           </div>
+
+          <div className="footer-col">
+            <div className="footer-h">Explore</div>
+            <a href="#about">About</a>
+            <a href="#packages">Packages</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#contact">Book a Call</a>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <span>© 2026 Digital Networking Agency LLC — It&apos;s in our DNA</span>
         </div>
       </footer>
     </>
+  );
+}
+
+export function PressMarquee() {
+  // Real publication logos, shown on white chips so every mark stays legible.
+  const outlets: { name: string; src?: string }[] = [
+    { name: "Forbes", src: "/logo-forbes.png" },
+    { name: "Business Insider", src: "/logo-bi.png" },
+    { name: "Rolling Stone", src: "/logo-rollingstone.png" },
+    { name: "Esquire", src: "/logo-esquire.png" },
+    { name: "Maxim", src: "/logo-maxim.png" },
+    { name: "Allure", src: "/logo-allure.png" },
+    { name: "Glamour", src: "/logo-glamour.png" },
+    { name: "Architectural Digest", src: "/logo-ad.png" },
+    { name: "Haute Beauty", src: "/logo-harpersbazaar.png" },
+    { name: "Sports Illustrated", src: "/logo-si.png" },
+    { name: "Us Weekly", src: "/logo-usweekly.png" },
+    { name: "Los Angeles Times", src: "/logo-latimes.png" },
+    { name: "Entrepreneur", src: "/logo-entrepreneur.jpg" },
+    { name: "Hollywood Life", src: "/logo-hollywoodlife.png" },
+    { name: "OK! Magazine", src: "/logo-ok.png" },
+    { name: "Success Magazine", src: "/logo-success.png" },
+    { name: "Muscle & Fitness", src: "/logo-musclefitness.png" },
+    { name: "Woman's World", src: "/logo-womansworld.png" },
+    { name: "IBTimes", src: "/logo-ibtimes.png" },
+    { name: "Investing.com", src: "/logo-investing.png" },
+    { name: "Flaunt", src: "/logo-flaunt.png" },
+    { name: "Haute Residence", src: "/logo-haute.png" },
+    { name: "The Business Journals", src: "/logo-bizjournals.png" },
+    { name: "Law & Crime", src: "/logo-lawcrime.png" },
+    { name: "Law News Day", src: "/logo-lawnewsday.png" },
+    { name: "USA Today", src: "/USA-Today-removebg-preview.png" },
+    { name: "Benzinga", src: "/Benzinga-Logo-removebg-preview.png" },
+    { name: "FOX", src: "/fox-scg-logo.svg" },
+    { name: "CEO Weekly", src: "/CEO_Weekly-removebg-preview.png" },
+    { name: "New York Weekly", src: "/NY-Weekly-removebg-preview.png" }
+  ];
+  const row = [...outlets, ...outlets];
+  return (
+    <section className="press-marquee">
+      <h2 className="press-heading reveal">Our Clients Get Media Mentions That Matter</h2>
+      <div className="press-track-wrap">
+        <div className="press-track">
+          {row.map((o, i) => (
+            <div className="press-item" key={`${o.name}-${i}`}>
+              {o.src ? (
+                <img src={o.src} alt={o.name} className="press-logo" />
+              ) : (
+                <span className="press-wordmark">{o.name}</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function TestimonialsSection() {
+  const reviews = [
+    {
+      name: "David",
+      meta: "Featured in MSN",
+      text:
+        "I have had a great experience working with Digital Networking Agency. Sam Harris and his team consistently do an excellent job of promoting brands and helping businesses stand out in a competitive market. Their professionalism, expertise, and dedication to delivering results are evident in everything they do. I truly enjoy working with them and highly recommend their services to anyone looking to enhance their brand visibility and online presence."
+    },
+    {
+      name: "Julie Krivanek",
+      meta: "Featured in CEO Weekly",
+      text:
+        "I have worked with many PR and marketing firms — and this stands head and shoulders above in the #1 spot. Responsive, timely, clear in expectations… and extremely creative, with superb results and a complete pleasure to work with. Honestly? If you have the chance to work with Sam Harris and his team, grab it — you won't be sorry."
+    },
+    {
+      name: "Sahar Maknouni",
+      meta: "Featured in CEO Weekly",
+      text:
+        "Working with Sam and the DNA team was an absolute pleasure. The process was smooth from start to finish and the final article exceeded my expectations. Looking forward to working together again soon!"
+    },
+    {
+      name: "VAYA VAYA",
+      meta: "Featured in CEO Weekly",
+      text:
+        "Really impressed with how professional and efficient the whole process was. Sam made everything easy and the article turned out great. Will definitely be coming back for more features!"
+    },
+    {
+      name: "Ben Labra",
+      meta: "Featured in CEO Weekly",
+      text:
+        "Sam and the team at Digital Networking Agency did a fantastic job. The article was well written and exactly what I was looking for. Can not wait to work with them again!"
+    },
+    {
+      name: "Brian Haarbin",
+      meta: "Featured in CEO Weekly",
+      text:
+        "Great experience working with DNA. Sam was communicative, professional and delivered exactly what was promised. The CEO Weekly feature was everything I hoped for and more."
+    },
+    {
+      name: "Alan Araujo",
+      meta: "Featured in CEO Weekly",
+      text:
+        "I was blown away by the quality of the article and the level of service. Sam made the whole process seamless and stress free. Highly recommend Digital Networking Agency!"
+    },
+    {
+      name: "Matthew Brick",
+      meta: "Featured in CEO Weekly",
+      text:
+        "From start to finish the experience with Sam and DNA was top notch. The article came out beautifully and the team was incredibly responsive throughout. Looking forward to future collaborations!"
+    },
+    {
+      name: "Uch Mobayode",
+      meta: "Featured in CEO Weekly",
+      text:
+        "Exceptional service and outstanding results. Sam took the time to understand my story and the article reflected that perfectly. Will definitely be working with DNA again!"
+    },
+    {
+      name: "Atulh Jindal",
+      meta: "Featured in CEO Weekly",
+      text:
+        "The team at Digital Networking Agency really delivered. Sam was professional, easy to work with and the final piece was exactly what I needed. Great experience overall!"
+    },
+    {
+      name: "Jennifer O'Connor",
+      meta: "Featured in MSN",
+      text:
+        "Working with Sam was a great experience from beginning to end. The MSN feature came out exactly as described and the process was incredibly straightforward. Highly recommend!"
+    },
+    {
+      name: "Lem Garcia",
+      meta: "Featured in USA Today",
+      text:
+        "Sam and the DNA team were fantastic to work with. The article captured my story perfectly and the whole process was smooth and professional. Looking forward to working together again soon!"
+    },
+    {
+      name: "Lynette Laguna",
+      meta: "Featured in Yahoo Finance",
+      text:
+        "Really happy with the service and the final article. Sam was great to work with and made the whole process easy. Will definitely be reaching out for future features!"
+    }
+  ];
+  return (
+    <section className="tst-section" id="testimonials">
+      <div className="tst-glow" />
+      <div className="stag reveal">Client Voices</div>
+      <div className="stitle reveal">What Our Clients Say</div>
+      <div className="sdiv reveal" />
+      <TestimonialsCarousel reviews={reviews} />
+    </section>
   );
 }

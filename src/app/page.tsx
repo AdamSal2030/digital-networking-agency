@@ -7,9 +7,11 @@ import {
   CtaFooterSection,
   HeroSection,
   PackagesSection,
+  PressMarquee,
   PrimeSection,
   ProofSection,
-  StatsSection
+  StatsSection,
+  TestimonialsSection
 } from "@/components/landing/sections";
 
 export default function Home() {
@@ -22,12 +24,14 @@ export default function Home() {
       <NavMenu />
       <HeroSection />
       <StatsSection />
+      <PressMarquee />
       <AboutSection />
       <PackagesSection />
       <AlaCarteSection />
       <PrimeSection />
       <BrandingSection />
       <ProofSection />
+      <TestimonialsSection />
       <CtaFooterSection />
       <LandingEffects />
     </>
