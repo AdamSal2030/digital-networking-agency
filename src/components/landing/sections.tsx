@@ -1,4 +1,5 @@
 import { HeroCtas } from "@/components/landing/HeroCtas";
+import { PlacementsCarousel } from "@/components/landing/PlacementsCarousel";
 import { TestimonialsCarousel } from "@/components/landing/TestimonialsCarousel";
 
 export function HeroSection() {
@@ -373,63 +374,7 @@ export function ProofSection() {
       <div className="stag reveal">Proof of Authority</div>
       <div className="stitle reveal">Client Placements</div>
       <div className="sdiv reveal" />
-      <div className="proof-grid">
-        {placements.map((p, i) => (
-          <a
-            key={p.href}
-            href={p.href}
-            className="pc pc-photo-card reveal"
-            style={{ transitionDelay: `${(i % 3) * 0.1}s` }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="pc-bar" />
-            {p.img ? (
-              <div className="pc-photo">
-                <img src={p.img} alt={p.headline} loading="lazy" />
-                {p.logo ? (
-                  <img
-                    src={p.logo}
-                    alt={p.outlet}
-                    className={
-                      p.logoWhite
-                        ? "pc-photo-logo pc-photo-logo--white"
-                        : "pc-photo-logo"
-                    }
-                    loading="lazy"
-                  />
-                ) : (
-                  <span className="pc-photo-logo pc-photo-logo--text">
-                    {p.outlet}
-                  </span>
-                )}
-              </div>
-            ) : (
-              <div className="pc-photo pc-photo--logo">
-                {p.logo ? (
-                  <img
-                    src={p.logo}
-                    alt={p.outlet}
-                    className={
-                      p.logoWhite
-                        ? "pc-panel-logo pc-panel-logo--white"
-                        : "pc-panel-logo"
-                    }
-                    loading="lazy"
-                  />
-                ) : (
-                  <span className="pc-panel-text">{p.outlet}</span>
-                )}
-              </div>
-            )}
-            <div className="pc-body">
-              <div className="po">{p.outlet}</div>
-              <div className="ph">{p.headline}</div>
-              <div className="pm">{p.meta}</div>
-            </div>
-          </a>
-        ))}
-      </div>
+      <PlacementsCarousel placements={placements} />
     </section>
   );
 }
