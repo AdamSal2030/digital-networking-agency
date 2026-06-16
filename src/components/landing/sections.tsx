@@ -287,7 +287,7 @@ export function ProofSection() {
         "Dr. Bhuvanendram Indrakrishnan: Leadership in Medicine and Community Health",
       meta: "May 22, 2026",
       href: "https://www.usatoday.com/story/special/contributor-content/2026/05/22/dr-bhuvanendram-indrakrishnan-leadership-in-medicine-and-community-health/90214273007/",
-      img: null,
+      img: "/placement-indran.jpg",
       logo: "/USA-Today-removebg-preview.png",
       logoWhite: true
     },
