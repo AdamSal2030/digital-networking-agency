@@ -268,7 +268,7 @@ a.pc:focus-visible{outline:2px solid var(--lime);outline-offset:3px;}
 /* logos are stored as dark marks on transparent — show them as-is on a white chip (consistent + always visible) */
 .pc-photo-logo--white{filter:none;}
 .pc-photo-logo--text{display:inline-flex;align-items:center;max-width:none;max-height:none;height:auto;font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#101117;line-height:1;white-space:nowrap;}
-.pc-panel-text{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:2px;color:#fff;}
+.pc-panel-text{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:1.5px;color:#fff;text-align:center;line-height:1.05;max-width:84%;}
 .pc-photo--logo{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#14171f 0%,#1d2230 100%);}
 .pc-photo--logo::after{display:none;}
 .pc-panel-logo{max-width:46%;max-height:38%;width:auto;height:auto;object-fit:contain;}

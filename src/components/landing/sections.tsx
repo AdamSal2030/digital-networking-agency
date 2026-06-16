@@ -302,6 +302,16 @@ export function ProofSection() {
       logoWhite: true
     },
     {
+      outlet: "Healthcare Business Today",
+      headline:
+        "The 25-Year Mission Behind a New Standard in Addiction Recovery",
+      meta: "May 23, 2025",
+      href: "https://www.healthcarebusinesstoday.com/the-25-year-mission-behind-a-new-standard-in-addiction-recovery/",
+      img: null,
+      logo: null,
+      logoWhite: true
+    },
+    {
       outlet: "Wall Street Times",
       headline:
         "From Mario Kart to the Supreme Court: How Matthew Brick Built a Law Firm That Puts Clients First",
