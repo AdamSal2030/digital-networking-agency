@@ -271,7 +271,7 @@ a.pc:focus-visible{outline:2px solid var(--lime);outline-offset:3px;}
 .pc-panel-text{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:2px;color:#fff;}
 .pc-photo--logo{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#14171f 0%,#1d2230 100%);}
 .pc-photo--logo::after{display:none;}
-.pc-panel-logo{max-width:56%;max-height:46%;width:auto;height:auto;object-fit:contain;}
+.pc-panel-logo{max-width:46%;max-height:38%;width:auto;height:auto;object-fit:contain;}
 .pc-panel-logo--white{filter:brightness(0) invert(1);opacity:.92;}
 .pc-body{padding:26px 30px 30px;display:flex;flex-direction:column;flex:1;}
 .pc-body .pm{margin-top:auto;padding-top:14px;}

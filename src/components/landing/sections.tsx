@@ -272,6 +272,26 @@ export function BrandingSection() {
 export function ProofSection() {
   const placements = [
     {
+      outlet: "Yahoo Finance",
+      headline:
+        "PointOne Partners Launches Texas Real Estate Investment Platform With Four Active Development Projects",
+      meta: "June 2, 2026",
+      href: "https://finance.yahoo.com/markets/stocks/articles/pointone-partners-launches-texas-real-201500951.html",
+      img: "/placement-shams.jpg",
+      logo: null,
+      logoWhite: true
+    },
+    {
+      outlet: "USA Today",
+      headline:
+        "Dr. Bhuvanendram Indrakrishnan: Leadership in Medicine and Community Health",
+      meta: "May 22, 2026",
+      href: "https://www.usatoday.com/story/special/contributor-content/2026/05/22/dr-bhuvanendram-indrakrishnan-leadership-in-medicine-and-community-health/90214273007/",
+      img: null,
+      logo: "/USA-Today-removebg-preview.png",
+      logoWhite: true
+    },
+    {
       outlet: "Wall Street Times",
       headline:
         "From Mario Kart to the Supreme Court: How Matthew Brick Built a Law Firm That Puts Clients First",
