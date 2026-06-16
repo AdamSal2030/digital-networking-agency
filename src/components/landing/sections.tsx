@@ -308,7 +308,7 @@ export function ProofSection() {
         "The 25-Year Mission Behind a New Standard in Addiction Recovery",
       meta: "May 23, 2025",
       href: "https://www.healthcarebusinesstoday.com/the-25-year-mission-behind-a-new-standard-in-addiction-recovery/",
-      img: null,
+      img: "/placement-mark.jpg",
       logo: null,
       logoWhite: true
     },
@@ -364,7 +364,7 @@ export function ProofSection() {
         "Mark Manderson: Elevating Standards of Mental Health and Addiction Care with Pacific Shores Recovery",
       meta: "July 2025",
       href: "https://www.benzinga.com/pressreleases/25/07/ab46479680/mark-manderson-elevating-standards-of-mental-health-and-addiction-care-with-pacific-shores-recove",
-      img: null,
+      img: "/placement-mark.jpg",
       logo: "/Benzinga-Logo-removebg-preview.png",
       logoWhite: true
     }
