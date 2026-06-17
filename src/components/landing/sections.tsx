@@ -25,9 +25,9 @@ export function HeroSection() {
           </div>
         </div>
         <p className="hero-vp">
-          We turn founders &amp; brands into household names &mdash; with{" "}
-          <strong>guaranteed coverage</strong> in the world&apos;s most trusted
-          publications.
+          We turn founders &amp; brands into household names by{" "}
+          <strong>pitching your story</strong> to our network of editors &amp;
+          journalists at the world&apos;s most trusted publications.
         </p>
         <HeroCtas />
       </div>
@@ -119,7 +119,7 @@ export function PackagesSection() {
           <div className="pt">Tier 1</div><div className="pn">Foundation</div><div className="ptag">Establishing trust</div>
           <div className="pp"><div className="ppn">$800</div><div className="ppm">/month</div></div>
           <div className="pcom">No minimum commitment</div>
-          <ul className="pf"><li>Guaranteed Publications</li><li>Pitching and Story Creation</li><li>Media Relations Team</li><li>Media Relations Strategy</li><li>Market Research</li><li>Writing Team</li><li>Digital Publication Pitching</li></ul>
+          <ul className="pf"><li>Targeted Publication Pitches</li><li>Pitching and Story Creation</li><li>Media Relations Team</li><li>Media Relations Strategy</li><li>Market Research</li><li>Writing Team</li><li>Digital Publication Pitching</li></ul>
           <div className="ppub"><div className="pplbl">Target Publications</div><div className="pplist">NY Weekly, Miami Wire, Music Observer, WallStreet Times, Celebrity News, The Chicago Journal, Women&apos;s Journal, Voyage New York, CEO Weekly</div></div>
           <a href="#contact" className="btn-g" style={{ display: "block", textAlign: "center" }}>Get Started</a>
         </div>
@@ -127,7 +127,7 @@ export function PackagesSection() {
           <div className="pt">Tier 2</div><div className="pn">Signature</div><div className="ptag">Market dominance</div>
           <div className="pp"><div className="ppn">$1,500</div><div className="ppm">/month</div></div>
           <div className="pcom">Minimum 3 months</div>
-          <ul className="pf"><li>3× Guaranteed Publications</li><li>1× Top Tier Publication</li><li>3× Pitching and Story Creation</li><li>Media Relations Team</li><li>Media Relations Strategy</li><li>Market Research</li><li>Writing Team</li><li>Digital Publication Pitching</li><li>Contributor Opportunity Pitching</li></ul>
+          <ul className="pf"><li>3× Targeted Publication Pitches</li><li>1× Top Tier Publication</li><li>3× Pitching and Story Creation</li><li>Media Relations Team</li><li>Media Relations Strategy</li><li>Market Research</li><li>Writing Team</li><li>Digital Publication Pitching</li><li>Contributor Opportunity Pitching</li></ul>
           <div className="ppub"><div className="pplbl">Target Publications</div><div className="pplist">Entrepreneur Tribune, Business Insider, Fox Interviewer, Kivo Daily, Los Angeles Wire, Texas Today, New York Wire, US Insider, US Reporter, BLK News, Benzinga, Digital Journal</div></div>
           <a href="#contact" className="btn-p" style={{ display: "block", textAlign: "center" }}><span>Get Started</span></a>
         </div>
@@ -135,7 +135,7 @@ export function PackagesSection() {
           <div className="pt">Tier 3</div><div className="pn">Platinum</div><div className="ptag">Category leadership</div>
           <div className="pp"><div className="ppn">$3,000</div><div className="ppm">/month</div></div>
           <div className="pcom">Minimum 3 months</div>
-          <ul className="pf"><li>5× Guaranteed Publications</li><li>5× Pitching and Story Creation</li><li>1× Top Tier Publication (Guaranteed)</li><li>Contributor Opportunity Pitching</li><li>Podcast and Radio Pitching</li><li>Print Publication Pitching</li><li>Ghostwriting</li><li>Television Pitching</li><li>Media Training</li></ul>
+          <ul className="pf"><li>5× Targeted Publication Pitches</li><li>5× Pitching and Story Creation</li><li>1× Top-Tier Publication Pitch</li><li>Contributor Opportunity Pitching</li><li>Podcast and Radio Pitching</li><li>Print Publication Pitching</li><li>Ghostwriting</li><li>Television Pitching</li><li>Media Training</li></ul>
           <div className="ppub"><div className="pplbl">Target Publications</div><div className="pplist">Hudson Weekly, Yahoo Finance, Australian Times, New York Reporter, CEO World Biz, Reality Times, OK! Magazine, Elle, Billboard, Podcast (1M+ subscriber channel)</div></div>
           <a href="#contact" className="btn-g" style={{ display: "block", textAlign: "center" }}>Get Started</a>
         </div>

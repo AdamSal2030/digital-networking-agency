@@ -85,7 +85,7 @@ export default function OpengraphImage() {
               marginTop: 28
             }}
           >
-            {"Results-driven PR · Guaranteed media coverage · It's in your DNA."}
+            {"Results-driven PR · Pitched to top editors & journalists · It's in your DNA."}
           </div>
         </div>
 

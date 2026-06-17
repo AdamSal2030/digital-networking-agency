@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.digitalnetworkingagency.com"),
   title: "DNA PR — Get Featured in Forbes, Rolling Stone & 100+ Top Outlets",
   description:
-    "DNA is a results-driven PR agency that gets founders and brands featured in the world's most trusted publications — guaranteed media coverage that builds lasting authority.",
+    "DNA is a results-driven PR agency that pitches founders' and brands' stories to our network of editors and journalists at the world's most trusted publications — building lasting authority.",
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
     title: "DNA PR — Get Featured in the World's Most Trusted Publications",
     description:
-      "Results-driven PR & media relations. Guaranteed coverage in Forbes, Rolling Stone, FOX & 100+ top outlets — because it's in your DNA.",
+      "Results-driven PR & media relations. We pitch your story to our editor and journalist contacts at Forbes, Rolling Stone, FOX & 100+ top outlets — because it's in your DNA.",
     url: "https://www.digitalnetworkingagency.com",
     siteName: "Digital Networking Agency",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DNA PR — Get Featured in the World's Most Trusted Publications",
     description:
-      "Results-driven PR & media relations. Guaranteed coverage in Forbes, Rolling Stone, FOX & 100+ top outlets.",
+      "Results-driven PR & media relations. We pitch your story to our editor and journalist contacts at Forbes, Rolling Stone, FOX & 100+ top outlets.",
   },
 };
 export default function RootLayout({
