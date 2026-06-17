@@ -544,67 +544,61 @@ export function TestimonialsSection() {
       name: "Sahar Maknouni",
       meta: "Featured in CEO Weekly",
       text:
-        "Working with Sam and the DNA team was an absolute pleasure. The process was smooth from start to finish and the final article exceeded my expectations. Looking forward to working together again soon!"
-    },
-    {
-      name: "VAYA VAYA",
-      meta: "Featured in CEO Weekly",
-      text:
-        "Really impressed with how professional and efficient the whole process was. Sam made everything easy and the article turned out great. Will definitely be coming back for more features!"
+        "Honestly didn't expect it to move this fast. Sam pitched my story, kept me looped in the whole way, and the CEO Weekly piece read exactly how I'd describe my own work. Already lining up the next one."
     },
     {
       name: "Ben Labra",
       meta: "Featured in CEO Weekly",
       text:
-        "Sam and the team at Digital Networking Agency did a fantastic job. The article was well written and exactly what I was looking for. Can not wait to work with them again!"
+        "What stood out to me was the writing — it actually sounded like me, not a recycled press release. We went through a couple rounds of edits and they were patient with every note."
     },
     {
       name: "Brian Haarbin",
       meta: "Featured in CEO Weekly",
       text:
-        "Great experience working with DNA. Sam was communicative, professional and delivered exactly what was promised. The CEO Weekly feature was everything I hoped for and more."
+        "Communication was the best part. I always knew where things stood, and what they said would happen, happened. The feature came out better than I'd pictured."
     },
     {
       name: "Alan Araujo",
       meta: "Featured in CEO Weekly",
       text:
-        "I was blown away by the quality of the article and the level of service. Sam made the whole process seamless and stress free. Highly recommend Digital Networking Agency!"
+        "Way less stressful than I expected, and the quality caught me off guard in the best way. If you're on the fence about it, just go for it."
     },
     {
       name: "Matthew Brick",
       meta: "Featured in CEO Weekly",
       text:
-        "From start to finish the experience with Sam and DNA was top notch. The article came out beautifully and the team was incredibly responsive throughout. Looking forward to future collaborations!"
+        "I'm particular about how I'm represented, so I appreciated how carefully they handled my story. Responsive, detail-oriented, and the final piece held up to scrutiny."
     },
     {
       name: "Uch Mobayode",
       meta: "Featured in CEO Weekly",
       text:
-        "Exceptional service and outstanding results. Sam took the time to understand my story and the article reflected that perfectly. Will definitely be working with DNA again!"
+        "They took the time to actually understand what I do before writing a word — that's why the article didn't feel templated. Would work with them again."
     },
     {
       name: "Atulh Jindal",
       meta: "Featured in CEO Weekly",
       text:
-        "The team at Digital Networking Agency really delivered. Sam was professional, easy to work with and the final piece was exactly what I needed. Great experience overall!"
+        "Straightforward and no nonsense. Delivered what was promised without the endless back-and-forth I've had with other firms."
     },
     {
       name: "Jennifer O'Connor",
       meta: "Featured in MSN",
       text:
-        "Working with Sam was a great experience from beginning to end. The MSN feature came out exactly as described and the process was incredibly straightforward. Highly recommend!"
+        "The MSN placement came through exactly as described. Clear timelines, easy to reach, no surprises — rarer than it should be these days."
     },
     {
       name: "Lem Garcia",
       meta: "Featured in USA Today",
       text:
-        "Sam and the DNA team were fantastic to work with. The article captured my story perfectly and the whole process was smooth and professional. Looking forward to working together again soon!"
+        "Seeing my name in USA Today still feels a little surreal. The team made it happen and made it painless. Can't recommend them enough."
     },
     {
       name: "Lynette Laguna",
       meta: "Featured in Yahoo Finance",
       text:
-        "Really happy with the service and the final article. Sam was great to work with and made the whole process easy. Will definitely be reaching out for future features!"
+        "Quick, professional, and the Yahoo Finance feature looked sharp. I'll be back for the next round."
     }
   ];
   return (
