@@ -32,7 +32,7 @@ export function TrustpilotWidget({
         ref={ref}
         className="trustpilot-widget"
         data-locale="en-US"
-        data-template-id="53aa8912dec7e10d38f59f36"
+        data-template-id="54ad5defc6454f065c28af8b"
         data-businessunit-id={businessUnitId}
         data-style-height="240px"
         data-style-width="100%"

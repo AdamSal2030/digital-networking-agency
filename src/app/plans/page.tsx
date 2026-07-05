@@ -4,7 +4,7 @@ import { TrustpilotWidget } from "@/components/landing/TrustpilotWidget";
 import { PressMarquee } from "@/components/landing/sections";
 
 // Paste your Trustpilot Business Unit ID here to switch on the live reviews widget.
-const TRUSTPILOT_BUSINESS_UNIT_ID = "";
+const TRUSTPILOT_BUSINESS_UNIT_ID = "6a01f342478772c1ee6df953";
 
 export const metadata: Metadata = {
   title: "Client Plans — DNA PR",
@@ -167,6 +167,12 @@ export default function PlansPage() {
               >
                 {p.featured ? <span>{p.cta}</span> : p.cta}
               </a>
+              <Link
+                href={`/plans/${p.name.toLowerCase()}`}
+                className="pkg-articles-link"
+              >
+                View articles →
+              </Link>
             </div>
           ))}
         </div>
