@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { TrustpilotWidget } from "@/components/landing/TrustpilotWidget";
+import { ReviewsSection } from "@/components/landing/ReviewsSection";
+import { getTrustpilotData } from "@/lib/trustpilot";
 import { PressMarquee } from "@/components/landing/sections";
-
-// Paste your Trustpilot Business Unit ID here to switch on the live reviews widget.
-const TRUSTPILOT_BUSINESS_UNIT_ID = "6a01f342478772c1ee6df953";
 
 export const metadata: Metadata = {
   title: "Client Plans — DNA PR",
   description: "Exclusive ongoing PR plans for DNA PR clients.",
   robots: { index: false, follow: false }
 };
+
+// Refresh the page (and its Trustpilot reviews) on the same cadence as the review fetch.
+export const revalidate = 21600; // REVALIDATE_SECONDS
 
 const plans = [
   {
@@ -119,7 +120,8 @@ const tiers = [
   }
 ];
 
-export default function PlansPage() {
+export default async function PlansPage() {
+  const trustpilot = await getTrustpilotData();
   return (
     <main className="plans-page">
       <header className="plans-top">
@@ -210,22 +212,7 @@ export default function PlansPage() {
           </div>
         </div>
 
-        <div className="plans-reviews">
-          <div className="plans-tiers-title">Rated by our clients</div>
-          {TRUSTPILOT_BUSINESS_UNIT_ID ? (
-            <TrustpilotWidget businessUnitId={TRUSTPILOT_BUSINESS_UNIT_ID} />
-          ) : (
-            <a
-              className="plans-tp"
-              href="https://www.trustpilot.com/review/digitalnetworkingagency.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="plans-tp-stars">★★★★★</span>
-              Read our reviews on Trustpilot →
-            </a>
-          )}
-        </div>
+        <ReviewsSection data={trustpilot} />
 
         <div className="plans-note">
           Not sure which fits? <a href="mailto:sam@digitalnetworkingagency.com?subject=Which%20plan%20is%20right%20for%20me">Reply to your strategist</a> and we&apos;ll map it to your goals.

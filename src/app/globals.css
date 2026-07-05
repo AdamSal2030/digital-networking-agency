@@ -683,6 +683,23 @@ a.btn-p span{position:relative;z-index:2;color:inherit;}
 .plans-tp:hover{border-color:var(--lime);transform:translateY(-2px);}
 .plans-tp-stars{color:#00b67a;letter-spacing:2px;font-size:15px;}
 .trustpilot-widget{margin-top:8px;}
+/* Custom Trustpilot reviews */
+.rev-score{display:inline-flex;align-items:center;gap:16px;text-decoration:none;margin-bottom:34px;padding:14px 26px;border:1px solid var(--border);border-radius:14px;background:var(--card);transition:border-color .3s,transform .3s;}
+.rev-score:hover{border-color:rgba(143,255,0,.4);transform:translateY(-2px);}
+.rev-score-num{font-family:'Bebas Neue',sans-serif;font-size:46px;line-height:1;color:var(--lime);}
+.rev-score-meta{display:flex;flex-direction:column;align-items:flex-start;gap:4px;}
+.rev-score-count{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.rev-stars{color:#00b67a;font-size:16px;letter-spacing:2px;line-height:1;}
+.rev-stars-empty{color:rgba(255,255,255,.18);}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left;margin-bottom:36px;}
+.rev-card{margin:0;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px;transition:transform .3s,border-color .3s;}
+.rev-card:hover{transform:translateY(-4px);border-color:rgba(143,255,0,.4);}
+.rev-title{font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.8px;color:var(--lime);}
+.rev-body{margin:0;font-family:'Cormorant Garamond',serif;font-size:16px;line-height:1.6;color:#c5cad2;flex:1;}
+.rev-foot{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-top:1px solid rgba(255,255,255,.06);padding-top:12px;}
+.rev-author{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;color:var(--text);}
+.rev-date{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--muted);white-space:nowrap;}
+@media(max-width:820px){.rev-grid{grid-template-columns:1fr;}}
 .pkg-articles-link{display:block;text-align:center;margin-top:14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--lime);text-decoration:none;transition:opacity .3s;}
 .pkg-articles-link:hover{opacity:.65;}
 .articles-back{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#9aa0aa;text-decoration:none;margin-bottom:18px;transition:color .3s;}
