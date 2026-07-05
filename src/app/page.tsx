@@ -14,6 +14,9 @@ import {
   TestimonialsSection
 } from "@/components/landing/sections";
 
+// Refresh the homepage (and its Trustpilot testimonials) every 6 hours.
+export const revalidate = 21600;
+
 export default function Home() {
   return (
     <>

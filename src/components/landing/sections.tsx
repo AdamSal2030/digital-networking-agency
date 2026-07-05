@@ -1,6 +1,7 @@
 import { HeroCtas } from "@/components/landing/HeroCtas";
 import { PlacementsCarousel } from "@/components/landing/PlacementsCarousel";
 import { TestimonialsCarousel } from "@/components/landing/TestimonialsCarousel";
+import { getTrustpilotData } from "@/lib/trustpilot";
 
 export function HeroSection() {
   return (
@@ -526,7 +527,7 @@ export function PressMarquee() {
   );
 }
 
-export function TestimonialsSection() {
+export async function TestimonialsSection() {
   const reviews = [
     {
       name: "David",
@@ -601,13 +602,42 @@ export function TestimonialsSection() {
         "Quick, professional, and the Yahoo Finance feature looked sharp. I'll be back for the next round."
     }
   ];
+
+  // Pull in live 5-star Trustpilot reviews and append them — deduped against the
+  // existing list by name and by opening text so nothing shows up twice. Refreshes
+  // automatically via the page's ISR revalidation.
+  const normName = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const textKey = (s: string) =>
+    s.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 50);
+  const seenNames = new Set(reviews.map((r) => normName(r.name)));
+  const seenText = new Set(reviews.map((r) => textKey(r.text)));
+
+  const tp = await getTrustpilotData();
+  const tpReviews = tp.reviews
+    .filter((r) => r.rating === 5)
+    .filter((r) => {
+      const nk = normName(r.author);
+      const tk = textKey(r.body);
+      if (seenNames.has(nk) || seenText.has(tk)) return false;
+      seenNames.add(nk);
+      seenText.add(tk);
+      return true;
+    })
+    .map((r) => ({
+      name: r.author,
+      meta: "Verified Trustpilot review",
+      text: r.body
+    }));
+
+  const allReviews = [...reviews, ...tpReviews];
+
   return (
     <section className="tst-section" id="testimonials">
       <div className="tst-glow" />
       <div className="stag reveal">Client Voices</div>
       <div className="stitle reveal">What Our Clients Say</div>
       <div className="sdiv reveal" />
-      <TestimonialsCarousel reviews={reviews} />
+      <TestimonialsCarousel reviews={allReviews} />
     </section>
   );
 }

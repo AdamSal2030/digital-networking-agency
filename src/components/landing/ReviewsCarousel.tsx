@@ -1,6 +1,3 @@
-"use client";
-
-import { useRef } from "react";
 import type { TpReview } from "@/lib/trustpilot";
 import { TpRating } from "./TpRating";
 
@@ -34,53 +31,36 @@ function VerifiedBadge() {
   );
 }
 
-export function ReviewsCarousel({ reviews }: { reviews: TpReview[] }) {
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  const scrollBy = (dir: number) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const card = track.querySelector<HTMLElement>(".rev-card");
-    const step = card ? card.offsetWidth + 18 : 320;
-    track.scrollBy({ left: dir * step, behavior: "smooth" });
-  };
-
+function Card({ r, clone = false }: { r: TpReview; clone?: boolean }) {
   return (
-    <div className="rev-carousel">
-      <button
-        type="button"
-        className="rev-arrow rev-arrow-prev"
-        aria-label="Previous reviews"
-        onClick={() => scrollBy(-1)}
-      >
-        ‹
-      </button>
+    <figure className="rev-card" aria-hidden={clone || undefined}>
+      <TpRating rating={r.rating} boxSize={26} />
+      <VerifiedBadge />
+      <div className="rev-meta">
+        <span className="rev-author">{r.author}</span>
+        {formatDate(r.date) && (
+          <span className="rev-date">, {formatDate(r.date)}</span>
+        )}
+      </div>
+      {r.title && <div className="rev-title">{r.title}</div>}
+      <blockquote className="rev-body">{r.body}</blockquote>
+    </figure>
+  );
+}
 
-      <div className="rev-track" ref={trackRef}>
+export function ReviewsCarousel({ reviews }: { reviews: TpReview[] }) {
+  // Duplicate the set so the marquee can loop seamlessly (the clone is
+  // decorative — hidden from assistive tech to avoid announcing reviews twice).
+  return (
+    <div className="rev-carousel" aria-label="Client reviews from Trustpilot">
+      <div className="rev-track">
         {reviews.map((r, i) => (
-          <figure className="rev-card" key={`${r.author}-${i}`}>
-            <TpRating rating={r.rating} boxSize={26} />
-            <VerifiedBadge />
-            <div className="rev-meta">
-              <span className="rev-author">{r.author}</span>
-              {formatDate(r.date) && (
-                <span className="rev-date">, {formatDate(r.date)}</span>
-              )}
-            </div>
-            {r.title && <div className="rev-title">{r.title}</div>}
-            <blockquote className="rev-body">{r.body}</blockquote>
-          </figure>
+          <Card r={r} key={`a-${r.author}-${i}`} />
+        ))}
+        {reviews.map((r, i) => (
+          <Card r={r} clone key={`b-${r.author}-${i}`} />
         ))}
       </div>
-
-      <button
-        type="button"
-        className="rev-arrow rev-arrow-next"
-        aria-label="Next reviews"
-        onClick={() => scrollBy(1)}
-      >
-        ›
-      </button>
     </div>
   );
 }
