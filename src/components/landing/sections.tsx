@@ -1,5 +1,5 @@
 import { HeroCtas } from "@/components/landing/HeroCtas";
-import { PlacementsCarousel } from "@/components/landing/PlacementsCarousel";
+import { PlacementsCarousel, type Placement } from "@/components/landing/PlacementsCarousel";
 import { TestimonialsCarousel } from "@/components/landing/TestimonialsCarousel";
 import { getTrustpilotData } from "@/lib/trustpilot";
 
@@ -271,8 +271,7 @@ export function BrandingSection() {
   );
 }
 
-export function ProofSection() {
-  const placements = [
+export const clientPlacements: Placement[] = [
     {
       outlet: "Yahoo Finance",
       headline:
@@ -369,13 +368,15 @@ export function ProofSection() {
       logo: "/Benzinga-Logo-removebg-preview.png",
       logoWhite: true
     }
-  ];
+];
+
+export function ProofSection() {
   return (
     <section className="proof-section">
       <div className="stag reveal">Proof of Authority</div>
       <div className="stitle reveal">Client Placements</div>
       <div className="sdiv reveal" />
-      <PlacementsCarousel placements={placements} />
+      <PlacementsCarousel placements={clientPlacements} />
     </section>
   );
 }

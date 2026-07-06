@@ -701,6 +701,8 @@ a.btn-p span{position:relative;z-index:2;color:inherit;}
 .plans-tp-stars{color:#00b67a;letter-spacing:2px;font-size:15px;}
 .trustpilot-widget{margin-top:8px;}
 /* Trustpilot-style reviews band */
+.plans-placements{max-width:1300px;margin:44px auto 0;border-top:1px solid var(--border);padding-top:34px;text-align:center;}
+.plans-placements-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4vw,46px);letter-spacing:1.5px;color:var(--white);line-height:1;margin:6px 0 26px;}
 .plans-reviews{text-align:left;}
 .rev-band{display:flex;align-items:center;gap:34px;}
 .rev-summary{display:flex;flex-direction:column;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;width:186px;}

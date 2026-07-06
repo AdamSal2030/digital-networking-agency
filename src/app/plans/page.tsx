@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ReviewsSection } from "@/components/landing/ReviewsSection";
 import { getTrustpilotData } from "@/lib/trustpilot";
-import { PressMarquee } from "@/components/landing/sections";
+import { PressMarquee, clientPlacements } from "@/components/landing/sections";
+import { PlacementsCarousel } from "@/components/landing/PlacementsCarousel";
 
 export const metadata: Metadata = {
   title: "Client Plans — DNA PR",
@@ -71,55 +72,6 @@ const plans = [
   }
 ];
 
-const details = [
-  {
-    name: "Momentum — $300 / month",
-    points: [
-      "1 Standard feature article published every month",
-      "From our Standard publication network",
-      "We handle the writing, pitching & publication end-to-end",
-      "Billed monthly — no contract, cancel anytime",
-      "Best for staying consistently visible between bigger campaigns"
-    ]
-  },
-  {
-    name: "Spotlight — $800 / month · 3-month minimum",
-    points: [
-      "1 Standard feature article every month",
-      "Plus 1 Premier (mid-tier) feature article every month",
-      "Premium ghostwriting, pitched through our editor & journalist network",
-      "Billed monthly · 3-month minimum",
-      "Best for stepping up to higher-authority coverage every single month"
-    ]
-  },
-  {
-    name: "Authority — $1,500 / month · 3-month minimum",
-    points: [
-      "1 Standard feature article every month",
-      "1 Premier (mid-tier) feature article every month",
-      "1 Flagship (top-tier) feature once within 3 months — USA Today, Forbes AU, Rolling Stone & more",
-      "The Flagship runs once across the 3 months — that runway is exactly what lets us properly pitch and land a top-tier placement",
-      "Full media strategy, a senior strategist & priority placement",
-      "Best for going all-in on becoming the recognized name in your space"
-    ]
-  }
-];
-
-const tiers = [
-  {
-    name: "Flagship",
-    desc: "Top-tier national outlets — USA Today, Forbes AU, Rolling Stone, Digital Journal & more."
-  },
-  {
-    name: "Premier",
-    desc: "Established mid-tier business & lifestyle publications with strong domain authority."
-  },
-  {
-    name: "Standard",
-    desc: "Our network of trusted digital news & business sites for consistent coverage."
-  }
-];
-
 export default async function PlansPage() {
   const trustpilot = await getTrustpilotData();
   return (
@@ -179,39 +131,10 @@ export default async function PlansPage() {
           ))}
         </div>
 
-        <div className="plans-details">
-          <div className="plans-tiers-title">The full details</div>
-          <div className="plans-detail-grid">
-            {details.map((d) => (
-              <div className="plans-detail" key={d.name}>
-                <h3>{d.name}</h3>
-                <ul className="plans-detail-list">
-                  {d.points.map((pt) => (
-                    <li key={pt}>{pt}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <div className="plans-howitworks">
-            <strong>How it works:</strong> every plan is fully managed — we write
-            your story, pitch it to our editor and journalist contacts, and handle
-            publication end to end. Once an article is published, it stays live.
-            Spotlight and Authority require a 3-month minimum; Momentum can be
-            cancelled anytime.
-          </div>
-        </div>
-
-        <div className="plans-tiers">
-          <div className="plans-tiers-title">How our publication tiers work</div>
-          <div className="plans-tier-row">
-            {tiers.map((t) => (
-              <div className="plans-tier" key={t.name}>
-                <h4>{t.name}</h4>
-                <p>{t.desc}</p>
-              </div>
-            ))}
-          </div>
+        <div className="plans-placements">
+          <div className="plans-tiers-title">Proof of Authority</div>
+          <h2 className="plans-placements-h">Client Placements</h2>
+          <PlacementsCarousel placements={clientPlacements} />
         </div>
 
         <ReviewsSection data={trustpilot} />
