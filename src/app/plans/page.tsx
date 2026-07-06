@@ -72,6 +72,39 @@ const plans = [
   }
 ];
 
+const assurances = [
+  "You approve every article before it goes live",
+  "Momentum is month-to-month — cancel anytime",
+  "Every published feature stays online permanently"
+];
+
+const faqs = [
+  {
+    q: "When am I charged?",
+    a: "Your subscription bills monthly from the day you start. Momentum is month-to-month; Spotlight and Authority run for a 3-month minimum, then continue monthly."
+  },
+  {
+    q: "Do I approve the article before it's published?",
+    a: "Always. We write your story and share it for your feedback, revising until you're happy — nothing goes live without your sign-off."
+  },
+  {
+    q: "Can I cancel?",
+    a: "Momentum can be cancelled anytime. Spotlight and Authority have a 3-month minimum, then switch to month-to-month you can cancel whenever."
+  },
+  {
+    q: "Which outlets will I be featured in?",
+    a: "It depends on your plan — hit “View articles” on any plan above to see the exact live publication list, each with its domain rating."
+  },
+  {
+    q: "How soon does my first feature go live?",
+    a: "Usually within your first month. We handle everything end to end — the writing, the pitching to our editor and journalist network, and publication."
+  },
+  {
+    q: "What happens to my article after it's published?",
+    a: "It stays online permanently — indexed and searchable — so it keeps building authority for your name long after it runs."
+  }
+];
+
 export default async function PlansPage() {
   const trustpilot = await getTrustpilotData();
   return (
@@ -124,6 +157,63 @@ export default async function PlansPage() {
           ))}
         </div>
 
+        <div className="plans-assurance">
+          {assurances.map((a) => (
+            <div className="plans-assurance-item" key={a}>
+              <span className="tick" aria-hidden="true">✓</span>
+              <span>{a}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="plans-compare">
+          <div className="plans-tiers-title">Plans at a glance</div>
+          <div className="plans-compare-scroll">
+            <table className="plans-compare-table">
+              <thead>
+                <tr>
+                  <th />
+                  <th>Spotlight</th>
+                  <th className="cmp-feat">Momentum</th>
+                  <th>Authority</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Standard feature / month</td>
+                  <td><span className="cmp-yes">✓</span></td>
+                  <td className="cmp-feat"><span className="cmp-yes">✓</span></td>
+                  <td><span className="cmp-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Premier feature / month</td>
+                  <td><span className="cmp-yes">✓</span></td>
+                  <td className="cmp-feat"><span className="cmp-no">—</span></td>
+                  <td><span className="cmp-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Flagship feature · within 3 months</td>
+                  <td><span className="cmp-no">—</span></td>
+                  <td className="cmp-feat"><span className="cmp-no">—</span></td>
+                  <td><span className="cmp-yes">✓</span></td>
+                </tr>
+                <tr>
+                  <td>Commitment</td>
+                  <td>3-mo min</td>
+                  <td className="cmp-feat">Cancel anytime</td>
+                  <td>3-mo min</td>
+                </tr>
+                <tr className="cmp-price-row">
+                  <td>Price</td>
+                  <td>$700<span className="cmp-mo">/mo</span></td>
+                  <td className="cmp-feat">$300<span className="cmp-mo">/mo</span></td>
+                  <td>$1,300<span className="cmp-mo">/mo</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         <div className="plans-placements">
           <div className="plans-tiers-title">Proof of Authority</div>
           <h2 className="plans-placements-h">Client Placements</h2>
@@ -131,6 +221,16 @@ export default async function PlansPage() {
         </div>
 
         <ReviewsSection data={trustpilot} />
+
+        <div className="plans-faq">
+          <div className="plans-tiers-title">Questions, answered</div>
+          {faqs.map((f) => (
+            <details className="plans-faq-item" key={f.q}>
+              <summary>{f.q}</summary>
+              <div className="plans-faq-a">{f.a}</div>
+            </details>
+          ))}
+        </div>
 
         <div className="plans-note">
           Not sure which fits? <a href="mailto:sam@digitalnetworkingagency.com?subject=Which%20plan%20is%20right%20for%20me">Reply to your strategist</a> and we&apos;ll map it to your goals.
