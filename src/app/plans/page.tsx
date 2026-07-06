@@ -16,6 +16,24 @@ export const revalidate = 21600; // REVALIDATE_SECONDS
 
 const plans = [
   {
+    kind: "Subscription",
+    name: "Spotlight",
+    tagline: "A high-impact prestige placement",
+    price: "$700",
+    per: "/month",
+    commitment: "3-month minimum",
+    featured: false,
+    cta: "Choose Spotlight",
+    href: "mailto:sam@digitalnetworkingagency.com?subject=Spotlight%20Plan",
+    features: [
+      "1 Standard feature article every month",
+      "1 Premier feature article every month",
+      "Premium ghostwriting & media strategy",
+      "Editor & journalist pitching",
+      "Dedicated PR strategist"
+    ]
+  },
+  {
     kind: "Monthly Subscription",
     name: "Momentum",
     tagline: "Stay consistently visible",
@@ -32,24 +50,6 @@ const plans = [
       "Editor & journalist pitching",
       "Dedicated PR strategist",
       "Month-to-month — cancel anytime"
-    ]
-  },
-  {
-    kind: "Subscription",
-    name: "Spotlight",
-    tagline: "A high-impact prestige placement",
-    price: "$700",
-    per: "/month",
-    commitment: "3-month minimum",
-    featured: false,
-    cta: "Choose Spotlight",
-    href: "mailto:sam@digitalnetworkingagency.com?subject=Spotlight%20Plan",
-    features: [
-      "1 Standard feature article every month",
-      "1 Premier feature article every month",
-      "Premium ghostwriting & media strategy",
-      "Editor & journalist pitching",
-      "Dedicated PR strategist"
     ]
   },
   {
