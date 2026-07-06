@@ -10,6 +10,7 @@ const groups: Group[] = [
   {
     category: "Power Network",
     pubs: [
+      { name: "MSN", dr: 94, url: "https://msn.com" },
       { name: "Business Insider", dr: 92, url: "https://businessinsider.com" },
       { name: "TechBullion", dr: 81, url: "https://techbullion.com" },
       { name: "New York Weekly", dr: 74, url: "https://nyweekly.com" },
