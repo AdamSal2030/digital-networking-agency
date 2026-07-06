@@ -31,9 +31,24 @@ function VerifiedBadge() {
   );
 }
 
-function Card({ r, clone = false }: { r: TpReview; clone?: boolean }) {
+function Card({
+  r,
+  href,
+  clone = false,
+}: {
+  r: TpReview;
+  href: string;
+  clone?: boolean;
+}) {
   return (
-    <figure className="rev-card" aria-hidden={clone || undefined}>
+    <a
+      className="rev-card"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-hidden={clone || undefined}
+      tabIndex={clone ? -1 : undefined}
+    >
       <TpRating rating={r.rating} boxSize={26} />
       <VerifiedBadge />
       <div className="rev-meta">
@@ -44,21 +59,27 @@ function Card({ r, clone = false }: { r: TpReview; clone?: boolean }) {
       </div>
       {r.title && <div className="rev-title">{r.title}</div>}
       <blockquote className="rev-body">{r.body}</blockquote>
-    </figure>
+    </a>
   );
 }
 
-export function ReviewsCarousel({ reviews }: { reviews: TpReview[] }) {
+export function ReviewsCarousel({
+  reviews,
+  profileUrl,
+}: {
+  reviews: TpReview[];
+  profileUrl: string;
+}) {
   // Duplicate the set so the marquee can loop seamlessly (the clone is
   // decorative — hidden from assistive tech to avoid announcing reviews twice).
   return (
     <div className="rev-carousel" aria-label="Client reviews from Trustpilot">
       <div className="rev-track">
         {reviews.map((r, i) => (
-          <Card r={r} key={`a-${r.author}-${i}`} />
+          <Card r={r} href={profileUrl} key={`a-${r.author}-${i}`} />
         ))}
         {reviews.map((r, i) => (
-          <Card r={r} clone key={`b-${r.author}-${i}`} />
+          <Card r={r} href={profileUrl} clone key={`b-${r.author}-${i}`} />
         ))}
       </div>
     </div>

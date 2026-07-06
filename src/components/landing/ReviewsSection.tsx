@@ -19,7 +19,7 @@ export function ReviewsSection({ data }: { data: TpData }) {
         </a>
 
         <div className="rev-cards-wrap">
-          <ReviewsCarousel reviews={reviews} />
+          <ReviewsCarousel reviews={reviews} profileUrl={profileUrl} />
           <div className="rev-latest">Showing our latest reviews</div>
         </div>
       </div>

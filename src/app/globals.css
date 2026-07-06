@@ -704,7 +704,8 @@ a.btn-p span{position:relative;z-index:2;color:inherit;}
 .rev-track{display:flex;width:max-content;animation:rev-marquee 60s linear infinite;}
 .rev-carousel:hover .rev-track{animation-play-state:paused;}
 @keyframes rev-marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.rev-card{flex:0 0 288px;width:288px;margin:4px 18px 4px 0;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;}
+.rev-card{flex:0 0 288px;width:288px;margin:4px 18px 4px 0;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;text-decoration:none;transition:border-color .3s,transform .3s;}
+.rev-card:hover{border-color:var(--lime);transform:translateY(-3px);}
 @media(prefers-reduced-motion:reduce){.rev-track{animation:none;}}
 .rev-verified{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.5px;color:var(--muted);}
 .rev-verified svg{width:15px;height:15px;}
