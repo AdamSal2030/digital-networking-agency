@@ -648,12 +648,27 @@ a.btn-p span{position:relative;z-index:2;color:inherit;}
 .plans-page a{cursor:pointer;}
 .plans-top{display:flex;align-items:center;justify-content:space-between;padding:22px 60px;border-bottom:1px solid var(--border);background:rgba(13,14,19,.6);backdrop-filter:blur(12px);}
 .plans-top-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--lime);}
-.plans-hero{text-align:center;padding:72px 28px 6px;}
+.plans-hero{text-align:center;padding:40px 28px 4px;}
 .plans-stag{justify-content:center;}
 .plans-title{margin:14px 0 0;}
 .plans-sub{font-family:'Cormorant Garamond',serif;font-size:19px;color:#c8ccd2;max-width:640px;margin:18px auto 0;line-height:1.65;}
-.plans-section{padding:46px 60px 64px;max-width:1300px;width:100%;margin:0 auto;}
-.plans-grid{margin-top:40px;}
+.plans-section{padding:26px 60px 56px;max-width:1300px;width:100%;margin:0 auto;}
+.plans-grid{margin-top:22px;}
+/* Compact the three plan cards so all fit in one viewport (scoped to /plans only) */
+.plans-grid .pkg-card{padding:28px 30px;}
+.plans-grid .pt{margin-bottom:6px;}
+.plans-grid .pn{font-size:34px;letter-spacing:1.5px;margin-bottom:4px;}
+.plans-grid .ptag{font-size:14px;margin-bottom:14px;}
+.plans-grid .pp{margin-bottom:5px;}
+.plans-grid .ppn{font-size:40px;}
+.plans-grid .ppm{font-size:12px;padding-bottom:8px;}
+.plans-grid .pcom{margin-bottom:15px;padding-bottom:15px;}
+.plans-grid .pf{margin-bottom:16px;}
+.plans-grid .pf li{font-size:14.5px;padding:5px 0;line-height:1.35;gap:10px;}
+.plans-grid .pf li::before{margin-top:3px;}
+.plans-grid .btn-p,.plans-grid .btn-g{padding:11px 22px;font-size:10px;}
+.plans-grid .pkg-articles-link{margin-top:9px;}
+.plans-grid .pkg-card.feat::before{top:24px;}
 .plans-details{max-width:860px;margin:66px auto 0;border-top:1px solid var(--border);padding-top:42px;}
 .plans-detail{margin-bottom:26px;}
 .plans-detail h3{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;color:var(--lime);margin-bottom:8px;}
