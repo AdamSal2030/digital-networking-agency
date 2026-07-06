@@ -69,7 +69,7 @@ export default function MomentumArticlesPage() {
   return (
     <ArticlesPage
       plan="Momentum"
-      tagline="1 Standard feature article every month — published across our 80+ publication network."
+      tagline="1 Standard feature article every month — published across our network."
       groups={groups}
     />
   );
