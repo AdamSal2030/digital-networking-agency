@@ -10,6 +10,8 @@ const groups: Group[] = [
   {
     category: "Power Network",
     pubs: [
+      { name: "Business Insider", dr: 92, url: "https://businessinsider.com" },
+      { name: "TechBullion", dr: 81, url: "https://techbullion.com" },
       { name: "New York Weekly", dr: 74, url: "https://nyweekly.com" },
       { name: "Los Angeles Wire", dr: 64, url: "https://losangeleswire.com" },
       { name: "CEO Weekly", dr: 62, url: "https://ceoweekly.com" },
@@ -49,6 +51,7 @@ const groups: Group[] = [
     category: "Niche & Specialty Publications",
     pubs: [
       { name: "Women's Journal", dr: 58, url: "https://womensjournal.com" },
+      { name: "Luxury LA Mag", dr: 56, url: "https://luxurylamag.com" },
       { name: "Entertainment Post", dr: 55, url: "https://entertainmentpost.com" },
       { name: "Artist Weekly", dr: 54, url: "https://artistweekly.com" },
       { name: "Music Observer", dr: 54, url: "https://musicobserver.com" },
