@@ -35,7 +35,7 @@ export default function AuthorityArticlesPage() {
   return (
     <ArticlesPage
       plan="Authority"
-      tagline="1 Standard + 1 Premier every month, plus 1 Flagship feature within your term — from the top-tier outlets below."
+      tagline="1 Standard + 1 Premier every month, plus 1 Flagship feature within 3 months — from the top-tier outlets below."
       groups={groups}
     />
   );

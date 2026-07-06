@@ -64,7 +64,7 @@ const plans = [
     features: [
       "1 Standard feature article every month",
       "1 Premier feature article every month",
-      "1 Flagship feature within your term — USA Today · Forbes AU · Rolling Stone & more",
+      "1 Flagship feature within 3 months — USA Today · Forbes AU · Rolling Stone & more",
       "Full media strategy & ghostwriting",
       "Senior strategist + priority placement"
     ]
@@ -97,7 +97,7 @@ const details = [
     points: [
       "1 Standard feature article every month",
       "1 Premier (mid-tier) feature article every month",
-      "1 Flagship (top-tier) feature once within your term — USA Today, Forbes AU, Rolling Stone & more",
+      "1 Flagship (top-tier) feature once within 3 months — USA Today, Forbes AU, Rolling Stone & more",
       "The Flagship runs once across the 3 months — that runway is exactly what lets us properly pitch and land a top-tier placement",
       "Full media strategy, a senior strategist & priority placement",
       "Best for going all-in on becoming the recognized name in your space"
