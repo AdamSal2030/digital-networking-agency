@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export type Pub = { name: string; dr: number; url?: string };
+export type Pub = { name: string; dr: number; url?: string; note?: string };
 export type Group = { category: string; pubs: Pub[] };
 
 export function ArticlesPage({
@@ -72,6 +72,9 @@ export function ArticlesPage({
                   >
                     <span className="article-pub-name">{p.name}</span>
                     <span className="article-pub-meta">
+                      {p.note ? (
+                        <span className="article-pub-note">{p.note}</span>
+                      ) : null}
                       <span className="article-pub-dr">DR {p.dr}</span>
                       <span className="article-pub-arrow" aria-hidden="true">
                         ↗
@@ -82,6 +85,9 @@ export function ArticlesPage({
                   <div className="article-pub" key={p.name}>
                     <span className="article-pub-name">{p.name}</span>
                     <span className="article-pub-meta">
+                      {p.note ? (
+                        <span className="article-pub-note">{p.note}</span>
+                      ) : null}
                       <span className="article-pub-dr">DR {p.dr}</span>
                     </span>
                   </div>
