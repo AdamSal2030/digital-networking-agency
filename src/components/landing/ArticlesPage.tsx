@@ -3,6 +3,17 @@ import Link from "next/link";
 export type Pub = { name: string; dr: number; url?: string; note?: string };
 export type Group = { category: string; pubs: Pub[] };
 
+// A publication's brand icon, resolved from its domain via Google's favicon
+// service (reliable for every domain; returns a fallback if none exists).
+function logoFor(url?: string): string | null {
+  if (!url) return null;
+  try {
+    return `https://www.google.com/s2/favicons?domain=${new URL(url).hostname}&sz=128`;
+  } catch {
+    return null;
+  }
+}
+
 export function ArticlesPage({
   plan,
   tagline,
@@ -58,8 +69,22 @@ export function ArticlesPage({
               <span className="articles-group-count">{g.pubs.length}</span>
             </div>
             <div className="articles-grid">
-              {g.pubs.map((p) =>
-                p.url ? (
+              {g.pubs.map((p) => {
+                const logo = logoFor(p.url);
+                const left = (
+                  <span className="article-pub-left">
+                    {logo ? (
+                      <img
+                        className="article-pub-logo"
+                        src={logo}
+                        alt=""
+                        loading="lazy"
+                      />
+                    ) : null}
+                    <span className="article-pub-name">{p.name}</span>
+                  </span>
+                );
+                return p.url ? (
                   <a
                     className="article-pub"
                     key={p.name}
@@ -67,7 +92,7 @@ export function ArticlesPage({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="article-pub-name">{p.name}</span>
+                    {left}
                     <span className="article-pub-meta">
                       {p.note ? (
                         <span className="article-pub-note">{p.note}</span>
@@ -80,7 +105,7 @@ export function ArticlesPage({
                   </a>
                 ) : (
                   <div className="article-pub" key={p.name}>
-                    <span className="article-pub-name">{p.name}</span>
+                    {left}
                     <span className="article-pub-meta">
                       {p.note ? (
                         <span className="article-pub-note">{p.note}</span>
@@ -88,8 +113,8 @@ export function ArticlesPage({
                       <span className="article-pub-dr">DR {p.dr}</span>
                     </span>
                   </div>
-                )
-              )}
+                );
+              })}
             </div>
           </div>
         ))}
