@@ -26,7 +26,7 @@ const plans = [
     href: "mailto:sam@digitalnetworkingagency.com?subject=Momentum%20Plan",
     features: [
       "1 Standard feature article every month",
-      "From our 80+ Standard publication network",
+      "From our Standard publication network",
       "Professional story writing & editing",
       "Editor & journalist pitching",
       "Dedicated PR strategist",
@@ -76,7 +76,7 @@ const details = [
     name: "Momentum — $300 / month",
     points: [
       "1 Standard feature article published every month",
-      "From our 80+ Standard publication network",
+      "From our Standard publication network",
       "We handle the writing, pitching & publication end-to-end",
       "Billed monthly — no contract, cancel anytime",
       "Best for staying consistently visible between bigger campaigns"
@@ -116,7 +116,7 @@ const tiers = [
   },
   {
     name: "Standard",
-    desc: "Our 80+ network of trusted digital news & business sites for consistent coverage."
+    desc: "Our network of trusted digital news & business sites for consistent coverage."
   }
 ];
 
