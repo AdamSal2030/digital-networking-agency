@@ -667,7 +667,7 @@ a.btn-p span{position:relative;z-index:2;color:inherit;}
 .plans-grid .pf li{font-size:14.5px;padding:5px 0;line-height:1.35;gap:10px;}
 .plans-grid .pf li::before{margin-top:3px;}
 .plans-grid .btn-p,.plans-grid .btn-g{padding:11px 22px;font-size:10px;}
-.plans-grid .pkg-articles-link{margin-top:9px;}
+.plans-grid .pkg-articles-link{margin-top:14px;}
 .plans-grid .pkg-card.feat::before{top:24px;}
 .plans-details{max-width:1300px;margin:44px auto 0;border-top:1px solid var(--border);padding-top:32px;}
 .plans-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
@@ -741,8 +741,10 @@ a.btn-p span{position:relative;z-index:2;color:inherit;}
   .rev-cards-wrap{width:100%;}
   .rev-latest{padding-left:0;text-align:center;}
 }
-.pkg-articles-link{display:block;text-align:center;margin-top:14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--lime);text-decoration:none;transition:opacity .3s;}
-.pkg-articles-link:hover{opacity:.65;}
+.pkg-articles-link{display:block;text-align:center;margin-top:16px;padding:13px 16px;border:1px solid var(--border);border-radius:100px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--lime);text-decoration:none;transition:border-color .3s,background .3s,color .3s;}
+.pkg-articles-link:hover{border-color:var(--lime);background:var(--limeglow);}
+.pkg-card.feat .pkg-articles-link{background:var(--lime);border-color:var(--lime);color:#06210a;}
+.pkg-card.feat .pkg-articles-link:hover{background:#a3ff33;border-color:#a3ff33;}
 .articles-back{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#9aa0aa;text-decoration:none;margin-bottom:18px;transition:color .3s;}
 .articles-back:hover{color:var(--lime);}
 .articles-note{max-width:840px;margin:0 auto 36px;font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.7;color:#aab0ba;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px 24px;text-align:center;}

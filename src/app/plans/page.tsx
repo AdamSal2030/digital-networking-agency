@@ -22,7 +22,7 @@ const plans = [
     price: "$300",
     per: "/month",
     commitment: "Billed monthly · cancel anytime",
-    featured: false,
+    featured: true,
     cta: "Start Momentum",
     href: "mailto:sam@digitalnetworkingagency.com?subject=Momentum%20Plan",
     features: [
@@ -38,10 +38,10 @@ const plans = [
     kind: "Subscription",
     name: "Spotlight",
     tagline: "A high-impact prestige placement",
-    price: "$800",
+    price: "$700",
     per: "/month",
     commitment: "3-month minimum",
-    featured: true,
+    featured: false,
     cta: "Choose Spotlight",
     href: "mailto:sam@digitalnetworkingagency.com?subject=Spotlight%20Plan",
     features: [
@@ -56,7 +56,7 @@ const plans = [
     kind: "Subscription",
     name: "Authority",
     tagline: "Build compounding authority",
-    price: "$1,500",
+    price: "$1,300",
     per: "/month",
     commitment: "3-month minimum",
     featured: false,
@@ -114,13 +114,6 @@ export default async function PlansPage() {
                   <li key={f}>{f}</li>
                 ))}
               </ul>
-              <a
-                href={p.href}
-                className={p.featured ? "btn-p" : "btn-g"}
-                style={{ display: "block", textAlign: "center" }}
-              >
-                {p.featured ? <span>{p.cta}</span> : p.cta}
-              </a>
               <Link
                 href={`/plans/${p.name.toLowerCase()}`}
                 className="pkg-articles-link"
