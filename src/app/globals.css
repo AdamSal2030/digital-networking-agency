@@ -647,6 +647,10 @@ a.btn-p span{position:relative;z-index:2;color:inherit;}
 .plans-page{cursor:auto;min-height:100vh;display:flex;flex-direction:column;background:radial-gradient(ellipse 90% 50% at 50% -5%,rgba(143,255,0,.10),transparent 55%),var(--black);}
 .plans-page a{cursor:pointer;}
 .plans-top{display:flex;align-items:center;justify-content:space-between;padding:22px 60px;border-bottom:1px solid var(--border);background:rgba(13,14,19,.6);backdrop-filter:blur(12px);}
+.articles-top{position:sticky;top:0;z-index:50;background:rgba(13,14,19,.85);}
+.articles-back-btn{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border:1px solid var(--border);border-radius:100px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--lime);text-decoration:none;transition:border-color .3s,background .3s,transform .3s;}
+.articles-back-btn:hover{border-color:var(--lime);background:var(--limeglow);transform:translateX(-3px);}
+.articles-back-btn span{font-size:15px;line-height:1;}
 .plans-top-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--lime);}
 .plans-hero{text-align:center;padding:40px 28px 4px;}
 .plans-stag{justify-content:center;}

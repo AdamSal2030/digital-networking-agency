@@ -20,17 +20,14 @@ export function ArticlesPage({
 
   return (
     <main className="plans-page">
-      <header className="plans-top">
-        <Link href="/plans" className="nav-logo" aria-label="DNA PR — Plans">
-          <img src="/black_logo.png" alt="DNA PR" className="nav-logo-img" />
+      <header className="plans-top articles-top">
+        <Link href="/plans" className="articles-back-btn">
+          <span aria-hidden="true">←</span> Back to Plans
         </Link>
         <span className="plans-top-tag">{plan} · Publications</span>
       </header>
 
       <section className="plans-hero">
-        <Link href="/plans" className="articles-back">
-          ← Back to plans
-        </Link>
         <h1 className="stitle plans-title">{plan} Publications</h1>
         <p className="plans-sub">{tagline}</p>
 
