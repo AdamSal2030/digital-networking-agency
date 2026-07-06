@@ -181,16 +181,18 @@ export default async function PlansPage() {
 
         <div className="plans-details">
           <div className="plans-tiers-title">The full details</div>
-          {details.map((d) => (
-            <div className="plans-detail" key={d.name}>
-              <h3>{d.name}</h3>
-              <ul className="plans-detail-list">
-                {d.points.map((pt) => (
-                  <li key={pt}>{pt}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="plans-detail-grid">
+            {details.map((d) => (
+              <div className="plans-detail" key={d.name}>
+                <h3>{d.name}</h3>
+                <ul className="plans-detail-list">
+                  {d.points.map((pt) => (
+                    <li key={pt}>{pt}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
           <div className="plans-howitworks">
             <strong>How it works:</strong> every plan is fully managed — we write
             your story, pitch it to our editor and journalist contacts, and handle
