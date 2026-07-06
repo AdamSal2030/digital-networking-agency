@@ -54,6 +54,7 @@ const groups: Group[] = [
       { name: "Women's Journal", dr: 58, url: "https://womensjournal.com" },
       { name: "Luxury LA Mag", dr: 56, url: "https://luxurylamag.com" },
       { name: "Entertainment Post", dr: 55, url: "https://entertainmentpost.com" },
+      { name: "Fox Interviewer", dr: 54, url: "https://foxinterviewer.com" },
       { name: "Artist Weekly", dr: 54, url: "https://artistweekly.com" },
       { name: "Music Observer", dr: 54, url: "https://musicobserver.com" },
       { name: "Celebrity News", dr: 53, url: "https://celebritynews.com" },
