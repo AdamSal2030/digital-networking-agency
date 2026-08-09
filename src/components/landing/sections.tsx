@@ -286,15 +286,6 @@ export const clientPlacements: Placement[] = [
       logoWhite: true
     },
     {
-      outlet: "MSN",
-      headline: "The entrepreneurs everyone is talking about in 2026",
-      meta: "Feature listicle · MSN",
-      href: "https://www.msn.com/en-us/news/other/the-entrepreneurs-everyone-is-talking-about-in-2026/ar-AA25j5ca",
-      img: "/placement-entrepreneurs-msn.jpg",
-      logo: null,
-      logoWhite: true
-    },
-    {
       outlet: "Yahoo Finance",
       headline:
         "PointOne Partners Launches Texas Real Estate Investment Platform With Four Active Development Projects",
@@ -321,6 +312,15 @@ export const clientPlacements: Placement[] = [
       meta: "October 15, 2025",
       href: "https://womensjournal.com/shermel-a-jeffers-chandwani-influencing-real-estate-in-st-kitts-nevis/",
       img: "/placement-shermel.jpg",
+      logo: null,
+      logoWhite: true
+    },
+    {
+      outlet: "MSN",
+      headline: "The entrepreneurs everyone is talking about in 2026",
+      meta: "Feature listicle · MSN",
+      href: "https://www.msn.com/en-us/news/other/the-entrepreneurs-everyone-is-talking-about-in-2026/ar-AA25j5ca",
+      img: "/placement-entrepreneurs-msn.jpg",
       logo: null,
       logoWhite: true
     },
