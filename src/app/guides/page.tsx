@@ -8,12 +8,12 @@ const SITE = "https://www.digitalnetworkingagency.com";
 export const metadata: Metadata = {
   title: "PR & Media Guides — How to Get Featured | DNA",
   description:
-    "Straight answers on how media placement actually works: the real routes into each publication, what they cost, and how to verify what you bought.",
+    "How media placement actually works — the real routes into Forbes, MSN and more, what makes a story land, and how DNA gets founders featured.",
   alternates: { canonical: `${SITE}/guides` },
   openGraph: {
     title: "PR & Media Guides — How to Get Featured | DNA",
     description:
-      "Straight answers on how media placement actually works: the real routes into each publication, what they cost, and how to verify what you bought.",
+      "How media placement actually works — the real routes into Forbes, MSN and more, what makes a story land, and how DNA gets founders featured.",
     url: `${SITE}/guides`,
     siteName: "Digital Networking Agency",
     type: "website",
@@ -52,8 +52,8 @@ export default function GuidesIndex() {
         <h1>PR &amp; Media Guides</h1>
         <p className={styles.lede}>
           How media placement actually works &mdash; the real routes into each
-          publication, what they cost, and how to check what you bought. Including
-          the parts most agencies leave out.
+          publication, what makes a story land, and how we get founders and brands
+          featured in the publications that matter.
         </p>
       </header>
 

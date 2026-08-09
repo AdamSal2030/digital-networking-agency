@@ -414,7 +414,7 @@ export function GuidesSection() {
           <div className="why-num">&rarr;</div>
           <div className="why-ico">◎</div>
           <h3>All Guides</h3>
-          <p>How media placement actually works — the real routes, the real costs, and the parts most agencies leave out.</p>
+          <p>How media placement actually works — the real routes into the publications that matter, and how we get founders featured.</p>
         </Link>
       </div>
     </section>
