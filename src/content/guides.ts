@@ -335,41 +335,53 @@ export const GUIDES: Guide[] = [
   {
     "slug": "how-to-get-featured-in-yahoo-finance",
     "h1": "How to Get Featured in Yahoo Finance",
-    "title": "How to Get Featured in Yahoo Finance | DNA PR",
-    "description": "Yahoo Finance carries its own reporting plus syndicated content. What it is, how features reach it, and how to get featured.",
-    "body": "<p>Yahoo Finance is one of the most-read financial sites in the world, and one of the most misunderstood places to get featured.</p>\n<p>Here is what it is and how content actually gets there.</p>\n<h2 id=\"what-yahoo-finance-is\">What Yahoo Finance is</h2>\n<p>A mainstream financial news and market data platform. Quotes, charts and portfolios sit alongside news covering markets, the economy, tech, crypto, personal finance and small business.</p>\n<p>Its readers are not only professional investors. They are everyday people checking a stock, comparing a mortgage rate or reading up on a company.</p>\n<h2 id=\"how-features-actually-reach-yahoo-finance\">How features actually reach Yahoo Finance</h2>\n<p>This is the part almost everyone gets wrong.</p>\n<p>Yahoo Finance publishes plenty of its own reporting, but much of what appears there did not start there. It arrives through wire services and syndication arrangements with other publishers — you will see credits to Reuters, Bloomberg, Benzinga, Fortune and other partner outlets alongside Yahoo's own staff.</p>\n<p>So the route is indirect. You do not usually get onto Yahoo Finance by pitching a Yahoo Finance editor. You get there by having a newsworthy story published somewhere whose content reaches the platform — and the platform decides what to carry.</p>\n<p>That is also why nobody can honestly promise you a placement there.</p>\n<h2 id=\"why-a-yahoo-finance-feature-is-worth-having\">Why a Yahoo Finance feature is worth having</h2>\n<p>Reach and recognition. Yahoo Finance is a name almost everyone knows, and a story carried there reaches a mainstream financial audience well beyond your usual circle.</p>\n<p>It also lasts. These pages stay searchable, so the piece keeps working when a prospect, partner or journalist looks you up.</p>\n<p>What it is not: editorial coverage is not investment advice, not an endorsement, and not something that moves a share price. Treat it as visibility and credibility.</p>\n<h2 id=\"what-a-feature-includes\">What a feature includes</h2>\n<p>A dedicated article about you, your company or your work, with a headline and angle built around a real development. Usually images, plus links to your website and profiles.</p>\n<p>It publishes with a date and a source credit, and stays live and indexed.</p>\n<h2 id=\"how-to-get-featured\">How to get featured</h2>\n<ul><li><strong>Earn it with genuine news.</strong> Free and legitimate. You need a story that stands up on its own: funding, a launch, results, expansion or a useful expert perspective.</li><li><strong>Use a professional feature service.</strong> A team shapes the story, writes it to publication standard and places it with an outlet. Faster and more structured, which is why most founders choose it.</li></ul>\n<h2 id=\"what-makes-a-strong-piece\">What makes a strong piece</h2>\n<p>Financial readers are sceptical by default, so substance wins.</p>\n<p>The pieces that travel have a clear news hook, specifics rather than adjectives, and something a reader can take away — numbers, a market shift you can explain, a decision and its outcome. Anything that reads like an advert stops at the first editor.</p>\n<p>Write it as a story a business journalist would want to run.</p>\n<h2 id=\"what-to-expect-from-the-process\">What to expect from the process</h2>\n<p>Share your story, our team drafts the piece, and you review and revise until it is right. Nothing publishes without your approval.</p>\n<p>Be honest about the rest: publication is the outlet's editorial decision, and whether a piece is syndicated onward is the platform's. Anyone guaranteeing either is selling something they do not control.</p>\n<h2 id=\"getting-started\">Getting started</h2>\n<p>Digital Networking Agency works with a wide network of business and finance publications. We shape the angle, write, edit and place. You keep full editorial control and sign off before anything goes live.</p>\n<p>If you have a real story, this is how you give it reach.</p>\n<h2 id=\"frequently-asked-questions\">Frequently asked questions</h2>\n<h3>Can you guarantee a Yahoo Finance feature?</h3>\n<p>No, and neither can anyone else. Publication is the outlet's decision and syndication is Yahoo's. What we control is the quality of the story and where we place it.</p>\n<h3>Do I have to pitch Yahoo Finance directly?</h3>\n<p>Usually not. Most third-party content reaches the platform through wire services and syndication rather than direct pitches.</p>\n<h3>What kind of story works best?</h3>\n<p>A genuine business development — funding, a launch, results, expansion or data — written with specifics rather than promotion.</p>",
+    "title": "How to Get Featured in Yahoo Finance: Routes & Costs",
+    "description": "The three real routes onto Yahoo Finance, what each costs, how long it takes, and who is actually eligible. No guarantees, no myths.",
+    "body": "<p>Yahoo Finance is one of the most-visited financial sites in the world, and one of the most oversold placements in PR.</p>\n<p>Here is how content actually gets there, and how to get featured on Yahoo Finance without buying a myth.</p>\n<h2 id=\"what-yahoo-finance-is\">What Yahoo Finance is</h2>\n<p>A financial news and data platform carrying its own journalism alongside syndicated content from wire services and partner publishers.</p>\n<p>That mix is the whole story: some of what you see is Yahoo's newsroom, and some arrived through a distribution feed.</p>\n<h2 id=\"the-three-routes-onto-yahoo-finance\">The three routes onto Yahoo Finance</h2>\n<div class=\"table-scroll\"><table><thead><tr><th>Route</th><th>What it involves</th><th>Typical timeline</th><th>What it cannot do</th></tr></thead><tbody><tr><td><strong>News release via a wire Yahoo carries</strong></td><td>A release distributed through a newswire whose feed Yahoo ingests</td><td>24–48 hours</td><td>Make you look staff-reported; eligibility limits apply</td></tr><tr><td><strong>Editorial or contributor article</strong></td><td>A piece published by an outlet whose content reaches the platform</td><td>Weeks</td><td>Be guaranteed — the outlet and platform both decide</td></tr><tr><td><strong>Company data listing</strong></td><td>Profile, logo and business details via data providers</td><td>About 14 days</td><td>Count as coverage; it is reference data</td></tr></tbody></table></div>\n<h2 id=\"can-your-company-actually-be-featured-the-eligibility-check\">Can your company actually be featured? The eligibility check</h2>\n<p>This is the part almost nobody selling Yahoo Finance placement will tell you.</p>\n<p>Yahoo's own published guidance states that press releases carried on the platform must include the <strong>ticker symbol in the header</strong>, and covers companies traded on exchanges Yahoo tracks. That is a real gate.</p>\n<p><strong>If you are private, pre-revenue or not exchange-traded</strong>, the press release route is not straightforwardly available to you, whatever a vendor promises. What remains realistic is coverage in a publication whose content reaches the platform, and getting your company data correct through the listing route.</p>\n<p>Ask any provider directly which route applies to your company. A straight answer is the test.</p>\n<h2 id=\"which-newswires-yahoo-lists\">Which newswires Yahoo lists</h2>\n<p>Yahoo publicly names the newswires contributing releases to the platform, including Newsfile, PR Newswire, ACCESSWIRE, Business Wire, GlobeNewswire and NewMediaWire.</p>\n<p>That list is Yahoo's, published in its own help documentation — not a private arrangement any agency owns. Anyone implying they have exclusive access to it is describing something that does not exist.</p>\n<h2 id=\"submitting-an-article-vs-distributing-a-release\">Submitting an article vs distributing a release</h2>\n<p>A <strong>release</strong> is your announcement, in your words, distributed through a wire. It reads like a release because it is one.</p>\n<p>An <strong>article</strong> is a written feature published by an outlet. It carries more weight with a reader precisely because a publication ran it.</p>\n<p>Both can end up on the same platform. They are not the same product, and they should not cost the same.</p>\n<h2 id=\"yahoo-finance-community-the-free-ticker-page-route\">Yahoo Finance Community: the free ticker-page route</h2>\n<p>There is a route most guides skip entirely. You can publish analysis in Yahoo Finance Community and email the link to <code>featured@yahooinc.com</code> for consideration on a ticker page.</p>\n<p>Posts generally need to run 400–600 words and state your investment time horizon. It is genuine stock analysis, not company promotion — so it works if you have a real view on a listed company, and not if you want a profile piece.</p>\n<p>It costs nothing.</p>\n<h2 id=\"what-it-costs-to-get-featured-in-yahoo-finance\">What it costs to get featured in Yahoo Finance</h2>\n<p>First, a disambiguation: this is not Yahoo Finance <strong>Premium</strong>, which is a paid subscription for users of the site. Different thing entirely.</p>\n<div class=\"table-scroll\"><table><thead><tr><th>What you're buying</th><th>Typical range</th></tr></thead><tbody><tr><td>Budget wire distribution</td><td>A few hundred dollars</td></tr><tr><td>Mid-market distribution</td><td>Roughly $300–$500</td></tr><tr><td>Legacy newswires</td><td>$800+</td></tr><tr><td>Managed PR with writing and placement</td><td>Priced per campaign</td></tr></tbody></table></div>\n<p>If a quote does not specify which route it buys, it is incomplete.</p>\n<h2 id=\"how-long-it-takes\">How long it takes</h2>\n<p>Wire syndication typically appears within 24–48 hours of distribution. Editorial placement takes weeks, because a publication has to actually want the story. Company data changes commonly take around 14 days to propagate.</p>\n<h2 id=\"does-a-yahoo-finance-feature-help-your-seo\">Does a Yahoo Finance feature help your SEO?</h2>\n<p>Not the way it is usually sold.</p>\n<p>The value is a brand mention on a recognised platform, an indexed asset, and something credible that appears when people search you. Link attribution varies by originating outlet, and nobody can promise you a followed link. Buy it for credibility and discoverability, not as a ranking shortcut.</p>\n<h2 id=\"why-submissions-get-rejected\">Why submissions get rejected</h2>\n<ul><li>No genuine news — an announcement nobody outside the company needs.</li><li>Promotional language where facts should be.</li><li>Previously published material submitted as new.</li><li>Missing the eligibility requirements above.</li><li>Formatting that ignores the wire's own guidelines.</li></ul>\n<h2 id=\"what-to-expect-from-the-process\">What to expect from the process</h2>\n<p>Share your story, our team drafts, you review and revise, and nothing publishes without your approval. We tell you which route applies to your company, in writing, before we start.</p>\n<p>Publication is the outlet's decision and syndication is the platform's. Anyone guaranteeing you a Yahoo Finance placement is guaranteeing something they do not control — including us, which is why we don't.</p>\n<p>Digital Networking Agency writes, edits and places. You keep full editorial control.</p>\n<h2 id=\"frequently-asked-questions\">Frequently asked questions</h2>\n<h3>Can a private company get featured on Yahoo Finance?</h3>\n<p>The press release route requires a ticker symbol and an exchange Yahoo covers, so it is not straightforwardly open to private companies. Coverage in a publication whose content reaches the platform is the realistic route.</p>\n<h3>Can I get on Yahoo Finance for free?</h3>\n<p>Yes, in two ways: earn coverage from a publication that reaches the platform, or publish analysis in Yahoo Finance Community and submit it for ticker-page consideration.</p>\n<h3>How much does it cost to get featured on Yahoo Finance?</h3>\n<p>Wire distribution typically runs from a few hundred dollars to $800+ depending on the newswire. Managed PR with writing and placement is priced per campaign. This is separate from Yahoo Finance Premium, which is a user subscription.</p>\n<h3>How long does it take to appear on Yahoo Finance?</h3>\n<p>Wire releases commonly appear within 24–48 hours. Editorial coverage takes weeks. Company profile data updates typically take around 14 days.</p>\n<h3>Does a Yahoo Finance feature mean a Yahoo journalist wrote about me?</h3>\n<p>Not usually. Much of what appears arrives through syndication or wire distribution. Staff-reported coverage is a separate thing and cannot be bought.</p>\n<h3>Is a Yahoo Finance link dofollow or nofollow?</h3>\n<p>Attribution varies by the originating outlet, and no provider can promise a followed link. Treat the placement as a credibility asset rather than an SEO purchase.</p>\n<h3>Does Yahoo Finance coverage count for an O-1 or EB-1A visa?</h3>\n<p>Immigration officers weigh the significance of the outlet that originally published the piece, not the size of its syndication footprint. Ask your immigration attorney before buying anything on that basis.</p>",
     "toc": [
       {
         "id": "what-yahoo-finance-is",
         "text": "What Yahoo Finance is"
       },
       {
-        "id": "how-features-actually-reach-yahoo-finance",
-        "text": "How features actually reach Yahoo Finance"
+        "id": "the-three-routes-onto-yahoo-finance",
+        "text": "The three routes onto Yahoo Finance"
       },
       {
-        "id": "why-a-yahoo-finance-feature-is-worth-having",
-        "text": "Why a Yahoo Finance feature is worth having"
+        "id": "can-your-company-actually-be-featured-the-eligibility-check",
+        "text": "Can your company actually be featured? The eligibility check"
       },
       {
-        "id": "what-a-feature-includes",
-        "text": "What a feature includes"
+        "id": "which-newswires-yahoo-lists",
+        "text": "Which newswires Yahoo lists"
       },
       {
-        "id": "how-to-get-featured",
-        "text": "How to get featured"
+        "id": "submitting-an-article-vs-distributing-a-release",
+        "text": "Submitting an article vs distributing a release"
       },
       {
-        "id": "what-makes-a-strong-piece",
-        "text": "What makes a strong piece"
+        "id": "yahoo-finance-community-the-free-ticker-page-route",
+        "text": "Yahoo Finance Community: the free ticker-page route"
+      },
+      {
+        "id": "what-it-costs-to-get-featured-in-yahoo-finance",
+        "text": "What it costs to get featured in Yahoo Finance"
+      },
+      {
+        "id": "how-long-it-takes",
+        "text": "How long it takes"
+      },
+      {
+        "id": "does-a-yahoo-finance-feature-help-your-seo",
+        "text": "Does a Yahoo Finance feature help your SEO?"
+      },
+      {
+        "id": "why-submissions-get-rejected",
+        "text": "Why submissions get rejected"
       },
       {
         "id": "what-to-expect-from-the-process",
         "text": "What to expect from the process"
-      },
-      {
-        "id": "getting-started",
-        "text": "Getting started"
       },
       {
         "id": "frequently-asked-questions",
@@ -377,9 +389,9 @@ export const GUIDES: Guide[] = [
       }
     ],
     "takeaways": [
-      "Yahoo Finance runs its own reporting alongside a large amount of syndicated and wire content.",
-      "You usually reach it by being published somewhere whose content flows to Yahoo Finance, not by pitching a Yahoo editor.",
-      "A strong piece is a real business story with substance, not a promotional write-up."
+      "Yahoo Finance carries its own reporting alongside content from newswires it lists publicly.",
+      "Press release placement has a real eligibility gate most providers never mention.",
+      "Knowing which route you are buying matters more than the logo."
     ]
   },
   {
@@ -431,91 +443,57 @@ export const GUIDES: Guide[] = [
   {
     "slug": "how-to-get-featured-in-usa-today",
     "h1": "How to Get Featured in USA Today",
-    "title": "How to Get Featured in USA Today | DNA PR",
-    "description": "USA Today is one of America's largest national publications. What it is, the two ways stories appear, and how to get featured.",
-    "body": "<p>Few media names in the United States are recognised as instantly as USA Today.</p>\n<p>Here is what it is, how stories actually appear there, and how people get featured.</p>\n<h2 id=\"what-usa-today-is\">What USA Today is</h2>\n<p>USA Today is one of America's largest general-audience national publications. It launched in 1982 and is published by USA TODAY Co., formerly Gannett, the largest newspaper publisher in the country by daily circulation.</p>\n<p>It covers national news, politics, money, tech, health, sport and entertainment for a mainstream American readership rather than a single industry niche. Its site reaches an enormous monthly audience, and articles stay live and indexed by search engines.</p>\n<h2 id=\"the-two-ways-stories-appear\">The two ways stories appear</h2>\n<p>This is the part worth understanding properly, because the two are genuinely different things.</p>\n<p><strong>Staff-reported journalism.</strong> Articles researched and written by USA Today's own reporters and editors. This cannot be bought, booked or scheduled. A journalist decides your story is worth covering, and covers it. It is an editorial decision, always.</p>\n<p><strong>Contributor content.</strong> USA Today also runs a separate contributor section, distinct from the newsroom's reporting and labelled as such on the page. A piece published there is contributor content — it is not staff-reported national journalism.</p>\n<p>Both carry your name on usatoday.com. Only one is the newsroom's own work, and anyone who blurs that line is not being straight with you.</p>\n<h2 id=\"why-national-recognition-matters\">Why national recognition matters</h2>\n<p>USA Today is a name every prospect, investor and client recognises instantly. No explanation needed, no context required.</p>\n<p>That is rarer than it sounds. Most credentials need a sentence of setup — \"it's a leading trade title for...\" — and the moment you have to explain a credential, it has already stopped working.</p>\n<p>You never have to explain this one.</p>\n<h2 id=\"what-a-feature-includes\">What a feature includes</h2>\n<p>A dedicated article about you and your work, with a headline and angle built around your positioning, typically with imagery and links through to your website and profiles.</p>\n<p>It publishes live and stays indexed, so it keeps working every time someone searches your name before a meeting, a deal or a decision.</p>\n<h2 id=\"how-to-get-featured\">How to get featured</h2>\n<ul><li><strong>Pitch and earn it.</strong> Take genuine national news — original data, a real first, a story with stakes — to the right reporter. Free and legitimate, entirely dependent on news value and editorial appetite. Nobody can promise the outcome.</li><li><strong>Use a professional feature service.</strong> A team writes the piece to publication standard and handles placement through the contributor route. More predictable on timing, and clearly labelled for what it is.</li></ul>\n<h2 id=\"what-makes-a-strong-piece\">What makes a strong piece</h2>\n<p>The bar here is simple and unforgiving. It has to matter to a general national audience, not just to your industry.</p>\n<p>A milestone that impresses your peers will not land. A story that connects to something a stranger in another state already cares about — money, work, health, technology, the cost of living — will.</p>\n<p>Ask what a reader with no stake in your sector gets out of it. If the honest answer is nothing, the angle is not there yet.</p>\n<h2 id=\"what-to-expect-from-the-process\">What to expect from the process</h2>\n<p>You share your story and perspective, our team drafts the piece, and you review with revisions until it reads exactly right. Nothing publishes until you approve it. Then it goes live and you get the link to share.</p>\n<p>Any provider who will not show you the draft first, or who is vague about which route your piece is taking, is not one to use.</p>\n<h2 id=\"getting-started\">Getting started</h2>\n<p>Digital Networking Agency works across a wide range of national and business publications. We write, edit and place, and we are clear with you about what each placement is and what it is not. You keep full editorial control, and nothing goes live without your sign-off.</p>\n<p>If you want a credential that needs no explanation, this is the one.</p>\n<h2 id=\"frequently-asked-questions\">Frequently asked questions</h2>\n<h3>Can I pay to be reported on by USA Today journalists?</h3>\n<p>No. Staff editorial coverage is a newsroom decision based on news value. It cannot be bought or guaranteed by anyone.</p>\n<h3>What is contributor content?</h3>\n<p>A separate, labelled section on usatoday.com that sits apart from the newsroom's own reporting. It is a distinct route, not staff-reported journalism.</p>\n<h3>Can I approve the article before it publishes?</h3>\n<p>Yes. You review and revise until it is right, and nothing publishes without your approval.</p>",
+    "title": "How to Get Featured in USA Today: Routes & Cost | DNA",
+    "description": "The three routes into USA Today, what each costs, how long it takes, and how contributor content differs from staff reporting. No guarantees, no spin.",
+    "body": "<p>USA Today is one of the largest general-audience publications in America, and one of the most misunderstood to get into.</p>\n<p>Here is how it actually works, and how people get featured on USA Today.</p>\n<h2 id=\"what-usa-today-is\">What USA Today is</h2>\n<p>USA Today is a national daily covering news, money, sports, life and tech for a broad general audience. It is published by USA TODAY Co., renamed from Gannett in late 2025.</p>\n<p>It also anchors the <strong>USA TODAY Network</strong> — more than 200 local publications across some 43 states. That distinction matters: appearing in a Network local title is not the same as appearing on usatoday.com, and some providers blur the two.</p>\n<h2 id=\"the-three-routes-into-usa-today\">The three routes into USA Today</h2>\n<p><strong>Staff editorial.</strong> A USA Today journalist decides your story is worth reporting. Free, earned, and entirely their decision. This is real national journalism and nobody can sell it to you.</p>\n<p><strong>Contributor content.</strong> A separate section of the site carrying content that USA Today's newsroom did not report. It appears on the usatoday.com domain and carries a visible <strong>\"Contributor Content\"</strong> label. It is a legitimate route — it is simply not staff reporting, and it should never be described as such.</p>\n<p><strong>Advertising.</strong> Display and sponsored placements bought through the commercial side. Clearly marked, priced like media buying.</p>\n<p>All three put your name on the domain. Only one involves a journalist choosing to write about you.</p>\n<h2 id=\"usa-today-s-business-spotlight-and-its-limits\">USA Today's Business Spotlight — and its limits</h2>\n<p>Business Spotlight is a Q&amp;A-style business feature many providers offer. It is worth understanding what it is: it sits on the commercial side rather than in the newsroom, entries are short, and links are typically nofollowed.</p>\n<p>That does not make it useless. It makes it a specific, modest product — and any provider presenting it as national editorial coverage is misrepresenting it.</p>\n<h2 id=\"what-it-costs-to-get-featured-in-usa-today\">What it costs to get featured in USA Today</h2>\n<ul><li><strong>Staff editorial:</strong> nothing. You cannot buy it, and paying anyone claiming otherwise buys you nothing.</li><li><strong>Contributor content:</strong> priced by whoever writes and places it. Ask what the fee covers and whether the article is written to the publication's standard.</li><li><strong>Advertising:</strong> media rates, negotiated commercially. Materially more expensive than either of the above.</li></ul>\n<p>Treat any quote that does not specify <em>which route</em> it buys as incomplete.</p>\n<h2 id=\"what-usa-today-actually-covers\">What USA Today actually covers</h2>\n<p>The stories that travel here are the ones useful to a general national reader: service journalism, personal finance, health, consumer costs, and original data that says something new.</p>\n<p>What does not travel: industry-inside stories, company milestones with no wider stake, and anything a reader outside your sector would need explained twice.</p>\n<h2 id=\"what-makes-a-strong-piece\">What makes a strong piece</h2>\n<p>Write for someone who has never heard of your company and has no reason to care yet.</p>\n<p>That means leading with the thing that affects them — the cost, the risk, the change, the number — and letting your expertise be the reason the answer is credible. A feature that reads as a company announcement will read that way to every editor who sees it.</p>\n<h2 id=\"how-to-submit-an-op-ed-or-letter-to-usa-today\">How to submit an op-ed or letter to USA Today</h2>\n<p>USA Today publishes its own submission guidelines, and this route costs nothing:</p>\n<ul><li><strong>Columns and op-eds:</strong> <code>forum@usatoday.com</code>, typically 550–750 words.</li><li><strong>Letters to the editor:</strong> <code>letters@usatoday.com</code>, 200 words or fewer.</li><li>Submissions must be <strong>exclusive</strong> — not previously published on a blog or social.</li><li><strong>AI-generated submissions are not accepted.</strong></li><li>Paste into the email body rather than attaching a file.</li><li>Include a two-sentence bio and a current photo you own the rights to.</li><li>If the Opinion team is interested, expect to hear back within about three business days.</li></ul>\n<p>If you have a genuine argument to make, this is the most direct route there is.</p>\n<h2 id=\"how-long-it-takes\">How long it takes</h2>\n<ul><li><strong>Op-ed submissions:</strong> about three business days for a response if there is interest.</li><li><strong>Staff editorial:</strong> unpredictable. Most pitches to any national outlet go unanswered.</li><li><strong>Contributor content:</strong> typically weeks from brief to publication.</li></ul>\n<p>Anyone quoting you a guaranteed date for editorial coverage is quoting something they do not control.</p>\n<h2 id=\"mistakes-that-get-pitches-ignored\">Mistakes that get pitches ignored</h2>\n<ul><li>Pitching the company instead of a story.</li><li>No news hook, no data, no reason it matters this week.</li><li>Sending the same paragraph to fifty outlets.</li><li>Attachments and press-release formatting where a short email would do.</li><li>Previously published material submitted as exclusive.</li></ul>\n<h2 id=\"how-to-get-featured\">How to get featured</h2>\n<ul><li><strong>Earn it.</strong> Pitch a real story, or submit an op-ed through the guidelines above. Free.</li><li><strong>Use a professional feature service.</strong> A team develops the angle, writes to the publication's standard and manages placement. Faster and more predictable, which is why most founders choose it.</li></ul>\n<h2 id=\"what-to-expect-from-the-process\">What to expect from the process</h2>\n<p>Share your story, our team drafts the piece, you review with revisions until it is exactly right, and nothing publishes until you approve it. We tell you which route we are using, in writing, before anything begins.</p>\n<p>Digital Networking Agency writes, edits and places. You keep full editorial control, and nothing goes live without your sign-off.</p>\n<h2 id=\"what-to-do-once-you-re-featured\">What to do once you're featured</h2>\n<p>Put the link where buyers already look: your site, your email signature, your deck, your profiles. Add it to your \"as seen in\" section using the publication's name accurately.</p>\n<p>One rule worth keeping: describe what you actually got. If it is contributor content, do not call it a USA Today investigation. The people who matter check.</p>\n<h2 id=\"frequently-asked-questions\">Frequently asked questions</h2>\n<h3>How much does it cost to get featured in USA Today?</h3>\n<p>Staff editorial costs nothing and cannot be bought. Contributor content is priced by whoever writes and places it. Advertising is priced at media rates. Always ask which of the three a quote covers.</p>\n<h3>How hard is it to get featured in USA Today?</h3>\n<p>Staff coverage is genuinely hard — national outlets receive far more pitches than they can run. Op-ed submission is more accessible if you have a real argument. Contributor content is the most predictable route.</p>\n<h3>How long does it take to get featured in USA Today?</h3>\n<p>Op-ed responses come in around three business days when there is interest. Contributor content typically takes weeks. Staff editorial has no timeline anyone can promise.</p>\n<h3>How do I submit an op-ed to USA Today?</h3>\n<p>Email <code>forum@usatoday.com</code> with a 550–750 word column pasted into the body, a two-sentence bio and a current photo. It must be exclusive and not AI-generated.</p>\n<h3>Will the article say \"Contributor Content\" on it?</h3>\n<p>If it is contributor content, yes — the label is visible on the page. That is the publication being straightforward with readers, and you should be equally straightforward when you share it.</p>\n<h3>Is a USA TODAY Network local paper the same as USA Today?</h3>\n<p>No. The Network includes 200+ local titles. Appearing in one is real coverage, but it is not usatoday.com, and it should not be presented as the national publication.</p>\n<h3>Do I need a PR agency to get into USA Today?</h3>\n<p>No. The op-ed route is free and public. An agency is worth paying for when you want the writing, angle and placement handled, or you are running several outlets at once.</p>",
     "toc": [
       {
         "id": "what-usa-today-is",
         "text": "What USA Today is"
       },
       {
-        "id": "the-two-ways-stories-appear",
-        "text": "The two ways stories appear"
+        "id": "the-three-routes-into-usa-today",
+        "text": "The three routes into USA Today"
       },
       {
-        "id": "why-national-recognition-matters",
-        "text": "Why national recognition matters"
+        "id": "usa-today-s-business-spotlight-and-its-limits",
+        "text": "USA Today's Business Spotlight — and its limits"
       },
       {
-        "id": "what-a-feature-includes",
-        "text": "What a feature includes"
+        "id": "what-it-costs-to-get-featured-in-usa-today",
+        "text": "What it costs to get featured in USA Today"
       },
       {
-        "id": "how-to-get-featured",
-        "text": "How to get featured"
+        "id": "what-usa-today-actually-covers",
+        "text": "What USA Today actually covers"
       },
       {
         "id": "what-makes-a-strong-piece",
         "text": "What makes a strong piece"
       },
       {
-        "id": "what-to-expect-from-the-process",
-        "text": "What to expect from the process"
+        "id": "how-to-submit-an-op-ed-or-letter-to-usa-today",
+        "text": "How to submit an op-ed or letter to USA Today"
       },
       {
-        "id": "getting-started",
-        "text": "Getting started"
+        "id": "how-long-it-takes",
+        "text": "How long it takes"
       },
       {
-        "id": "frequently-asked-questions",
-        "text": "Frequently asked questions"
-      }
-    ],
-    "takeaways": [
-      "USA Today is one of America's largest general-audience national publications.",
-      "Stories appear two ways: staff-reported journalism and a separate contributor content section.",
-      "Staff coverage is earned through genuine news value and is always the newsroom's decision."
-    ]
-  },
-  {
-    "slug": "how-to-get-featured-on-ap-news",
-    "h1": "How to Get Featured on AP News",
-    "title": "How to Get Featured on AP News | DNA PR",
-    "description": "AP News carries both AP journalism and distributed press releases. What the difference is, what a placement includes, and how to get featured.",
-    "body": "<p>AP News is one of the most recognised news domains in the world, which is why so much confusion surrounds how to appear on it.</p>\n<p>Here is what it is and how the two routes onto the site work.</p>\n<h2 id=\"what-ap-news-is\">What AP News is</h2>\n<p>The Associated Press is a not-for-profit news cooperative founded in 1846. It employs its own reporters and editors, and supplies their work to thousands of publishers worldwide.</p>\n<p>apnews.com is AP's consumer-facing site. It carries AP's own journalism, and also hosts a press release section fed by wire distribution partners.</p>\n<h2 id=\"the-two-ways-content-appears-on-ap-news\">The two ways content appears on AP News</h2>\n<p><strong>Earned AP editorial coverage.</strong> An AP journalist decides your story is worth reporting and writes it. That is coverage in the true sense. It is assigned on news value alone and cannot be purchased or guaranteed by anyone. You can pitch AP, but the decision belongs entirely to their newsroom.</p>\n<p><strong>Distributed press releases.</strong> Wire services such as Business Wire, GlobeNewswire and PR Newswire have partnerships that place client releases on apnews.com. The release appears on the domain, in your own words, in a clearly marked press release section. AP news staff are not involved in writing it, and the page is labelled accordingly.</p>\n<p>Both are real. They are not interchangeable, and any provider calling a distributed release AP coverage is describing it inaccurately.</p>\n<h2 id=\"why-ap-reach-matters\">Why AP reach matters</h2>\n<p>Wire distribution exists because news travels. A release on a major wire is syndicated across its partner network, so one announcement can surface on dozens or hundreds of news and industry sites.</p>\n<p>AP News is among the most visible destinations in that network — a domain people recognise instantly, which is why founders value it for funding news, launches and milestones.</p>\n<h2 id=\"what-a-press-release-placement-includes\">What a press release placement includes</h2>\n<p>A professionally written release in standard news format: headline, dateline, lead, supporting detail, quotes and a boilerplate about your company. Plus links to your website and images where the wire supports them.</p>\n<p>It publishes on apnews.com under the press release designation, with syndication to the wire's wider network, and you receive the live links.</p>\n<h2 id=\"how-to-get-featured\">How to get featured</h2>\n<ul><li><strong>Earn editorial coverage.</strong> Have genuine news, with public interest beyond your own company, and pitch the relevant AP desk. Free, legitimate, entirely at their discretion.</li><li><strong>Distribute a professionally written release.</strong> A team writes your announcement to wire standard and submits it through a distribution partner. Faster and more predictable, which is why most companies choose it.</li></ul>\n<h2 id=\"what-makes-a-strong-release\">What makes a strong release</h2>\n<p>A real news hook. Something happened: you raised, launched, hired, published research. \"We are a great company\" is not news, and wire editors reject it.</p>\n<p>Then facts. Numbers, dates, names, specifics. Quotes that sound like a person said them, not a marketing department. No superlatives you cannot support.</p>\n<p>Wire desks screen submissions and bounce promotional copy. Written properly, a release reads like news because it is news.</p>\n<h2 id=\"what-to-expect-from-the-process\">What to expect from the process</h2>\n<p>Share your announcement and the detail behind it, our team drafts the release to wire standard, and you review with revisions until it is right. Nothing is submitted until you approve it, and you get the links once it is live.</p>\n<p>We will also tell you plainly what the placement is and is not.</p>\n<h2 id=\"getting-started\">Getting started</h2>\n<p>Digital Networking Agency writes and places press releases through wire distribution partners, and works across a wide publication network. You keep full editorial control, and nothing is submitted without your sign-off.</p>\n<p>If you have real news, let us write it properly and put it where it travels.</p>\n<h2 id=\"frequently-asked-questions\">Frequently asked questions</h2>\n<h3>Is a press release on AP News the same as AP coverage?</h3>\n<p>No. A distributed release appears in a clearly marked press release section, written by you or your agency. AP editorial coverage is reported and written by an AP journalist. They are different things.</p>\n<h3>Can AP editorial coverage be guaranteed?</h3>\n<p>No, by anyone. AP assigns coverage on news value at its own discretion. Anyone promising guaranteed AP editorial coverage is promising something they do not control.</p>\n<h3>Can I approve the release before it is submitted?</h3>\n<p>Yes. You review and revise until it is right, and nothing is submitted without your approval.</p>",
-    "toc": [
-      {
-        "id": "what-ap-news-is",
-        "text": "What AP News is"
-      },
-      {
-        "id": "the-two-ways-content-appears-on-ap-news",
-        "text": "The two ways content appears on AP News"
-      },
-      {
-        "id": "why-ap-reach-matters",
-        "text": "Why AP reach matters"
-      },
-      {
-        "id": "what-a-press-release-placement-includes",
-        "text": "What a press release placement includes"
+        "id": "mistakes-that-get-pitches-ignored",
+        "text": "Mistakes that get pitches ignored"
       },
       {
         "id": "how-to-get-featured",
         "text": "How to get featured"
       },
       {
-        "id": "what-makes-a-strong-release",
-        "text": "What makes a strong release"
-      },
-      {
         "id": "what-to-expect-from-the-process",
         "text": "What to expect from the process"
       },
       {
-        "id": "getting-started",
-        "text": "Getting started"
+        "id": "what-to-do-once-you-re-featured",
+        "text": "What to do once you're featured"
       },
       {
         "id": "frequently-asked-questions",
@@ -523,9 +501,79 @@ export const GUIDES: Guide[] = [
       }
     ],
     "takeaways": [
-      "The Associated Press is a wire service with its own journalists.",
-      "Two things appear on apnews.com: AP editorial coverage, which is earned and cannot be bought, and press releases distributed through wire partners, which are labelled as releases.",
-      "A distributed release is a legitimate, useful product — it is simply not the same as an AP journalist writing about you."
+      "There are three routes into USA Today, and they are not the same product.",
+      "Staff reporting is earned. Contributor content and advertising are separate paths.",
+      "Knowing which one you are being sold is the most useful thing on this page."
+    ]
+  },
+  {
+    "slug": "how-to-get-featured-on-ap-news",
+    "h1": "How to Get Featured on AP News",
+    "title": "How to Get Featured on AP News: Costs & Rules | DNA",
+    "description": "What it costs to get a press release on AP News, how long it takes, and the difference between distributed releases and earned AP coverage.",
+    "body": "<p>The Associated Press is one of the most trusted names in news, which is exactly why \"get featured on AP News\" is sold so aggressively.</p>\n<p>Here is what actually happens, and what it costs.</p>\n<h2 id=\"what-ap-news-is\">What AP News is</h2>\n<p>The Associated Press is a not-for-profit news cooperative founded in 1846. Its journalists supply reporting to thousands of member outlets worldwide, which is why an AP story can appear in hundreds of publications at once.</p>\n<p>That reach is real, and it is the reason the name carries weight.</p>\n<h2 id=\"ap-news-vs-the-associated-press\">AP News vs the Associated Press</h2>\n<p>People search both. They refer to the same organisation — the Associated Press is the news cooperative, and apnews.com is its consumer-facing site.</p>\n<p>The distinction that actually matters is not the name. It is what kind of content you are looking at on the page.</p>\n<h2 id=\"the-two-ways-content-appears-on-ap-news\">The two ways content appears on AP News</h2>\n<div class=\"table-scroll\"><table><thead><tr><th></th><th>Earned AP coverage</th><th>Distributed press release</th></tr></thead><tbody><tr><td><strong>Who writes it</strong></td><td>An AP journalist</td><td>You, or someone you hire</td></tr><tr><td><strong>Who decides</strong></td><td>AP's newsroom</td><td>The wire, within its guidelines</td></tr><tr><td><strong>Cost</strong></td><td>Cannot be bought</td><td>Wire distribution fee</td></tr><tr><td><strong>How it's labelled</strong></td><td>AP byline</td><td>Marked as a release; AP staff not involved</td></tr><tr><td><strong>What it signals</strong></td><td>A journalist judged it newsworthy</td><td>You had something to announce</td></tr></tbody></table></div>\n<p>Both are real. <strong>They are not interchangeable</strong>, and any provider blurring them is selling you the reputation of one while delivering the other.</p>\n<h2 id=\"how-to-submit-a-press-release-to-ap-directly\">How to submit a press release to AP directly</h2>\n<p>You can pitch AP's newsroom yourself, at no cost. AP maintains desks by subject — business, sports, entertainment, lifestyle and features — as well as regional bureaus and an official news-tips channel.</p>\n<p>No membership is required. It is entirely at AP's discretion, and most pitches to any national newsroom go unanswered. But it is free, and if you have genuine news it is the honest route.</p>\n<h2 id=\"which-wire-services-place-releases-on-ap-news\">Which wire services place releases on AP News</h2>\n<p>Releases reach the apnews.com press release section through wire distribution. The major services include Business Wire, PR Newswire, GlobeNewswire, EIN Presswire and ACCESSWIRE.</p>\n<p>What matters is the tier. Not every distribution package includes apnews.com, so confirm it explicitly before paying — this is the single most common place people are overcharged for something they did not receive.</p>\n<h2 id=\"how-much-it-costs-to-get-a-press-release-on-ap-news\">How much it costs to get a press release on AP News</h2>\n<p>Third-party distribution tiers that include apnews.com commonly run from roughly <strong>$100 to $500</strong>, with premium newswires higher.</p>\n<p>Separately, AP runs its own content and advertising programs. Those are a different product at a materially higher price, and they are not what most agencies are selling when they say \"AP News.\"</p>\n<p>If a quote does not name the wire and the tier, it is not a quote.</p>\n<h2 id=\"how-long-it-takes-and-how-long-it-stays-live\">How long it takes — and how long it stays live</h2>\n<p>Distributed releases typically appear within <strong>24 to 72 hours</strong>, depending on the wire and tier. Direct newsroom outreach has no timeline at all.</p>\n<p>Retention varies by wire agreement. Some releases remain indexed indefinitely; others are removed after a period. Ask before you buy, and capture the live link when it publishes.</p>\n<h2 id=\"ap-style-press-release-format\">AP style press release format</h2>\n<p>Wires reject on format more often than on substance. The specifications that matter:</p>\n<ul><li>Headline <strong>80 characters or fewer</strong>, with the brand name early</li><li><strong>300–600 words</strong> total</li><li>Standard dateline, inverted pyramid structure</li><li>At least one quote from a named person</li><li>Boilerplate at the end</li><li>Multimedia where relevant</li></ul>\n<h2 id=\"do-ap-news-press-release-links-help-seo\">Do AP News press release links help SEO?</h2>\n<p>Be careful here, because this is where the sales claims break down.</p>\n<p>Press release links are routinely marked <code>nofollow</code> or <code>sponsored</code>, and Google's guidelines treat paid-distribution links as not passing ranking credit. That is by design, not a flaw.</p>\n<p>The value is real but different: a recognised name, an indexed page, and something credible that appears when someone searches you. Buy it for that.</p>\n<h2 id=\"why-wire-editors-reject-press-releases\">Why wire editors reject press releases</h2>\n<ul><li>No actual news — an update nobody outside the company needs</li><li>Promotional language instead of facts</li><li>Word count well over the limit</li><li>Missing dateline, quote or boilerplate</li><li>Previously published material submitted as new</li><li>Ignoring the wire's own published guidelines</li></ul>\n<h2 id=\"how-to-verify-your-release-actually-published\">How to verify your release actually published</h2>\n<p>Nobody covers this, and it takes two minutes:</p>\n<ol><li>Search the exact headline in quotes and confirm an <code>apnews.com</code> URL.</li><li>Check the page for the release label — it should say AP staff were not involved.</li><li>Save the live URL and an archived capture on the day it publishes.</li><li>Re-check after a few weeks to see whether it is still live.</li></ol>\n<p>Ask your provider for the direct link, not a screenshot.</p>\n<h2 id=\"how-to-get-featured\">How to get featured</h2>\n<ul><li><strong>Earn it.</strong> Pitch the relevant AP desk with genuine news. Free, slow, entirely their call.</li><li><strong>Distribute a release.</strong> A professionally written release through a wire tier that includes apnews.com. Predictable, priced, and honest about what it is.</li></ul>\n<h2 id=\"what-to-expect-from-the-process\">What to expect from the process</h2>\n<p>We write the release to wire standard, confirm the tier includes apnews.com before anything is paid, and send you the live link when it publishes. You approve the copy first.</p>\n<p>We do not sell guaranteed AP editorial coverage, because no one can deliver it.</p>\n<h2 id=\"frequently-asked-questions\">Frequently asked questions</h2>\n<h3>Is a press release on AP News the same as AP coverage?</h3>\n<p>No. A distributed release appears on the domain but AP journalists were not involved in writing it, and the page is labelled accordingly. Earned AP coverage means an AP reporter chose to write about you.</p>\n<h3>How much does it cost to get a press release on AP News?</h3>\n<p>Third-party distribution tiers including apnews.com typically run from around $100 to $500, with premium newswires higher. Always confirm the specific tier includes apnews.com.</p>\n<h3>How long does it take to appear on AP News?</h3>\n<p>Distributed releases usually appear within 24 to 72 hours. Direct pitches to AP's newsroom have no timeline and most go unanswered.</p>\n<h3>Does a press release stay on AP News permanently?</h3>\n<p>It varies by wire agreement — some remain indexed indefinitely, others are removed after a set period. Ask before buying and save the live link when it publishes.</p>\n<h3>Are AP News press release links dofollow or nofollow?</h3>\n<p>They are routinely nofollow or sponsored. Paid-distribution links are not intended to pass ranking credit, so buy the placement for credibility rather than SEO.</p>\n<h3>Can AP editorial coverage be guaranteed?</h3>\n<p>No. It is an editorial decision by AP's newsroom. Anyone guaranteeing it is selling something they cannot control.</p>\n<h3>Do I need to be an AP member to get on AP News?</h3>\n<p>No. You can pitch AP's desks directly at no cost, and wire distribution does not require membership either.</p>",
+    "toc": [
+      {
+        "id": "what-ap-news-is",
+        "text": "What AP News is"
+      },
+      {
+        "id": "ap-news-vs-the-associated-press",
+        "text": "AP News vs the Associated Press"
+      },
+      {
+        "id": "the-two-ways-content-appears-on-ap-news",
+        "text": "The two ways content appears on AP News"
+      },
+      {
+        "id": "how-to-submit-a-press-release-to-ap-directly",
+        "text": "How to submit a press release to AP directly"
+      },
+      {
+        "id": "which-wire-services-place-releases-on-ap-news",
+        "text": "Which wire services place releases on AP News"
+      },
+      {
+        "id": "how-much-it-costs-to-get-a-press-release-on-ap-news",
+        "text": "How much it costs to get a press release on AP News"
+      },
+      {
+        "id": "how-long-it-takes-and-how-long-it-stays-live",
+        "text": "How long it takes — and how long it stays live"
+      },
+      {
+        "id": "ap-style-press-release-format",
+        "text": "AP style press release format"
+      },
+      {
+        "id": "do-ap-news-press-release-links-help-seo",
+        "text": "Do AP News press release links help SEO?"
+      },
+      {
+        "id": "why-wire-editors-reject-press-releases",
+        "text": "Why wire editors reject press releases"
+      },
+      {
+        "id": "how-to-verify-your-release-actually-published",
+        "text": "How to verify your release actually published"
+      },
+      {
+        "id": "how-to-get-featured",
+        "text": "How to get featured"
+      },
+      {
+        "id": "what-to-expect-from-the-process",
+        "text": "What to expect from the process"
+      },
+      {
+        "id": "frequently-asked-questions",
+        "text": "Frequently asked questions"
+      }
+    ],
+    "takeaways": [
+      "Two different things appear on apnews.com: earned AP reporting and distributed press releases.",
+      "A release on the domain is legitimate, but it is not an AP journalist writing about you.",
+      "Knowing which one you are buying is the difference between credibility and a costly misunderstanding."
     ]
   },
   {
