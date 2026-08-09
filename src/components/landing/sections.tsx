@@ -276,6 +276,25 @@ export function BrandingSection() {
 
 export const clientPlacements: Placement[] = [
     {
+      outlet: "MSN",
+      headline:
+        "The body isn't a machine: Inside Dr. Kirk Sanford's case for honest regenerative medicine",
+      meta: "Full feature · MSN",
+      href: "https://www.msn.com/en-us/news/other/the-body-isn%E2%80%99t-a-machine-inside-dr-kirk-sanford%E2%80%99s-case-for-honest-regenerative-medicine/ar-AA2705OB",
+      img: "/placement-kirk-msn.jpg",
+      logo: null,
+      logoWhite: true
+    },
+    {
+      outlet: "MSN",
+      headline: "The entrepreneurs everyone is talking about in 2026",
+      meta: "Feature listicle · MSN",
+      href: "https://www.msn.com/en-us/news/other/the-entrepreneurs-everyone-is-talking-about-in-2026/ar-AA25j5ca",
+      img: "/placement-entrepreneurs-msn.jpg",
+      logo: null,
+      logoWhite: true
+    },
+    {
       outlet: "Yahoo Finance",
       headline:
         "PointOne Partners Launches Texas Real Estate Investment Platform With Four Active Development Projects",

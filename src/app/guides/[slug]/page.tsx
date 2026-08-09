@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GUIDES, getGuide } from "@/content/guides";
 import styles from "../guides.module.css";
+import { ProofCards } from "../ProofCards";
 
 const SITE = "https://www.digitalnetworkingagency.com";
 const AUTHOR = "Sam Harris";
@@ -159,6 +160,7 @@ export default async function GuidePage({
                 Contact Now <span aria-hidden="true">&rarr;</span>
               </Link>
             </aside>
+            <ProofCards slug={guide.slug} />
             <div
               className={styles.body}
               dangerouslySetInnerHTML={{ __html: bodyRest }}

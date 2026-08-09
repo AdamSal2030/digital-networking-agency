@@ -535,3 +535,124 @@
     padding: 30px 24px;
   }
 }
+
+/* Proof cards — verified live placements inside a guide */
+.proof {
+  margin: 64px 0;
+  padding: 40px 34px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.proof::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--lime), transparent);
+}
+.proofTag {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--lime);
+  display: block;
+  margin-bottom: 12px;
+}
+.proofTitle {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(26px, 3.4vw, 36px);
+  letter-spacing: 1.1px;
+  color: var(--white);
+  margin: 0 0 10px;
+  line-height: 1.05;
+}
+.proofLede {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+.proofGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.proofCard {
+  display: flex;
+  flex-direction: column;
+  background: #1b1f2a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.35s, transform 0.35s;
+}
+.proofCard:hover {
+  border-color: var(--lime);
+  transform: translateY(-3px);
+}
+.proofShot {
+  display: block;
+  background: #fff;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+.proofShot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.proofBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 20px 22px;
+  flex: 1;
+}
+.proofMeta {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+.proofHeadline {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--white);
+}
+.proofRead {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: auto;
+  transition: color 0.3s;
+}
+.proofCard:hover .proofRead {
+  color: var(--lime);
+}
+.proofRead span {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.proofCard:hover .proofRead span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 720px) {
+  .proofGrid {
+    grid-template-columns: 1fr;
+  }
+  .proof {
+    padding: 30px 22px;
+  }
+}
