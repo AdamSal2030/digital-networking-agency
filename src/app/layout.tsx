@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   title: "DNA PR — Get Featured in Forbes, Rolling Stone & 100+ Top Outlets",
   description:
     "DNA is a results-driven PR agency that pitches founders' and brands' stories to our network of editors and journalists at the world's most trusted publications — building lasting authority.",
-  icons: {
-    icon: "/favicon.ico",
-  },
   openGraph: {
     title: "DNA PR — Get Featured in the World's Most Trusted Publications",
     description:

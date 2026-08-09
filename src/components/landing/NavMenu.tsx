@@ -10,6 +10,7 @@ const links = [
   { href: "#prime", label: "DNA Prime" },
   { href: "#branding", label: "Branding" },
   { href: "#testimonials", label: "Reviews" },
+  { href: "/pr-for", label: "Industries" },
   { href: "/guides", label: "Guides" }
 ];
 

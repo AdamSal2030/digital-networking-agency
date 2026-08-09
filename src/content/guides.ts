@@ -759,6 +759,128 @@ export const GUIDES: Guide[] = [
       "It operates several regional editions, and coverage differs between them.",
       "It suits companies whose market or ambitions cross borders."
     ]
+  },
+  {
+    "slug": "how-much-does-a-pr-agency-cost",
+    "h1": "How Much Does a PR Agency Cost?",
+    "title": "How Much Does a PR Agency Cost? | DNA PR",
+    "description": "What PR actually costs in 2026 — retainers, per-placement pricing, project fees, and how to tell what you are paying for.",
+    "body": "<p>PR pricing is opaque on purpose. Most agencies will not publish a number, which makes it hard to know whether a quote is reasonable.</p>\n<p>Here is how it actually works.</p>\n<h2 id=\"the-three-pricing-models\">The three pricing models</h2>\n<p><strong>Monthly retainer.</strong> You pay a fixed fee for ongoing work — story development, pitching, placement, sometimes crisis and strategy. Traditional agencies commonly work this way, and it can run from four figures a month at the boutique end into five figures for large firms.</p>\n<p><strong>Per placement.</strong> You pay for a specific article in a specific publication. Prices vary enormously by outlet, from low hundreds for smaller digital titles into five figures and beyond for premium sponsored programmes.</p>\n<p><strong>Project fee.</strong> A defined piece of work — a launch, a funding announcement, a campaign — priced as a package.</p>\n<h2 id=\"why-quotes-vary-so-wildly\">Why quotes vary so wildly</h2>\n<p>Because the products are different, even when the pitch sounds identical.</p>\n<p>A quote for earned editorial coverage buys effort: research, angle development, writing, and pitching to editors who may say no. A quote for a paid placement buys a slot. Both are legitimate. They are not worth the same money and they carry very different risk.</p>\n<p>The question that cuts through it: <strong>which is this, and who decides whether it publishes?</strong></p>\n<h2 id=\"what-drives-the-price-up\">What drives the price up</h2>\n<ul><li><strong>Outlet tier.</strong> Larger, more selective publications cost more or take far longer to earn.</li><li><strong>Volume.</strong> Several placements coordinated around a launch costs more than one.</li><li><strong>Writing.</strong> Whether the agency writes the piece or you supply it.</li><li><strong>Speed.</strong> Compressed timelines cost more, in PR as everywhere.</li><li><strong>Scope.</strong> Strategy, messaging and media training sit on top of placement.</li></ul>\n<h2 id=\"what-you-should-get-for-the-money\">What you should get for the money</h2>\n<p>Regardless of model, a reasonable engagement includes: a story angle developed with you, copy written to editorial standard, your review and approval before anything publishes, the live link on publication, and a straight answer about which route was used.</p>\n<p>If any of those is missing, price is not your main problem.</p>\n<h2 id=\"questions-to-ask-before-you-pay\">Questions to ask before you pay</h2>\n<ul><li>Is this earned editorial or a paid placement?</li><li>Who writes it, and do I approve it before publication?</li><li>Which publications specifically, and can I see recent examples?</li><li>What happens if it does not publish?</li><li>Will the article carry a label indicating it is contributor or sponsored content?</li></ul>\n<p>Any agency worth hiring answers all five in writing.</p>\n<h2 id=\"what-we-charge\">What we charge</h2>\n<p>Our campaigns are priced per engagement based on outlets, volume and how much writing is involved. We tell you which route each placement uses before you commit, and you approve every piece before it publishes.</p>\n<h2 id=\"frequently-asked-questions\">Frequently asked questions</h2>\n<h3>Is PR worth it for a small business?</h3>\n<p>It depends what you need. If your buyers research you before purchasing, credibility has direct commercial value. If you sell on price to people who never search your name, spend the budget elsewhere.</p>\n<h3>Why will not agencies publish their prices?</h3>\n<p>Because scope varies so much that a single number would be misleading, and because some are pricing on perceived value rather than cost. Ask for a written scope and the price becomes meaningful.</p>\n<h3>Is cheap PR a bad sign?</h3>\n<p>Not necessarily — it usually signals a paid placement rather than earned coverage. That is fine if that is what you want. It is a problem only when it is sold as something else.</p>",
+    "toc": [
+      {
+        "id": "the-three-pricing-models",
+        "text": "The three pricing models"
+      },
+      {
+        "id": "why-quotes-vary-so-wildly",
+        "text": "Why quotes vary so wildly"
+      },
+      {
+        "id": "what-drives-the-price-up",
+        "text": "What drives the price up"
+      },
+      {
+        "id": "what-you-should-get-for-the-money",
+        "text": "What you should get for the money"
+      },
+      {
+        "id": "questions-to-ask-before-you-pay",
+        "text": "Questions to ask before you pay"
+      },
+      {
+        "id": "what-we-charge",
+        "text": "What we charge"
+      },
+      {
+        "id": "frequently-asked-questions",
+        "text": "Frequently asked questions"
+      }
+    ],
+    "takeaways": [
+      "PR pricing splits into three models, and they are not comparable.",
+      "The number matters less than what it buys and who decides the outcome.",
+      "Cheap placement and earned coverage are different products at different prices."
+    ]
+  },
+  {
+    "slug": "how-much-does-it-cost-to-get-featured",
+    "h1": "How Much Does It Cost to Get Featured in the Press?",
+    "title": "How Much Does It Cost to Get Featured in the Press?",
+    "description": "What press coverage costs by route and outlet tier — earned, contributor, sponsored and wire — and how to tell which you are buying.",
+    "body": "<p>The honest answer is that it ranges from nothing to six figures, and the spread has almost nothing to do with quality.</p>\n<p>Here is what determines the number.</p>\n<h2 id=\"the-four-routes-and-what-each-costs\">The four routes, and what each costs</h2>\n<p><strong>Earned editorial.</strong> A journalist decides your story is worth covering. Costs nothing. Cannot be purchased, cannot be guaranteed, and most pitches go unanswered.</p>\n<p><strong>Contributor or branded content.</strong> You or your writer supply an article that the publication runs, usually with a label. Priced from low hundreds at smaller digital outlets upward.</p>\n<p><strong>Sponsored content programmes.</strong> Formal paid-content products at major publications. Prices commonly start in the tens of thousands.</p>\n<p><strong>Wire distribution.</strong> A press release distributed to a network of sites. Typically from around $100 to several hundred depending on tier.</p>\n<h2 id=\"why-outlet-tier-changes-everything\">Why outlet tier changes everything</h2>\n<p>A feature in a niche digital business title and a feature in a national newspaper are not the same product, and the market prices them accordingly.</p>\n<p>What you are paying for is the audience and the selectivity. The harder a publication is to get into, the more it costs — either in money, or in the effort and time earned coverage requires.</p>\n<h2 id=\"what-an-agency-fee-covers\">What an agency fee covers</h2>\n<p>If you are paying an agency rather than a publication directly, the fee typically covers story development, writing to editorial standard, targeting and submission, revisions, and management of the process — on top of any placement cost.</p>\n<p>That is worth paying for when writing is not your job, or when you are coordinating several placements. It is not worth paying for if you want a single article and you can write.</p>\n<h2 id=\"how-to-tell-what-you-are-being-sold\">How to tell what you are being sold</h2>\n<ul><li>Ask which of the four routes it is, in writing.</li><li>Ask whether the published article will carry a contributor or sponsored label.</li><li>Ask who decides whether it publishes.</li><li>Ask to see the live URL of a recent example, not a screenshot.</li></ul>\n<p>Anyone guaranteeing placement in a publication with an independent newsroom is describing a paid route, whatever they call it.</p>\n<h2 id=\"what-it-is-actually-worth\">What it is actually worth</h2>\n<p>The useful question is not what it costs but what it does.</p>\n<p>A placement is worth paying for when your buyers research you before purchasing, when you need third-party credibility you cannot manufacture, or when a permanent indexed article about you changes how a conversation starts. If none of those apply, the money is better spent elsewhere.</p>\n<h2 id=\"frequently-asked-questions\">Frequently asked questions</h2>\n<h3>Can I get featured for free?</h3>\n<p>Yes — earned editorial costs nothing, and many publications accept op-eds and expert commentary at no charge. It takes longer and most pitches are unsuccessful, but it is real.</p>\n<h3>Why do prices vary so much between agencies?</h3>\n<p>Usually because they are selling different routes. A few hundred dollars and several thousand dollars rarely buy the same thing, even when the sales page looks identical.</p>\n<h3>Is a more expensive publication always better?</h3>\n<p>No. A feature read by the right thousand people is worth more than one read by the wrong million. Match the outlet to your buyer, not to the logo.</p>",
+    "toc": [
+      {
+        "id": "the-four-routes-and-what-each-costs",
+        "text": "The four routes, and what each costs"
+      },
+      {
+        "id": "why-outlet-tier-changes-everything",
+        "text": "Why outlet tier changes everything"
+      },
+      {
+        "id": "what-an-agency-fee-covers",
+        "text": "What an agency fee covers"
+      },
+      {
+        "id": "how-to-tell-what-you-are-being-sold",
+        "text": "How to tell what you are being sold"
+      },
+      {
+        "id": "what-it-is-actually-worth",
+        "text": "What it is actually worth"
+      },
+      {
+        "id": "frequently-asked-questions",
+        "text": "Frequently asked questions"
+      }
+    ],
+    "takeaways": [
+      "There are four routes into a publication, at four very different prices.",
+      "Earned editorial is free and cannot be bought.",
+      "Most \"get featured\" offers are one of the paid routes, priced by outlet tier."
+    ]
+  },
+  {
+    "slug": "how-to-get-press-for-your-business",
+    "h1": "How to Get Press for Your Business",
+    "title": "How to Get Press for Your Business | DNA PR",
+    "description": "A practical guide to earning media coverage — what makes a story publishable, how to pitch, and what to do when pitching does not work.",
+    "body": "<p>Most businesses approach press backwards. They decide they want coverage, then look for someone to give it to them.</p>\n<p>Editors work the other way round. Here is how to meet them where they are.</p>\n<h2 id=\"why-most-pitches-fail\">Why most pitches fail</h2>\n<p>Because they are about the company.</p>\n<p>\"We launched a product\" and \"we hired a CEO\" are not stories to anyone outside your building. An editor's job is to publish things their readers want to read, and your milestone is not automatically one of them.</p>\n<p>The pitches that work answer a different question: what does the reader learn, and why now?</p>\n<h2 id=\"what-makes-a-story-publishable\">What makes a story publishable</h2>\n<p>Four things, and you need at least one:</p>\n<ul><li><strong>Data nobody else has.</strong> Your own numbers, aggregated and anonymised, are the most underused asset most businesses own.</li><li><strong>A contrarian view you can defend.</strong> Not contrarian for its own sake — a genuine argument against the standard advice in your field.</li><li><strong>Timeliness.</strong> Your work connects to something happening this week.</li><li><strong>A human story.</strong> Something specific and true that a reader remembers.</li></ul>\n<p>If you cannot say what the reader learns in one sentence, it is not ready.</p>\n<h2 id=\"how-to-pitch\">How to pitch</h2>\n<p>Find the individual journalist who covers your space and read what they have actually published. Not the outlet — the person.</p>\n<p>Then send something short: subject line that states the story, two or three sentences on why it matters now, one line on why you are the person to comment, and an offer to talk. No attachments, no press release, no preamble.</p>\n<p>Most pitches go unanswered. That is normal and not a reflection on your business.</p>\n<h2 id=\"free-routes-worth-using\">Free routes worth using</h2>\n<ul><li><strong>Op-eds.</strong> Most publications accept opinion submissions and publish their guidelines openly.</li><li><strong>Expert commentary services.</strong> Journalists post requests for sources; answering well and fast gets you quoted.</li><li><strong>Podcasts.</strong> Far easier to get booked than print, and often a better audience.</li><li><strong>Local and trade press.</strong> Less competitive, and closer to your actual buyers than national coverage.</li></ul>\n<h2 id=\"when-to-use-an-agency\">When to use an agency</h2>\n<p>When writing is not your job, when you want several placements coordinated rather than one, or when you have tried pitching and it has not worked.</p>\n<p>What you are buying is the story development, the writing, the targeting and the management of it. What you are not buying — from anyone — is a guarantee that an independent editor publishes you.</p>\n<h2 id=\"how-we-work\">How we work</h2>\n<p>Share your story and who you need to reach. We develop the angle, write the piece to editorial standard, and manage placement. You review and revise until it is right, and nothing publishes without your approval.</p>\n<h2 id=\"frequently-asked-questions\">Frequently asked questions</h2>\n<h3>How long does it take to get press?</h3>\n<p>Weeks rather than days for most routes, and unpredictable for earned editorial. Anyone promising a specific date is promising something they do not control.</p>\n<h3>Do I need a press release?</h3>\n<p>Usually not. A short, specific email to the right journalist outperforms a formal release for most businesses. Releases matter mainly for formal announcements and wire distribution.</p>\n<h3>What if my business is not interesting?</h3>\n<p>Almost every business has a publishable story — it is usually the thing you find obvious. What you know from doing the work is more interesting to outsiders than you think.</p>",
+    "toc": [
+      {
+        "id": "why-most-pitches-fail",
+        "text": "Why most pitches fail"
+      },
+      {
+        "id": "what-makes-a-story-publishable",
+        "text": "What makes a story publishable"
+      },
+      {
+        "id": "how-to-pitch",
+        "text": "How to pitch"
+      },
+      {
+        "id": "free-routes-worth-using",
+        "text": "Free routes worth using"
+      },
+      {
+        "id": "when-to-use-an-agency",
+        "text": "When to use an agency"
+      },
+      {
+        "id": "how-we-work",
+        "text": "How we work"
+      },
+      {
+        "id": "frequently-asked-questions",
+        "text": "Frequently asked questions"
+      }
+    ],
+    "takeaways": [
+      "Editors publish stories, not companies.",
+      "The hook matters more than the pitch, the list or the timing.",
+      "Coverage compounds — the first placement is the hardest."
+    ]
   }
 ];
 
