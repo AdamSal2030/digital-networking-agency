@@ -1,0 +1,119 @@
+/* Outlet chips */
+.outlets {
+  margin: 0 0 40px;
+  padding: 24px 26px;
+  background: var(--card);
+  border-left: 3px solid var(--lime);
+}
+.outletsLabel {
+  display: block;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 14px;
+}
+.outletList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.outletChip {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 7px 13px;
+  white-space: nowrap;
+}
+
+/* Placement list */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+}
+.item {
+  margin: 0;
+}
+.card {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.35s, transform 0.35s;
+}
+.card:hover {
+  border-color: var(--lime);
+  transform: translateY(-3px);
+}
+.shot {
+  display: block;
+  overflow: hidden;
+  background: #0f1218;
+  aspect-ratio: 16 / 10;
+}
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px 26px;
+  justify-content: center;
+}
+.meta {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+.headline {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--white);
+}
+.read {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.3s;
+}
+.card:hover .read {
+  color: var(--lime);
+}
+.read span {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.card:hover .read span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 720px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+  .body {
+    padding: 20px 20px 22px;
+  }
+  .outlets {
+    padding: 20px;
+  }
+}

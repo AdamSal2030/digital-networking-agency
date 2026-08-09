@@ -7,6 +7,7 @@ import { ProofCards } from "../ProofCards";
 
 const SITE = "https://www.digitalnetworkingagency.com";
 const AUTHOR = "Sam Harris";
+const BOOKING = "https://calendly.com/dna-agency00/30min";
 const AUTHOR_ROLE = "Founder";
 
 // Split the article so a CTA band can sit mid-read, before the Nth heading.
@@ -183,9 +184,14 @@ export default async function GuidePage({
                   We write and place your feature. You approve every word.
                 </p>
               </div>
-              <Link className={styles.midCtaBtn} href="/#contact">
+              <a
+                className={styles.midCtaBtn}
+                href={BOOKING}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Get featured <span aria-hidden="true">&rarr;</span>
-              </Link>
+              </a>
             </aside>
             <ProofCards slug={guide.slug} />
             <div
@@ -202,13 +208,17 @@ export default async function GuidePage({
           Ready to get <em>featured?</em>
         </h2>
         <p>
-          Every founder in this guide started where you are now. We build the
-          story, place it with the publications that matter, and put your name
-          in front of the people you want to reach.
+          Book a 30-minute call. We&rsquo;ll tell you honestly which publications
+          fit your business and what the process looks like.
         </p>
-        <Link className={styles.ctaBtn} href="/#contact">
-          Contact Now to Get Featured <span aria-hidden="true">&rarr;</span>
-        </Link>
+        <a
+          className={styles.ctaBtn}
+          href={BOOKING}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book a Free Call <span aria-hidden="true">&rarr;</span>
+        </a>
         <p className={styles.ctaLinks}>
           <a href="mailto:sam@digitalnetworkingagency.com">
             sam@digitalnetworkingagency.com

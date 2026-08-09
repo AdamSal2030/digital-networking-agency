@@ -7,6 +7,7 @@ import styles from "../../guides/guides.module.css";
 
 const SITE = "https://www.digitalnetworkingagency.com";
 const AUTHOR = "Sam Harris";
+const BOOKING = "https://calendly.com/dna-agency00/30min";
 
 export const dynamicParams = false;
 
@@ -161,12 +162,17 @@ export default async function ServicePage({
             Ready to get <em>featured?</em>
           </h2>
           <p>
-            Tell us what you do and who you need to reach. We&rsquo;ll tell you
-            honestly which publications fit and what the process looks like.
+            Book a 30-minute call. We&rsquo;ll tell you honestly which publications
+            fit your business and what the process looks like.
           </p>
-          <Link className={styles.ctaBtn} href="/#contact">
-            Contact Now to Get Featured <span aria-hidden="true">&rarr;</span>
-          </Link>
+          <a
+            className={styles.ctaBtn}
+            href={BOOKING}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book a Free Call <span aria-hidden="true">&rarr;</span>
+          </a>
           <p className={styles.ctaLinks}>
             <a href="mailto:sam@digitalnetworkingagency.com">
               sam@digitalnetworkingagency.com
