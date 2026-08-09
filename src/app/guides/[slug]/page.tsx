@@ -141,7 +141,7 @@ export default async function GuidePage({
         <header className={styles.header}>
           <h1>{guide.h1}</h1>
           <p className={styles.byline}>
-            By {AUTHOR}, {AUTHOR_ROLE}, Digital Networking Agency · Last updated 9 August 2026
+            By {AUTHOR}, Digital Networking Agency · Last updated 9 August 2026
           </p>
         </header>
 
