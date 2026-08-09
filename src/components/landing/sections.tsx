@@ -3,6 +3,8 @@ import { PlacementsCarousel, type Placement } from "@/components/landing/Placeme
 import { TestimonialsCarousel } from "@/components/landing/TestimonialsCarousel";
 import { getTrustpilotData } from "@/lib/trustpilot";
 import Link from "next/link";
+import { GuidesCarousel } from "./GuidesCarousel";
+import { GUIDES } from "@/content/guides";
 
 export function HeroSection() {
   return (
@@ -372,50 +374,35 @@ export const clientPlacements: Placement[] = [
 ];
 
 export function GuidesSection() {
-  const guides = [
-    { slug: "get-featured-in-forbes", n: "01", title: "How to Get Featured in Forbes",
-      blurb: "The four real routes onto Forbes.com — staff editorial, Councils, BrandVoice and agency-assisted — and what each actually costs." },
-    { slug: "how-to-get-featured-on-msn", n: "02", title: "How to Get Featured on MSN",
-      blurb: "MSN has no newsroom to pitch. Here’s how syndication really works, and how to tell what you’re actually buying." },
-    { slug: "how-to-get-featured-in-ceo-weekly", n: "03", title: "How to Get Featured in CEO Weekly",
-      blurb: "What CEO Weekly is, how placement works, what it reportedly costs, and who it genuinely suits." },
-    { slug: "how-to-get-featured-in-ny-weekly", n: "04", title: "How to Get Featured in NY Weekly",
-      blurb: "Staff editorial versus branded content, the reported price range, and a six-point audit for any placement." },
-    { slug: "how-to-get-featured-in-womens-journal", n: "05", title: "How to Get Featured in Women’s Journal",
-      blurb: "The real submission route — including the free one you can use without an agency." }
-  ];
+  // Accent word shown on the card panel; add new guides here and they
+  // appear automatically in the carousel.
+  const accents: Record<string, string> = {
+    "get-featured-in-forbes": "in Forbes",
+    "how-to-get-featured-on-msn": "on MSN",
+    "how-to-get-featured-in-ceo-weekly": "in CEO Weekly",
+    "how-to-get-featured-in-ny-weekly": "in NY Weekly",
+    "how-to-get-featured-in-womens-journal": "in Women's Journal"
+  };
+
+  const cards = GUIDES.map((g) => ({
+    slug: g.slug,
+    title: g.h1,
+    accent: accents[g.slug] ?? ""
+  }));
 
   return (
-    <section className="section-why" id="guides">
-      <div className="stag reveal">Straight Answers</div>
-      <div className="stitle reveal">PR &amp; Media Guides</div>
-      <div className="sdiv reveal" />
-      <div className="why-grid">
-        {guides.map((g, i) => (
-          <Link
-            className="why-card reveal"
-            key={g.slug}
-            href={`/guides/${g.slug}`}
-            style={{ transitionDelay: `${i * 0.1}s`, textDecoration: "none", color: "inherit", display: "block" }}
-          >
-            <div className="why-glow" />
-            <div className="why-num">{g.n}</div>
-            <div className="why-ico">◈</div>
-            <h3>{g.title}</h3>
-            <p>{g.blurb}</p>
-          </Link>
-        ))}
-        <Link
-          className="why-card reveal"
-          href="/guides"
-          style={{ transitionDelay: "0.5s", textDecoration: "none", color: "inherit", display: "block" }}
-        >
-          <div className="why-glow" />
-          <div className="why-num">&rarr;</div>
-          <div className="why-ico">◎</div>
-          <h3>All Guides</h3>
-          <p>How media placement actually works — the real routes into the publications that matter, and how we get founders featured.</p>
+    <section className="guides-section" id="guides">
+      <div className="stag reveal">From the Blog</div>
+      <div className="guides-head">
+        <h2 className="guides-title reveal">
+          Guides on getting <em>featured</em>
+        </h2>
+        <Link className="guides-all reveal" href="/guides">
+          View all articles &rarr;
         </Link>
+      </div>
+      <div className="reveal">
+        <GuidesCarousel guides={cards} />
       </div>
     </section>
   );

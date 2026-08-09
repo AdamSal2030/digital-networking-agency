@@ -34,9 +34,9 @@ export default function Home() {
       <AlaCarteSection />
       <PrimeSection />
       <BrandingSection />
-      <GuidesSection />
       <ProofSection />
       <TestimonialsSection />
+      <GuidesSection />
       <CtaFooterSection />
       <LandingEffects />
     </>
