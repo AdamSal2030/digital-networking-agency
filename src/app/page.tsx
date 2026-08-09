@@ -5,6 +5,7 @@ import {
   AlaCarteSection,
   BrandingSection,
   CtaFooterSection,
+  GuidesSection,
   HeroSection,
   PackagesSection,
   PressMarquee,
@@ -33,6 +34,7 @@ export default function Home() {
       <AlaCarteSection />
       <PrimeSection />
       <BrandingSection />
+      <GuidesSection />
       <ProofSection />
       <TestimonialsSection />
       <CtaFooterSection />

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -8,7 +9,8 @@ const links = [
   { href: "#alacarte", label: "A La Carte" },
   { href: "#prime", label: "DNA Prime" },
   { href: "#branding", label: "Branding" },
-  { href: "#testimonials", label: "Reviews" }
+  { href: "#testimonials", label: "Reviews" },
+  { href: "/guides", label: "Guides" }
 ];
 
 export function NavMenu() {
@@ -43,11 +45,17 @@ export function NavMenu() {
       </button>
 
       <div className="nav-links">
-        {links.map((link) => (
-          <a href={link.href} key={link.href} onClick={closeMenu}>
-            {link.label}
-          </a>
-        ))}
+        {links.map((link) =>
+          link.href.startsWith("/") ? (
+            <Link href={link.href} key={link.href} onClick={closeMenu}>
+              {link.label}
+            </Link>
+          ) : (
+            <a href={link.href} key={link.href} onClick={closeMenu}>
+              {link.label}
+            </a>
+          )
+        )}
         <a href="#contact" className="nav-cta" onClick={closeMenu}>
           <span>Book a Call</span>
           <svg viewBox="0 0 24 24" aria-hidden="true">
