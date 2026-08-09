@@ -145,6 +145,30 @@ export default async function GuidePage({
           </p>
         </header>
 
+        {guide.toc.length > 1 ? (
+          <nav className={styles.toc} aria-label="On this page">
+            <span className={styles.tocTitle}>On this page</span>
+            <ul>
+              {guide.toc.map((h) => (
+                <li key={h.id}>
+                  <a href={`#${h.id}`}>{h.text}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ) : null}
+
+        {guide.takeaways.length ? (
+          <aside className={styles.takeaways}>
+            <span className={styles.takeawaysTitle}>Key takeaways</span>
+            <ul>
+              {guide.takeaways.map((k) => (
+                <li key={k}>{k}</li>
+              ))}
+            </ul>
+          </aside>
+        ) : null}
+
         <div
           className={styles.body}
           dangerouslySetInnerHTML={{ __html: bodyTop }}
@@ -153,11 +177,14 @@ export default async function GuidePage({
         {bodyRest ? (
           <>
             <aside className={styles.midCta}>
-              <p className={styles.midCtaText}>
-                Want your story in <em>front of these editors?</em>
-              </p>
+              <div>
+                <p className={styles.midCtaText}>Want us to get you featured?</p>
+                <p className={styles.midCtaSub}>
+                  We write and place your feature. You approve every word.
+                </p>
+              </div>
               <Link className={styles.midCtaBtn} href="/#contact">
-                Contact Now <span aria-hidden="true">&rarr;</span>
+                Get featured <span aria-hidden="true">&rarr;</span>
               </Link>
             </aside>
             <ProofCards slug={guide.slug} />

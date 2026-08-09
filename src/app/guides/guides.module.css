@@ -28,6 +28,7 @@
 
 /* Reset the site-wide `nav{position:fixed}` rule for in-article navs */
 .crumbs,
+.toc,
 .more {
   position: static;
   top: auto;
@@ -43,6 +44,7 @@
   padding: 0;
 }
 .crumbs::after,
+.toc::after,
 .more::after {
   content: none;
 }
@@ -655,4 +657,84 @@
   .proof {
     padding: 30px 22px;
   }
+}
+
+/* On this page */
+.toc {
+  display: block;
+  margin: 0 0 34px;
+  padding: 22px 26px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+.tocTitle {
+  display: block;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+}
+.toc a {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  color: var(--lime);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.toc a:hover {
+  border-bottom-color: var(--lime);
+}
+
+/* Key takeaways */
+.takeaways {
+  margin: 0 0 40px;
+  padding: 26px 30px;
+  background: var(--card);
+  border-left: 3px solid var(--lime);
+}
+.takeawaysTitle {
+  display: block;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--lime);
+  margin-bottom: 16px;
+}
+.takeaways ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.takeaways li {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--white);
+  padding-left: 22px;
+  position: relative;
+}
+.takeaways li::before {
+  content: "\25B8";
+  position: absolute;
+  left: 0;
+  color: var(--lime);
+}
+
+.midCtaSub {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  color: var(--muted);
+  margin: 6px 0 0;
 }
