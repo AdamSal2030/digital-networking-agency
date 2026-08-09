@@ -393,20 +393,30 @@ export const clientPlacements: Placement[] = [
 ];
 
 export function GuidesSection() {
-  // Accent word shown on the card panel; add new guides here and they
-  // appear automatically in the carousel.
-  const accents: Record<string, string> = {
-    "get-featured-in-forbes": "in Forbes",
-    "how-to-get-featured-on-msn": "on MSN",
-    "how-to-get-featured-in-ceo-weekly": "in CEO Weekly",
-    "how-to-get-featured-in-ny-weekly": "in NY Weekly",
-    "how-to-get-featured-in-womens-journal": "in Women's Journal"
+  // Accent word for the card panel, derived from the slug so new guides
+  // need no manual entry here.
+  const accentFor = (slug: string) => {
+    const m = slug.match(/get-featured-(in|on)-(.+)$/);
+    if (!m) return "";
+    const words = m[2]
+      .split("-")
+      .map((w) => (w === "and" ? "&" : w.charAt(0).toUpperCase() + w.slice(1)))
+      .join(" ")
+      .replace("Womens", "Women's")
+      .replace("Msn", "MSN")
+      .replace("Ny ", "NY ")
+      .replace("Ceo ", "CEO ")
+      .replace("Usa ", "USA ")
+      .replace("Ap ", "AP ")
+      .replace("La ", "LA ")
+      .replace("Us ", "US ");
+    return `${m[1]} ${words}`;
   };
 
   const cards = GUIDES.map((g) => ({
     slug: g.slug,
     title: g.h1,
-    accent: accents[g.slug] ?? ""
+    accent: accentFor(g.slug)
   }));
 
   return (
