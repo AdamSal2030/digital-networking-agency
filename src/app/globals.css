@@ -871,3 +871,11 @@ a.article-pub:hover .article-pub-arrow{opacity:1;transform:translate(0,0);}
   .gc-panel{min-height:190px;}
   .gc-panel-title{font-size:26px;}
 }
+
+/* Guides section CTA */
+.guides-cta{margin-top:56px;display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;text-align:center;}
+.guides-cta-text{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.6vw,32px);letter-spacing:.8px;color:var(--white);margin:0;}
+.guides-cta-text em{font-style:normal;color:var(--lime);text-shadow:0 0 18px var(--limeglow);}
+.guides-cta-btn{display:inline-flex;align-items:center;gap:10px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:#101117;background:var(--lime);padding:17px 34px;text-decoration:none;transition:box-shadow .35s,transform .35s;}
+.guides-cta-btn:hover{box-shadow:0 0 32px rgba(143,255,0,.4);transform:translateY(-2px);}
+@media (max-width:900px){.guides-cta{flex-direction:column;gap:20px;}}

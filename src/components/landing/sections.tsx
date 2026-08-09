@@ -404,6 +404,14 @@ export function GuidesSection() {
       <div className="reveal">
         <GuidesCarousel guides={cards} />
       </div>
+      <div className="guides-cta reveal">
+        <p className="guides-cta-text">
+          Reading about it is one thing. <em>Being in it</em> is another.
+        </p>
+        <a className="guides-cta-btn" href="#contact">
+          Contact Now to Get Featured <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
     </section>
   );
 }

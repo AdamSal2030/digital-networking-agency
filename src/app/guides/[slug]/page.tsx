@@ -8,6 +8,17 @@ const SITE = "https://www.digitalnetworkingagency.com";
 const AUTHOR = "Sam Harris";
 const AUTHOR_ROLE = "Founder";
 
+// Split the article so a CTA band can sit mid-read, before the Nth heading.
+function splitBody(html: string, beforeHeading = 3) {
+  const positions: number[] = [];
+  const re = /<h2[\s>]/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(html)) !== null) positions.push(m.index);
+  if (positions.length <= beforeHeading) return [html, ""];
+  const at = positions[beforeHeading];
+  return [html.slice(0, at), html.slice(at)];
+}
+
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -56,6 +67,7 @@ export default async function GuidePage({
 
   const url = `${SITE}/guides/${guide.slug}`;
   const updated = "2026-08-09";
+  const [bodyTop, bodyRest] = splitBody(guide.body);
 
   const jsonLd = [
     {
@@ -134,16 +146,40 @@ export default async function GuidePage({
 
         <div
           className={styles.body}
-          dangerouslySetInnerHTML={{ __html: guide.body }}
+          dangerouslySetInnerHTML={{ __html: bodyTop }}
         />
+
+        {bodyRest ? (
+          <>
+            <aside className={styles.midCta}>
+              <p className={styles.midCtaText}>
+                Want your story in <em>front of these editors?</em>
+              </p>
+              <Link className={styles.midCtaBtn} href="/#contact">
+                Contact Now <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </aside>
+            <div
+              className={styles.body}
+              dangerouslySetInnerHTML={{ __html: bodyRest }}
+            />
+          </>
+        ) : null}
       </article>
 
       <aside className={styles.cta}>
-        <h2>Want a straight answer about your own situation?</h2>
+        <span className={styles.ctaTag}>Your story, in print</span>
+        <h2>
+          Ready to get <em>featured?</em>
+        </h2>
         <p>
-          We&rsquo;ll tell you honestly whether a placement is worth it for you &mdash;
-          including when it isn&rsquo;t.
+          Every founder in this guide started where you are now. We build the
+          story, place it with the publications that matter, and put your name
+          in front of the people you want to reach.
         </p>
+        <Link className={styles.ctaBtn} href="/#contact">
+          Contact Now to Get Featured <span aria-hidden="true">&rarr;</span>
+        </Link>
         <p className={styles.ctaLinks}>
           <a href="mailto:sam@digitalnetworkingagency.com">
             sam@digitalnetworkingagency.com
