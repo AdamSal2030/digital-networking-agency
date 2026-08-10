@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { GUIDES } from "@/content/guides";
 import { SERVICES } from "@/content/services";
+import { OUTLETS } from "@/content/outlets";
 
 const SITE = "https://www.digitalnetworkingagency.com";
 
@@ -27,6 +28,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${SITE}/get-featured-in`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE}/contact`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${SITE}/results`,
       lastModified,
       changeFrequency: "monthly",
@@ -48,5 +61,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticRoutes, ...guideRoutes, ...serviceRoutes];
+  const outletRoutes: MetadataRoute.Sitemap = OUTLETS.map((o) => ({
+    url: `${SITE}/get-featured-in/${o.slug}`,
+    lastModified,
+    changeFrequency: "monthly",
+    priority: 0.9,
+  }));
+
+  return [...staticRoutes, ...guideRoutes, ...serviceRoutes, ...outletRoutes];
 }
