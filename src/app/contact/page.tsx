@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import styles from "../get-featured-in/getfeatured.module.css";
 import contact from "./contact.module.css";
 
 const SITE = "https://www.digitalnetworkingagency.com";
-const BOOKING = "https://calendly.com/dna-agency00/30min";
-// TODO: replace with your Formspree form id (formspree.io -> New form).
-// Until then the form falls back to opening the visitor's email client.
-const FORMSPREE = "";
+const FORMSPREE = "moeadqdz"; // formspree.io form id
+const WHATSAPP = "https://wa.me/13302276337";
 
 export const metadata: Metadata = {
   title: "Contact Us | Digital Networking Agency",
   description:
-    "Book a call or send a message. We'll tell you honestly which publications fit your business and what the process looks like.",
+    "Tell us who you want to reach and where you want to appear. We recommend the right publications and handle the writing and placement, start to finish.",
   alternates: { canonical: `${SITE}/contact` },
   openGraph: {
     title: "Contact Us | Digital Networking Agency",
     description:
-      "Book a call or send a message. We'll tell you honestly which publications fit your business and what the process looks like.",
+      "Tell us who you want to reach and where you want to appear. We handle the writing and placement, start to finish.",
     url: `${SITE}/contact`,
     siteName: "Digital Networking Agency",
     type: "website",
@@ -26,10 +23,6 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const formAction = FORMSPREE
-    ? `https://formspree.io/f/${FORMSPREE}`
-    : "mailto:sam@digitalnetworkingagency.com";
-
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -57,81 +50,146 @@ export default function ContactPage() {
           <span className={styles.kicker}>Contact us</span>
           <h1>Let&rsquo;s get you featured</h1>
           <p className={styles.subhead}>
-            Book a 30-minute call, or send a message. We&rsquo;ll tell you
-            honestly which publications fit your business.
+            Tell us who you want to reach and where you want to appear. We
+            recommend the right publications and handle the writing and
+            placement, start to finish.
           </p>
+          <ul className={styles.badges}>
+            <li>You approve every word</li>
+            <li>Unlimited revisions</li>
+            <li>We reply within 24 hours</li>
+          </ul>
         </div>
       </section>
 
       <div className={styles.body}>
-        <div className={contact.grid}>
-          {/* Booking */}
-          <div className={contact.col}>
-            <h2 className={contact.colTitle}>Book a call</h2>
-            <p className={contact.colLede}>
-              The fastest way to start. Pick a time that works for you.
-            </p>
-            <div
-              className="calendly-inline-widget"
-              data-url={`${BOOKING}?hide_gdpr_banner=1&background_color=181a23&text_color=f2f2f2&primary_color=8fff00`}
-              style={{ minWidth: "280px", height: "640px" }}
-            />
-            <Script
-              src="https://assets.calendly.com/assets/external/widget.js"
-              strategy="afterInteractive"
-            />
-            <a
-              className={contact.fallbackLink}
-              href={BOOKING}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Calendar not loading? Book here &rarr;
-            </a>
-          </div>
-
-          {/* Message + details */}
-          <div className={contact.col}>
-            <h2 className={contact.colTitle}>Send a message</h2>
-            <form
-              className={contact.form}
-              action={formAction}
-              method="POST"
-            >
+        <div className={contact.layout}>
+          {/* Form */}
+          <form
+            className={contact.form}
+            action={`https://formspree.io/f/${FORMSPREE}`}
+            method="POST"
+          >
+            <div className={contact.row}>
               <label>
-                Your name
-                <input type="text" name="name" required />
+                First name <span className={contact.req}>*</span>
+                <input type="text" name="first_name" required />
               </label>
               <label>
-                Email
+                Last name
+                <input type="text" name="last_name" />
+              </label>
+            </div>
+
+            <div className={contact.row}>
+              <label>
+                Email <span className={contact.req}>*</span>
                 <input type="email" name="email" required />
               </label>
               <label>
-                What do you do?
-                <input type="text" name="business" placeholder="Company or role" />
+                Phone
+                <input type="tel" name="phone" />
               </label>
-              <label>
-                Which publication are you after?
-                <input type="text" name="outlet" placeholder="e.g. Forbes, USA Today" />
-              </label>
-              <label>
-                Message
-                <textarea name="message" rows={4} />
-              </label>
-              <button type="submit">Send message</button>
-            </form>
-
-            <div className={contact.direct}>
-              <span className={contact.directLabel}>Or reach us directly</span>
-              <a href="mailto:sam@digitalnetworkingagency.com">
-                sam@digitalnetworkingagency.com
-              </a>
-              <a href="tel:+13302276337">+1 (330) 227-6337</a>
-              <span className={contact.address}>
-                6545 Market Ave N, Suite 100, Canton, OH 44721
-              </span>
             </div>
-          </div>
+
+            <label>
+              Website or social profile
+              <input type="text" name="website" placeholder="https://" />
+            </label>
+
+            <label>
+              Publications you have in mind
+              <input
+                type="text"
+                name="publications"
+                placeholder="e.g. Forbes, USA Today, Yahoo Finance"
+              />
+            </label>
+
+            <div className={contact.row}>
+              <label>
+                Who are we featuring?
+                <select name="featuring" defaultValue="">
+                  <option value="" disabled>
+                    Select…
+                  </option>
+                  <option>Personal brand</option>
+                  <option>Company</option>
+                  <option>Both</option>
+                </select>
+              </label>
+              <label>
+                Timeline
+                <select name="timeline" defaultValue="">
+                  <option value="" disabled>
+                    Select…
+                  </option>
+                  <option>As soon as possible</option>
+                  <option>Within a month</option>
+                  <option>1–3 months</option>
+                  <option>Just exploring</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              Budget in mind
+              <select name="budget" defaultValue="">
+                <option value="" disabled>
+                  Select…
+                </option>
+                <option>Under $1,000</option>
+                <option>$1,000 – $3,000</option>
+                <option>$3,000 – $10,000</option>
+                <option>$10,000+</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
+
+            <label>
+              Anything else?
+              <textarea name="message" rows={4} />
+            </label>
+
+            <button type="submit">Request my feature</button>
+            <p className={contact.replynote}>We reply within 24 hours, every time.</p>
+          </form>
+
+          {/* Direct contact */}
+          <aside className={contact.side}>
+            <h2 className={contact.sideTitle}>Prefer to reach us directly?</h2>
+            <a className={contact.sideItem} href="mailto:sam@digitalnetworkingagency.com">
+              <span className={contact.sideIcon} aria-hidden="true">✉</span>
+              <span>
+                <span className={contact.sideLabel}>Email</span>
+                sam@digitalnetworkingagency.com
+              </span>
+            </a>
+            <a className={contact.sideItem} href="tel:+13302276337">
+              <span className={contact.sideIcon} aria-hidden="true">✆</span>
+              <span>
+                <span className={contact.sideLabel}>Phone</span>
+                +1 (330) 227-6337
+              </span>
+            </a>
+            <a
+              className={contact.sideItem}
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className={contact.sideIcon} aria-hidden="true">✆</span>
+              <span>
+                <span className={contact.sideLabel}>WhatsApp</span>
+                Message us
+              </span>
+            </a>
+            <div className={contact.sideAddress}>
+              6545 Market Ave N, Suite 100
+              <br />
+              Canton, OH 44721
+            </div>
+          </aside>
         </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import { LandingEffects } from "@/components/landing/effects";
-import { NavMenu } from "@/components/landing/NavMenu";
 import {
   AboutSection,
   AlaCarteSection,
@@ -25,7 +24,6 @@ export default function Home() {
       <div className="cursor-ring" id="curR" />
       <div id="progress" />
 
-      <NavMenu />
       <HeroSection />
       <StatsSection />
       <PressMarquee />

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import { NavMenu } from "@/components/landing/NavMenu";
+import { FloatingContact } from "@/components/FloatingContact";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.digitalnetworkingagency.com"),
@@ -37,7 +39,9 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <NavMenu />
         {children}
+        <FloatingContact />
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)
