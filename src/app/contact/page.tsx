@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import styles from "../get-featured-in/getfeatured.module.css";
 import contact from "./contact.module.css";
+import { ContactForm } from "./ContactForm";
 
 const SITE = "https://www.digitalnetworkingagency.com";
-const FORMSPREE = "moeadqdz"; // formspree.io form id
 const WHATSAPP = "https://wa.me/13302276337";
 
 export const metadata: Metadata = {
@@ -65,95 +65,7 @@ export default function ContactPage() {
       <div className={styles.body}>
         <div className={contact.layout}>
           {/* Form */}
-          <form
-            className={contact.form}
-            action={`https://formspree.io/f/${FORMSPREE}`}
-            method="POST"
-          >
-            <div className={contact.row}>
-              <label>
-                First name <span className={contact.req}>*</span>
-                <input type="text" name="first_name" required />
-              </label>
-              <label>
-                Last name
-                <input type="text" name="last_name" />
-              </label>
-            </div>
-
-            <div className={contact.row}>
-              <label>
-                Email <span className={contact.req}>*</span>
-                <input type="email" name="email" required />
-              </label>
-              <label>
-                Phone
-                <input type="tel" name="phone" />
-              </label>
-            </div>
-
-            <label>
-              Website or social profile
-              <input type="text" name="website" placeholder="https://" />
-            </label>
-
-            <label>
-              Publications you have in mind
-              <input
-                type="text"
-                name="publications"
-                placeholder="e.g. Forbes, USA Today, Yahoo Finance"
-              />
-            </label>
-
-            <div className={contact.row}>
-              <label>
-                Who are we featuring?
-                <select name="featuring" defaultValue="">
-                  <option value="" disabled>
-                    Select…
-                  </option>
-                  <option>Personal brand</option>
-                  <option>Company</option>
-                  <option>Both</option>
-                </select>
-              </label>
-              <label>
-                Timeline
-                <select name="timeline" defaultValue="">
-                  <option value="" disabled>
-                    Select…
-                  </option>
-                  <option>As soon as possible</option>
-                  <option>Within a month</option>
-                  <option>1–3 months</option>
-                  <option>Just exploring</option>
-                </select>
-              </label>
-            </div>
-
-            <label>
-              Budget in mind
-              <select name="budget" defaultValue="">
-                <option value="" disabled>
-                  Select…
-                </option>
-                <option>Under $1,000</option>
-                <option>$1,000 – $3,000</option>
-                <option>$3,000 – $10,000</option>
-                <option>$10,000+</option>
-                <option>Not sure yet</option>
-              </select>
-            </label>
-
-            <label>
-              Anything else?
-              <textarea name="message" rows={4} />
-            </label>
-
-            <button type="submit">Request my feature</button>
-            <p className={contact.replynote}>We reply within 24 hours, every time.</p>
-          </form>
+          <ContactForm />
 
           {/* Direct contact */}
           <aside className={contact.side}>
