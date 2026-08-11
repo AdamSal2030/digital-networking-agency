@@ -252,3 +252,191 @@
 @media (max-width: 560px) {
   .row { grid-template-columns: 1fr; }
 }
+
+/* Wide page wrapper (uses more of the screen than the reading column) */
+.wide {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 64px 32px 100px;
+}
+
+/* Pill selectors (Who / Budget / Timeline) */
+.pillset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.pillset legend {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0;
+}
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.pill {
+  position: relative;
+  cursor: pointer;
+}
+.pill input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+.pill span {
+  display: inline-block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  color: var(--text);
+  background: #14161d;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 30px;
+  padding: 11px 22px;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.pill:hover span {
+  border-color: rgba(143, 255, 0, 0.5);
+}
+.pill input:checked + span {
+  background: var(--lime);
+  color: #101117;
+  border-color: var(--lime);
+  box-shadow: 0 0 20px rgba(143, 255, 0, 0.3);
+}
+.pill input:focus-visible + span {
+  outline: 2px solid var(--lime);
+  outline-offset: 2px;
+}
+
+/* Right-column contact cards (Publisive style) */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px 22px;
+  text-decoration: none;
+  margin-bottom: 14px;
+  transition: border-color 0.3s, transform 0.3s, background 0.3s;
+}
+.card:hover {
+  border-color: var(--lime);
+  transform: translateY(-2px);
+  background: #2b3040;
+}
+.cardIcon {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: rgba(143, 255, 0, 0.1);
+  border: 1px solid rgba(143, 255, 0, 0.3);
+  color: var(--lime);
+}
+.cardText {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+.cardLabel {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cardValue {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  color: var(--white);
+}
+.cardValueSm {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  color: var(--white);
+  word-break: break-all; /* long email never clips */
+  line-height: 1.3;
+}
+
+/* What happens next */
+.next {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 26px 24px;
+  margin-top: 6px;
+}
+.nextLabel {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 18px;
+}
+.nextList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+}
+.nextList li {
+  display: flex;
+  gap: 14px;
+}
+.nextList li span:last-child {
+  display: grid;
+  gap: 3px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.nextList li strong {
+  font-family: "Playfair Display", serif;
+  font-size: 17px;
+  color: var(--white);
+  font-weight: 700;
+}
+.nextNum {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DM Mono", monospace;
+  font-size: 13px;
+  color: var(--lime);
+  border: 1px solid rgba(143, 255, 0, 0.4);
+}
+.nextReply {
+  margin: 20px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  color: var(--text);
+}
+.nextReply span {
+  color: var(--lime);
+  margin-right: 6px;
+}

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { GUIDES } from "@/content/guides";
 import { SERVICES } from "@/content/services";
 import { OUTLETS } from "@/content/outlets";
+import { CASE_STUDIES } from "@/content/caseStudies";
 
 const SITE = "https://www.digitalnetworkingagency.com";
 
@@ -40,6 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${SITE}/case-studies`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${SITE}/results`,
       lastModified,
       changeFrequency: "monthly",
@@ -68,5 +75,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticRoutes, ...guideRoutes, ...serviceRoutes, ...outletRoutes];
+  const caseRoutes: MetadataRoute.Sitemap = CASE_STUDIES.map((c) => ({
+    url: `${SITE}/case-studies/${c.slug}`,
+    lastModified,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...guideRoutes, ...serviceRoutes, ...outletRoutes, ...caseRoutes];
 }

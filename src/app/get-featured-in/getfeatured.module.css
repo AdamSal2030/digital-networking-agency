@@ -1,5 +1,9 @@
 /* Short conversion landing pages — DNA theme */
 
+/* restore native cursor (site hides it globally) */
+.page, .page * { cursor: auto; }
+.page a, .page button, .page [role="button"], .page label, .page summary { cursor: pointer; }
+
 .page {
   background: var(--black);
   min-height: 100vh;

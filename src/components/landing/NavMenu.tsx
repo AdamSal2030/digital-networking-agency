@@ -11,6 +11,7 @@ const links = [
   { href: "/#branding", label: "Branding" },
   { href: "/#testimonials", label: "Reviews" },
   { href: "/get-featured-in", label: "Get Featured" },
+  { href: "/case-studies", label: "Case Studies" },
   { href: "/pr-for", label: "Industries" },
   { href: "/guides", label: "Guides" },
   { href: "/contact", label: "Contact" }

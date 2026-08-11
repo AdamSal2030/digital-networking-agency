@@ -5,6 +5,30 @@ import styles from "./contact.module.css";
 
 const FORMSPREE = "https://formspree.io/f/moeadqdz";
 
+function PillGroup({
+  name,
+  label,
+  options,
+}: {
+  name: string;
+  label: string;
+  options: string[];
+}) {
+  return (
+    <fieldset className={styles.pillset}>
+      <legend>{label}</legend>
+      <div className={styles.pills}>
+        {options.map((opt) => (
+          <label key={opt} className={styles.pill}>
+            <input type="radio" name={name} value={opt} />
+            <span>{opt}</span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+  );
+}
+
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">(
     "idle"
@@ -36,22 +60,8 @@ export function ContactForm() {
       <div className={styles.success}>
         <span className={styles.successMark} aria-hidden="true">
           <svg viewBox="0 0 52 52" width="60" height="60">
-            <circle
-              cx="26"
-              cy="26"
-              r="24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            />
-            <path
-              d="M15 27l7 7 15-16"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="3.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+            <circle cx="26" cy="26" r="24" fill="none" stroke="currentColor" strokeWidth="2.5" />
+            <path d="M15 27l7 7 15-16" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
         <h2 className={styles.successTitle}>You&rsquo;re on the list.</h2>
@@ -59,11 +69,7 @@ export function ContactForm() {
           Thanks for reaching out. We&rsquo;ll get back to you within 24 hours
           with the fastest path to your feature.
         </p>
-        <button
-          type="button"
-          className={styles.successBtn}
-          onClick={() => setStatus("idle")}
-        >
+        <button type="button" className={styles.successBtn} onClick={() => setStatus("idle")}>
           Send another message
         </button>
       </div>
@@ -104,49 +110,25 @@ export function ContactForm() {
         <input
           type="text"
           name="publications"
-          placeholder="e.g. Forbes, USA Today, Yahoo Finance"
+          placeholder={'e.g. Forbes, USA Today, or "recommend me"'}
         />
       </label>
 
-      <div className={styles.row}>
-        <label>
-          Who are we featuring?
-          <select name="featuring" defaultValue="">
-            <option value="" disabled>
-              Select…
-            </option>
-            <option>Personal brand</option>
-            <option>Company</option>
-            <option>Both</option>
-          </select>
-        </label>
-        <label>
-          Timeline
-          <select name="timeline" defaultValue="">
-            <option value="" disabled>
-              Select…
-            </option>
-            <option>As soon as possible</option>
-            <option>Within a month</option>
-            <option>1–3 months</option>
-            <option>Just exploring</option>
-          </select>
-        </label>
-      </div>
-
-      <label>
-        Budget in mind
-        <select name="budget" defaultValue="">
-          <option value="" disabled>
-            Select…
-          </option>
-          <option>Under $1,000</option>
-          <option>$1,000 – $3,000</option>
-          <option>$3,000 – $10,000</option>
-          <option>$10,000+</option>
-          <option>Not sure yet</option>
-        </select>
-      </label>
+      <PillGroup
+        name="featuring"
+        label="Who are we featuring?"
+        options={["Personal", "Company", "Both"]}
+      />
+      <PillGroup
+        name="budget"
+        label="Budget in mind"
+        options={["Under $1K", "$1K–$3K", "$3K–$10K", "$10K+", "Not sure yet"]}
+      />
+      <PillGroup
+        name="timeline"
+        label="Timeline"
+        options={["ASAP", "Within a month", "1–3 months", "Just exploring"]}
+      />
 
       <label>
         Anything else?
@@ -166,7 +148,6 @@ export function ContactForm() {
           .
         </p>
       )}
-      <p className={styles.replynote}>We reply within 24 hours, every time.</p>
     </form>
   );
 }

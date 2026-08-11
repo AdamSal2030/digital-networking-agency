@@ -62,44 +62,63 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className={styles.body}>
+      <div className={contact.wide}>
         <div className={contact.layout}>
           {/* Form */}
           <ContactForm />
 
-          {/* Direct contact */}
+          {/* Direct contact — Publisive-style cards */}
           <aside className={contact.side}>
-            <h2 className={contact.sideTitle}>Prefer to reach us directly?</h2>
-            <a className={contact.sideItem} href="mailto:sam@digitalnetworkingagency.com">
-              <span className={contact.sideIcon} aria-hidden="true">✉</span>
-              <span>
-                <span className={contact.sideLabel}>Email</span>
-                sam@digitalnetworkingagency.com
+            <a className={contact.card} href="tel:+13302276337">
+              <span className={contact.cardIcon} aria-hidden="true">✆</span>
+              <span className={contact.cardText}>
+                <span className={contact.cardLabel}>Call us</span>
+                <span className={contact.cardValue}>+1 (330) 227-6337</span>
               </span>
             </a>
-            <a className={contact.sideItem} href="tel:+13302276337">
-              <span className={contact.sideIcon} aria-hidden="true">✆</span>
-              <span>
-                <span className={contact.sideLabel}>Phone</span>
-                +1 (330) 227-6337
+            <a className={contact.card} href="mailto:sam@digitalnetworkingagency.com">
+              <span className={contact.cardIcon} aria-hidden="true">✉</span>
+              <span className={contact.cardText}>
+                <span className={contact.cardLabel}>Email us</span>
+                <span className={contact.cardValueSm}>sam@digitalnetworkingagency.com</span>
               </span>
             </a>
-            <a
-              className={contact.sideItem}
-              href={WHATSAPP}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className={contact.sideIcon} aria-hidden="true">✆</span>
-              <span>
-                <span className={contact.sideLabel}>WhatsApp</span>
-                Message us
+            <a className={contact.card} href={WHATSAPP} target="_blank" rel="noopener noreferrer">
+              <span className={contact.cardIcon} aria-hidden="true">✆</span>
+              <span className={contact.cardText}>
+                <span className={contact.cardLabel}>WhatsApp</span>
+                <span className={contact.cardValue}>Message us directly</span>
               </span>
             </a>
-            <div className={contact.sideAddress}>
-              6545 Market Ave N, Suite 100
-              <br />
-              Canton, OH 44721
+
+            <div className={contact.next}>
+              <span className={contact.nextLabel}>What happens next</span>
+              <ol className={contact.nextList}>
+                <li>
+                  <span className={contact.nextNum}>1</span>
+                  <span>
+                    <strong>Tell us your goals</strong>
+                    Who you want to reach, and where you want to appear.
+                  </span>
+                </li>
+                <li>
+                  <span className={contact.nextNum}>2</span>
+                  <span>
+                    <strong>We map your placements</strong>
+                    We shortlist the outlets that fit your audience.
+                  </span>
+                </li>
+                <li>
+                  <span className={contact.nextNum}>3</span>
+                  <span>
+                    <strong>We write and publish</strong>
+                    Our team drafts your feature, you approve every word, then it goes live.
+                  </span>
+                </li>
+              </ol>
+              <p className={contact.nextReply}>
+                <span aria-hidden="true">✓</span> We reply within 24 hours, every time.
+              </p>
             </div>
           </aside>
         </div>
