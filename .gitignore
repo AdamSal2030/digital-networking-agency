@@ -33,3 +33,4 @@ next-env.d.ts
 
 # local preview config
 .claude/
+.vercel

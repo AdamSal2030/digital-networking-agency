@@ -3,7 +3,7 @@
 import { useState } from "react";
 import styles from "./contact.module.css";
 
-const FORMSPREE = "https://formspree.io/f/moeadqdz";
+const ENDPOINT = "/api/contact";
 
 function PillGroup({
   name,
@@ -39,7 +39,7 @@ export function ContactForm() {
     const form = e.currentTarget;
     setStatus("sending");
     try {
-      const res = await fetch(FORMSPREE, {
+      const res = await fetch(ENDPOINT, {
         method: "POST",
         body: new FormData(form),
         headers: { Accept: "application/json" },
@@ -134,6 +134,16 @@ export function ContactForm() {
         Anything else?
         <textarea name="message" rows={4} />
       </label>
+
+      {/* honeypot: hidden from humans; bots fill it and get silently dropped */}
+      <input
+        type="text"
+        name="company_hp"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+      />
 
       <button type="submit" disabled={status === "sending"}>
         {status === "sending" ? "Sending…" : "Request my feature"}
