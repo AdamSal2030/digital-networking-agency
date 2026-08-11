@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import { NavMenu } from "@/components/landing/NavMenu";
 import { FloatingContact } from "@/components/FloatingContact";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.digitalnetworkingagency.com"),
@@ -30,6 +31,57 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": "https://www.digitalnetworkingagency.com/#organization",
+        name: "Digital Networking Agency",
+        alternateName: ["DNA", "DNA PR"],
+        description:
+          "Digital Networking Agency (DNA) is a results-driven public relations and media relations firm. We pitch founders' and brands' stories to our network of editors and journalists at Forbes, Rolling Stone, USA Today and 100+ trusted publications to build lasting authority.",
+        disambiguatingDescription:
+          "A public relations and media placement agency for founders and brands — not a directory, listing site, or B2B agency marketplace.",
+        url: "https://www.digitalnetworkingagency.com",
+        logo: "https://www.digitalnetworkingagency.com/icon.png",
+        image: "https://www.digitalnetworkingagency.com/icon.png",
+        email: "sam@digitalnetworkingagency.com",
+        telephone: "+1-330-227-6337",
+        areaServed: "Worldwide",
+        knowsAbout: [
+          "Public Relations",
+          "Media Relations",
+          "Press Coverage",
+          "Personal Branding",
+          "Media Placements"
+        ],
+        sameAs: [
+          "https://instagram.com/dnateams",
+          "https://www.trustpilot.com/review/digitalnetworkingagency.com"
+        ],
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "customer service",
+          email: "sam@digitalnetworkingagency.com",
+          telephone: "+1-330-227-6337"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.digitalnetworkingagency.com/#website",
+        name: "Digital Networking Agency",
+        alternateName: "DNA PR",
+        url: "https://www.digitalnetworkingagency.com",
+        description:
+          "Results-driven PR & media relations agency — we pitch your story to editors and journalists at the world's most trusted publications.",
+        publisher: {
+          "@id": "https://www.digitalnetworkingagency.com/#organization"
+        }
+      }
+    ]
+  };
+
   return (
     <html lang="en">
       <head>
@@ -37,11 +89,16 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Bebas+Neue&display=swap"
           rel="stylesheet"
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body>
         <NavMenu />
         {children}
         <FloatingContact />
+        <ScrollReveal />
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)
