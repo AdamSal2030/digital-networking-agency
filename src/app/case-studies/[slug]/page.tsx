@@ -88,11 +88,11 @@ export default async function CaseStudyPage({
       />
 
       <div className={styles.detail}>
-        <nav className={styles.crumbs} aria-label="Breadcrumb">
+        <div className={styles.crumbs} role="navigation" aria-label="Breadcrumb">
           <Link href="/">Home</Link>
           <span aria-hidden="true">/</span>
           <Link href="/case-studies">Case Studies</Link>
-        </nav>
+        </div>
 
         <div className={styles.detailHead}>
           <div className={styles.detailText}>
@@ -141,7 +141,7 @@ export default async function CaseStudyPage({
           </a>
         </aside>
 
-        <nav className={styles.more} aria-label="More case studies">
+        <section className={styles.more} aria-label="More case studies">
           <h2>More case studies</h2>
           <div className={styles.moreGrid}>
             {others.map((x) => (
@@ -152,7 +152,7 @@ export default async function CaseStudyPage({
               </Link>
             ))}
           </div>
-        </nav>
+        </section>
       </div>
     </div>
   );

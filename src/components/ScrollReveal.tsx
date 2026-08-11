@@ -4,24 +4,28 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 /**
- * Site-wide scroll animation. On every page except the homepage (which has its
- * own reveal system), it fades content up as it enters the viewport.
- * Elements already tagged `.sr` are observed; common blocks are auto-tagged.
+ * Progressive-enhancement scroll animation.
+ *
+ * Content is ALWAYS visible by default. Only when this component mounts and the
+ * browser supports IntersectionObserver do we add `sr-on` to <html>, which
+ * activates the hidden→reveal CSS. If anything fails, or JS is disabled, or the
+ * user prefers reduced motion, nothing is hidden. A safety timer also reveals
+ * everything after a moment so content can never get stuck invisible.
  */
 export function ScrollReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname === "/") return; // homepage has LandingEffects
+    if (pathname === "/") return; // homepage has its own reveal system
     if (typeof window === "undefined") return;
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || !("IntersectionObserver" in window)) return; // leave content visible
 
     const auto = document.querySelectorAll(
-      "main h1, main h2, main .sr, " +
-        "[class*='block'], [class*='card'], [class*='step'], [class*='faq'], " +
-        "[class*='takeaways'], [class*='detailSection'], [class*='footerCta'], " +
-        "[class*='cta'], [class*='outlets'], [class*='item']"
+      "main .sr, [class*='block'], [class*='card'], [class*='step'], " +
+        "[class*='faq'], [class*='takeaways'], [class*='detailSection'], " +
+        "[class*='footerCta']"
     );
 
     const targets: Element[] = [];
@@ -31,11 +35,10 @@ export function ScrollReveal() {
       el.classList.add("sr");
       targets.push(el);
     });
+    if (!targets.length) return;
 
-    if (reduce) {
-      targets.forEach((el) => el.classList.add("sr-in"));
-      return;
-    }
+    // activate the hidden state only now that JS is confirmed running
+    document.documentElement.classList.add("sr-on");
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -46,23 +49,31 @@ export function ScrollReveal() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -6% 0px" }
     );
 
     targets.forEach((el, i) => {
-      (el as HTMLElement).style.transitionDelay = `${Math.min(i % 6, 5) * 0.05}s`;
+      (el as HTMLElement).style.transitionDelay = `${Math.min(i % 5, 4) * 0.05}s`;
       io.observe(el);
     });
 
-    // anything already on-screen at load reveals immediately
+    // reveal anything already in view on load
     requestAnimationFrame(() => {
       targets.forEach((el) => {
         const r = el.getBoundingClientRect();
-        if (r.top < window.innerHeight * 0.9) el.classList.add("sr-in");
+        if (r.top < window.innerHeight * 0.95) el.classList.add("sr-in");
       });
     });
 
-    return () => io.disconnect();
+    // hard safety net: nothing stays invisible past this point
+    const failsafe = setTimeout(() => {
+      document.querySelectorAll(".sr").forEach((el) => el.classList.add("sr-in"));
+    }, 2200);
+
+    return () => {
+      io.disconnect();
+      clearTimeout(failsafe);
+    };
   }, [pathname]);
 
   return null;

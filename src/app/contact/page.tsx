@@ -45,7 +45,7 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className={styles.hero}>
+      <section className={`${styles.hero} ${contact.chero}`}>
         <div className={styles.heroInner}>
           <span className={styles.kicker}>Contact us</span>
           <h1>Let&rsquo;s get you featured</h1>
@@ -63,7 +63,8 @@ export default function ContactPage() {
       </section>
 
       <div className={contact.wide}>
-        <div className={contact.layout}>
+        <div className={contact.panel}>
+          <div className={contact.layout}>
           {/* Form */}
           <ContactForm />
 
@@ -121,6 +122,7 @@ export default function ContactPage() {
               </p>
             </div>
           </aside>
+          </div>
         </div>
       </div>
     </div>
