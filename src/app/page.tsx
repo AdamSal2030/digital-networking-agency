@@ -1,18 +1,16 @@
 import { LandingEffects } from "@/components/landing/effects";
 import {
   AboutSection,
-  AlaCarteSection,
-  BrandingSection,
   CtaFooterSection,
   GuidesSection,
   HeroSection,
-  PackagesSection,
   PressMarquee,
-  PrimeSection,
   ProofSection,
   StatsSection,
   TestimonialsSection
 } from "@/components/landing/sections";
+import { ServicesTeaser } from "@/components/landing/HomeExtras";
+import { VideoTestimonial } from "@/components/VideoTestimonial";
 
 // Refresh the homepage (and its Trustpilot testimonials) every 6 hours.
 export const revalidate = 21600;
@@ -28,11 +26,9 @@ export default function Home() {
       <StatsSection />
       <PressMarquee />
       <AboutSection />
-      <PackagesSection />
-      <AlaCarteSection />
-      <PrimeSection />
-      <BrandingSection />
       <ProofSection />
+      <ServicesTeaser />
+      <VideoTestimonial />
       <TestimonialsSection />
       <GuidesSection />
       <CtaFooterSection />

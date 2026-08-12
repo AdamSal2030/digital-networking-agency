@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const BOOKING = "https://calendly.com/dna-agency00/30min";
+const BOOKING = "/contact";
 const EMAIL = "mailto:sam@digitalnetworkingagency.com";
 const PHONE = "tel:+13302276337";
 // WhatsApp: digits only, no + or spaces

@@ -5,7 +5,7 @@ import styles from "../guides/guides.module.css";
 import resultStyles from "./results.module.css";
 
 const SITE = "https://www.digitalnetworkingagency.com";
-const BOOKING = "https://calendly.com/dna-agency00/30min";
+const BOOKING = "/contact";
 
 const DESCRIPTION =
   "Real client placements from Digital Networking Agency — live, published articles across MSN, Yahoo Finance, USA Today, Benzinga and more.";

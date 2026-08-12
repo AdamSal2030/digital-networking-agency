@@ -7,7 +7,7 @@ import { ProofCards } from "../ProofCards";
 
 const SITE = "https://www.digitalnetworkingagency.com";
 const AUTHOR = "Sam Harris";
-const BOOKING = "https://calendly.com/dna-agency00/30min";
+const BOOKING = "/contact";
 const AUTHOR_ROLE = "Founder";
 
 // Split the article so a CTA band can sit mid-read, before the Nth heading.

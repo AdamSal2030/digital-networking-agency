@@ -4,6 +4,7 @@ import "./globals.css";
 import { NavMenu } from "@/components/landing/NavMenu";
 import { FloatingContact } from "@/components/FloatingContact";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.digitalnetworkingagency.com"),
@@ -97,6 +98,7 @@ export default function RootLayout({
       <body>
         <NavMenu />
         {children}
+        <SiteFooter />
         <FloatingContact />
         <ScrollReveal />
         <Script id="meta-pixel" strategy="afterInteractive">

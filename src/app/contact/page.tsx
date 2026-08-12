@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import styles from "../get-featured-in/getfeatured.module.css";
 import contact from "./contact.module.css";
 import { ContactForm } from "./ContactForm";
+import { ContactFAQ } from "./ContactFAQ";
 
 const SITE = "https://www.digitalnetworkingagency.com";
 const WHATSAPP = "https://wa.me/13302276337";
@@ -45,19 +46,19 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className={`${styles.hero} ${contact.chero}`}>
-        <div className={styles.heroInner}>
-          <span className={styles.kicker}>Contact us</span>
-          <h1>Let&rsquo;s get you featured</h1>
-          <p className={styles.subhead}>
-            Tell us who you want to reach and where you want to appear. We
-            recommend the right publications and handle the writing and
-            placement, start to finish.
+      <section className={contact.chero}>
+        <div className={contact.cheroInner}>
+          <span className={contact.ckicker}>Contact us</span>
+          <h1 className={contact.ch1}>Let&rsquo;s make headlines.</h1>
+          <p className={contact.csub}>
+            Tell us who you want to reach and where you want to appear — we
+            recommend the outlets and handle the writing and placement, end to
+            end.
           </p>
-          <ul className={styles.badges}>
+          <ul className={contact.cbadges}>
             <li>You approve every word</li>
             <li>Unlimited revisions</li>
-            <li>We reply within 24 hours</li>
+            <li>Reply within 24 hours</li>
           </ul>
         </div>
       </section>
@@ -66,10 +67,20 @@ export default function ContactPage() {
         <div className={contact.panel}>
           <div className={contact.layout}>
           {/* Form */}
-          <ContactForm />
+          <div>
+            <div className={contact.formHead}>
+              <span className={contact.formHeadIcon} aria-hidden="true">➤</span>
+              <span className={contact.formHeadText}>
+                <strong>Request your feature</strong>
+                <span>Takes under a minute. No obligation.</span>
+              </span>
+            </div>
+            <ContactForm />
+          </div>
 
           {/* Direct contact — Publisive-style cards */}
           <aside className={contact.side}>
+            <span className={contact.sideHead}>Prefer to reach us directly?</span>
             <a className={contact.card} href="tel:+13302276337">
               <span className={contact.cardIcon} aria-hidden="true">✆</span>
               <span className={contact.cardText}>
@@ -125,6 +136,8 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      <ContactFAQ />
     </div>
   );
 }

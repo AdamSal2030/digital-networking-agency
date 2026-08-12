@@ -5,7 +5,7 @@ import { CASE_STUDIES, getCaseStudy } from "@/content/caseStudies";
 import styles from "../case.module.css";
 
 const SITE = "https://www.digitalnetworkingagency.com";
-const BOOKING = "https://calendly.com/dna-agency00/30min";
+const BOOKING = "/contact";
 
 export const dynamicParams = false;
 

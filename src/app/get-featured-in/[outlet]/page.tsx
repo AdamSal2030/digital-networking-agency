@@ -5,7 +5,7 @@ import { OUTLETS, getOutlet } from "@/content/outlets";
 import styles from "../getfeatured.module.css";
 
 const SITE = "https://www.digitalnetworkingagency.com";
-const BOOKING = "https://calendly.com/dna-agency00/30min";
+const BOOKING = "/contact";
 
 export const dynamicParams = false;
 

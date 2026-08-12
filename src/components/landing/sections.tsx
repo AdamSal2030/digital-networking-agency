@@ -38,7 +38,7 @@ export function HeroSection() {
       <div className="hero-right">
         <div className="hero-visual reveal-r">
           <div className="hero-visual-frame">
-            <img src="/hero-media.jpg" alt="DNA PR — premium media coverage" />
+            <img src="/hero-media.jpg" alt="DNA PR — press coverage across the world's leading media" />
             <div className="hero-visual-grad" />
           </div>
           <div className="hero-badge hero-badge--a">
@@ -60,7 +60,7 @@ export function StatsSection() {
   return (
     <div className="stats-bar">
       <div className="stat-item reveal"><div className="stat-number">45+</div><div className="stat-label">Publicists &amp; Journalists</div></div>
-      <div className="stat-item reveal" style={{ transitionDelay: ".1s" }}><div className="stat-number">100+</div><div className="stat-label">Top-Tier Media Outlets</div></div>
+      <div className="stat-item reveal" style={{ transitionDelay: ".1s" }}><div className="stat-number">1100+</div><div className="stat-label">Publication Outlets</div></div>
       <div className="stat-item reveal" style={{ transitionDelay: ".2s" }}><div className="stat-number">7</div><div className="stat-label">Steps to Publication</div></div>
       <div className="stat-item reveal" style={{ transitionDelay: ".3s" }}><div className="stat-number">∞</div><div className="stat-label">Brand Legacy Potential</div></div>
     </div>
@@ -121,27 +121,27 @@ export function PackagesSection() {
       <div className="pkg-grid">
         <div className="pkg-card reveal">
           <div className="pt">Tier 1</div><div className="pn">Foundation</div><div className="ptag">Establishing trust</div>
-          <div className="pp"><div className="ppn">$800</div><div className="ppm">/month</div></div>
+          <div className="pp"><div className="ppn">Custom</div><div className="ppm">quote</div></div>
           <div className="pcom">No minimum commitment</div>
           <ul className="pf"><li>Targeted Publication Pitches</li><li>Pitching and Story Creation</li><li>Media Relations Team</li><li>Media Relations Strategy</li><li>Market Research</li><li>Writing Team</li><li>Digital Publication Pitching</li></ul>
           <div className="ppub"><div className="pplbl">Target Publications</div><div className="pplist">NY Weekly, Miami Wire, Music Observer, WallStreet Times, Celebrity News, The Chicago Journal, Women&apos;s Journal, Voyage New York, CEO Weekly</div></div>
-          <a href="#contact" className="btn-g" style={{ display: "block", textAlign: "center" }}>Get Started</a>
+          <Link href="/contact" className="btn-g" style={{ display: "block", textAlign: "center" }}>Get Started</Link>
         </div>
         <div className="pkg-card feat reveal" style={{ transitionDelay: ".15s" }}>
           <div className="pt">Tier 2</div><div className="pn">Signature</div><div className="ptag">Market dominance</div>
-          <div className="pp"><div className="ppn">$1,500</div><div className="ppm">/month</div></div>
+          <div className="pp"><div className="ppn">Custom</div><div className="ppm">quote</div></div>
           <div className="pcom">Minimum 3 months</div>
           <ul className="pf"><li>3× Targeted Publication Pitches</li><li>1× Top Tier Publication</li><li>3× Pitching and Story Creation</li><li>Media Relations Team</li><li>Media Relations Strategy</li><li>Market Research</li><li>Writing Team</li><li>Digital Publication Pitching</li><li>Contributor Opportunity Pitching</li></ul>
           <div className="ppub"><div className="pplbl">Target Publications</div><div className="pplist">Entrepreneur Tribune, Business Insider, Fox Interviewer, Kivo Daily, Los Angeles Wire, Texas Today, New York Wire, US Insider, US Reporter, BLK News, Benzinga, Digital Journal</div></div>
-          <a href="#contact" className="btn-p" style={{ display: "block", textAlign: "center" }}><span>Get Started</span></a>
+          <Link href="/contact" className="btn-p" style={{ display: "block", textAlign: "center" }}><span>Get Started</span></Link>
         </div>
         <div className="pkg-card reveal" style={{ transitionDelay: ".3s" }}>
           <div className="pt">Tier 3</div><div className="pn">Platinum</div><div className="ptag">Category leadership</div>
-          <div className="pp"><div className="ppn">$3,000</div><div className="ppm">/month</div></div>
+          <div className="pp"><div className="ppn">Custom</div><div className="ppm">quote</div></div>
           <div className="pcom">Minimum 3 months</div>
           <ul className="pf"><li>5× Targeted Publication Pitches</li><li>5× Pitching and Story Creation</li><li>1× Top-Tier Publication Pitch</li><li>Contributor Opportunity Pitching</li><li>Podcast and Radio Pitching</li><li>Print Publication Pitching</li><li>Ghostwriting</li><li>Television Pitching</li><li>Media Training</li></ul>
           <div className="ppub"><div className="pplbl">Target Publications</div><div className="pplist">Hudson Weekly, Yahoo Finance, Australian Times, New York Reporter, CEO World Biz, Reality Times, OK! Magazine, Elle, Billboard, Podcast (1M+ subscriber channel)</div></div>
-          <a href="#contact" className="btn-g" style={{ display: "block", textAlign: "center" }}>Get Started</a>
+          <Link href="/contact" className="btn-g" style={{ display: "block", textAlign: "center" }}>Get Started</Link>
         </div>
       </div>
     </section>
@@ -226,65 +226,41 @@ export function BrandingSection() {
       </section>
 
       <section className="part-section">
-        <div className="part-title reveal">Brands We Have Partnered With</div>
-        <div className="part-grid">
-          {[
-            {
-              src: "/techcon-removebg-preview.png",
-              alt: "TechCon SoCal",
-              name: "TechCon SoCal"
-            },
-            {
-              src: "/grit-brokerage-logo-Picsart-BackgroundRemover.jpg",
-              alt: "Grit Brokerage",
-              large: true,
-              name: "Grit Brokerage"
-            },
-            {
-              src: "/brede_ciapciak-removebg-preview.png",
-              alt: "Brede Ciapciak Dental",
-              name: "Brede Ciapciak Dental"
-            },
-            {
-              src: "/Sj-removebg-preview.png",
-              alt: "Interior Design and Real Estate Service",
-              name: "Interior Design & Real Estate Service"
-            }
-          ].map((brand, i) => (
-            <div
-              key={brand.alt}
-              className="pi pi-logo reveal"
-              style={{ transitionDelay: `${0.07 * (i + 1)}s` }}
-            >
-              <img
-                src={brand.src}
-                alt={brand.alt}
-                className={
-                  "large" in brand && brand.large
-                    ? "partner-logo-img partner-logo-img--grit"
-                    : "partner-logo-img"
-                }
-              />
-              <span className="partner-logo-name">{brand.name}</span>
-            </div>
-          ))}
+        <div className="part-title reveal">Brands We&rsquo;ve Worked With</div>
+        <div className="brand-marquee-wrap reveal">
+          <div className="brand-marquee">
+            {(() => {
+              const brands = [
+                { src: "/techcon-removebg-preview.png", alt: "TechCon SoCal" },
+                { src: "/grit-brokerage-logo-Picsart-BackgroundRemover.jpg", alt: "Grit Brokerage", large: true },
+                { src: "/brede_ciapciak-removebg-preview.png", alt: "Brede Ciapciak Dental" },
+                { src: "/Sj-removebg-preview.png", alt: "Interior Design & Real Estate Service" },
+                { src: "/beverly-removebg-preview.png", alt: "Beverly" }
+              ];
+              // triple the list so the loop stays seamless across widths
+              return [...brands, ...brands, ...brands].map((b, i) => (
+                <div className="bm-item" key={`${b.alt}-${i}`}>
+                  <img
+                    src={b.src}
+                    alt={b.alt}
+                    className={"large" in b && b.large ? "bm-img bm-img--lg" : "bm-img"}
+                    loading="lazy"
+                  />
+                </div>
+              ));
+            })()}
+          </div>
         </div>
       </section>
     </>
   );
 }
 
+// NOTE: clients that have their own Case Study (Kirk, Indrakrishnan, Brick,
+// Albright, Kelly) are placed LAST here so they aren't the front slides of the
+// carousel — they're already featured in the "Clients We've Featured" section,
+// so in the placements carousel you reach them via the arrow.
 export const clientPlacements: Placement[] = [
-    {
-      outlet: "MSN",
-      headline:
-        "The body isn't a machine: Inside Dr. Kirk Sanford's case for honest regenerative medicine",
-      meta: "Full feature · MSN",
-      href: "https://www.msn.com/en-us/news/other/the-body-isn%E2%80%99t-a-machine-inside-dr-kirk-sanford%E2%80%99s-case-for-honest-regenerative-medicine/ar-AA2705OB",
-      img: "/placement-kirk-msn.jpg",
-      logo: null,
-      logoWhite: true
-    },
     {
       outlet: "Yahoo Finance",
       headline:
@@ -293,16 +269,6 @@ export const clientPlacements: Placement[] = [
       href: "https://finance.yahoo.com/markets/stocks/articles/pointone-partners-launches-texas-real-201500951.html",
       img: "/placement-shams.jpg",
       logo: null,
-      logoWhite: true
-    },
-    {
-      outlet: "USA Today",
-      headline:
-        "Dr. Bhuvanendram Indrakrishnan: Leadership in Medicine and Community Health",
-      meta: "May 22, 2026",
-      href: "https://www.usatoday.com/story/special/contributor-content/2026/05/22/dr-bhuvanendram-indrakrishnan-leadership-in-medicine-and-community-health/90214273007/",
-      img: "/placement-indran.jpg",
-      logo: "/USA-Today-removebg-preview.png",
       logoWhite: true
     },
     {
@@ -335,40 +301,12 @@ export const clientPlacements: Placement[] = [
       logoWhite: true
     },
     {
-      outlet: "Wall Street Times",
-      headline:
-        "From Mario Kart to the Supreme Court: How Matthew Brick Built a Law Firm That Puts Clients First",
-      meta: "April 23, 2026",
-      href: "https://wallstreettimes.com/from-mario-kart-to-the-supreme-court-how-matthew-brick-built-a-law-firm-that-puts-clients-first/",
-      img: "/placement-brick.jpg",
-      logo: "/WST%20.jpeg",
-      logoWhite: false
-    },
-    {
-      outlet: "New York Weekly",
-      headline: "Leaving a Mark: Andréa Albright and the Future of Legacy Publishing",
-      meta: "Entrepreneur Feature",
-      href: "https://nyweekly.com/entrepreneur/leaving-a-mark-andrea-albright-and-the-future-of-legacy-publishing/",
-      img: "/placement-albright.jpg",
-      logo: "/NY-Weekly-removebg-preview.png",
-      logoWhite: true
-    },
-    {
       outlet: "Fox Interviewer",
       headline: "The VRDO Rate-Rigging Scandal: How Wall Street Bilked Taxpayers",
       meta: "June 3, 2025",
       href: "https://foxinterviewer.com/business/the-vrdo-rate-rigging-scandal-how-wall-street-bilked-taxpayers/",
       img: "/placement-vrdo.jpg",
       logo: "/fox-scg-logo.svg",
-      logoWhite: true
-    },
-    {
-      outlet: "CEO Weekly",
-      headline: "Patrick Kelly: Giving Fresh Produce a Global Voice Through Storytelling and Innovation",
-      meta: "September 18, 2025",
-      href: "https://ceoweekly.com/patrick-kelly-giving-fresh-produce-a-global-voice-through-storytelling-and-innovation/",
-      img: "/placement-kelly.jpg",
-      logo: "/CEO_Weekly-removebg-preview.png",
       logoWhite: true
     },
     {
@@ -388,6 +326,54 @@ export const clientPlacements: Placement[] = [
       href: "https://www.benzinga.com/pressreleases/25/07/ab46479680/mark-manderson-elevating-standards-of-mental-health-and-addiction-care-with-pacific-shores-recove",
       img: "/placement-mark.jpg",
       logo: "/Benzinga-Logo-removebg-preview.png",
+      logoWhite: true
+    },
+    {
+      outlet: "MSN",
+      headline:
+        "The body isn't a machine: Inside Dr. Kirk Sanford's case for honest regenerative medicine",
+      meta: "Full feature · MSN",
+      href: "https://www.msn.com/en-us/news/other/the-body-isn%E2%80%99t-a-machine-inside-dr-kirk-sanford%E2%80%99s-case-for-honest-regenerative-medicine/ar-AA2705OB",
+      img: "/placement-kirk-msn.jpg",
+      logo: null,
+      logoWhite: true
+    },
+    {
+      outlet: "USA Today",
+      headline:
+        "Dr. Bhuvanendram Indrakrishnan: Leadership in Medicine and Community Health",
+      meta: "May 22, 2026",
+      href: "https://www.usatoday.com/story/special/contributor-content/2026/05/22/dr-bhuvanendram-indrakrishnan-leadership-in-medicine-and-community-health/90214273007/",
+      img: "/placement-indran.jpg",
+      logo: "/USA-Today-removebg-preview.png",
+      logoWhite: true
+    },
+    {
+      outlet: "Wall Street Times",
+      headline:
+        "From Mario Kart to the Supreme Court: How Matthew Brick Built a Law Firm That Puts Clients First",
+      meta: "April 23, 2026",
+      href: "https://wallstreettimes.com/from-mario-kart-to-the-supreme-court-how-matthew-brick-built-a-law-firm-that-puts-clients-first/",
+      img: "/placement-brick.jpg",
+      logo: "/WST%20.jpeg",
+      logoWhite: false
+    },
+    {
+      outlet: "New York Weekly",
+      headline: "Leaving a Mark: Andréa Albright and the Future of Legacy Publishing",
+      meta: "Entrepreneur Feature",
+      href: "https://nyweekly.com/entrepreneur/leaving-a-mark-andrea-albright-and-the-future-of-legacy-publishing/",
+      img: "/placement-albright.jpg",
+      logo: "/NY-Weekly-removebg-preview.png",
+      logoWhite: true
+    },
+    {
+      outlet: "CEO Weekly",
+      headline: "Patrick Kelly: Giving Fresh Produce a Global Voice Through Storytelling and Innovation",
+      meta: "September 18, 2025",
+      href: "https://ceoweekly.com/patrick-kelly-giving-fresh-produce-a-global-voice-through-storytelling-and-innovation/",
+      img: "/placement-kelly.jpg",
+      logo: "/CEO_Weekly-removebg-preview.png",
       logoWhite: true
     }
 ];
@@ -439,7 +425,7 @@ export function GuidesSection() {
         </p>
         <a
           className="guides-cta-btn"
-          href="https://calendly.com/dna-agency00/30min"
+          href="/contact"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -476,79 +462,9 @@ export function CtaFooterSection() {
           <a href="mailto:sam@digitalnetworkingagency.com" className="btn-p">
             <span>Book a Consultation</span>
           </a>
-          <a href="#packages" className="btn-g">View Packages</a>
+          <Link href="/services" className="btn-g">View Packages</Link>
         </div>
       </section>
-      <footer className="site-footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <img src="/black_logo.png" alt="DNA PR" className="footer-logo" />
-            <p className="footer-tag">
-              Results-driven PR &amp; media relations. We secure meaningful coverage
-              that turns brands into authorities &mdash; because it&apos;s in your DNA.
-            </p>
-            <div className="footer-social">
-              <a href="https://instagram.com/dnateams" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              </a>
-              <a href="mailto:sam@digitalnetworkingagency.com" aria-label="Email">
-                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-              </a>
-              <a href="tel:+13302276337" aria-label="Phone">
-                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-              </a>
-            </div>
-            <a
-              className="hero-tp footer-tp"
-              href="https://www.trustpilot.com/review/digitalnetworkingagency.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Read our reviews on Trustpilot"
-            >
-              <span className="hero-tp-stars">
-                <span className="tp-tile"><img src="/tp-star-white.svg" alt="" /></span>
-                <span className="tp-tile"><img src="/tp-star-white.svg" alt="" /></span>
-                <span className="tp-tile"><img src="/tp-star-white.svg" alt="" /></span>
-                <span className="tp-tile"><img src="/tp-star-white.svg" alt="" /></span>
-                <span className="tp-tile"><img src="/tp-star-white.svg" alt="" /></span>
-              </span>
-              <span className="hero-tp-brand">
-                <img src="/tp-star-green.svg" alt="" className="tp-mark" />
-                Trustpilot
-              </span>
-            </a>
-          </div>
-
-          <div className="footer-col">
-            <div className="footer-h">Contact</div>
-            <a href="mailto:sam@digitalnetworkingagency.com">sam@digitalnetworkingagency.com</a>
-            <a href="tel:+13302276337">+1 (330) 227-6337</a>
-            <a href="https://instagram.com/dnateams" target="_blank" rel="noopener noreferrer">@dnateams</a>
-          </div>
-
-          <div className="footer-col">
-            <div className="footer-h">Office</div>
-            <p className="footer-addr">
-              Digital Networking Agency LLC<br />
-              6545 Market Ave N, Suite 100<br />
-              Canton, OH 44721<br />
-              United States
-            </p>
-          </div>
-
-          <div className="footer-col">
-            <div className="footer-h">Explore</div>
-            <a href="#about">About</a>
-            <a href="#packages">Packages</a>
-            <a href="#testimonials">Reviews</a>
-            <a href="#contact">Book a Call</a>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <span>© 2026 Digital Networking Agency LLC — It&apos;s in our DNA</span>
-        </div>
-      </footer>
     </>
   );
 }
@@ -716,7 +632,7 @@ export async function TestimonialsSection() {
     <section className="tst-section" id="testimonials">
       <div className="tst-glow" />
       <div className="stag reveal">Client Voices</div>
-      <div className="stitle reveal">What Our Clients Say</div>
+      <div className="stitle reveal">Digital Networking Agency Reviews</div>
       <div className="sdiv reveal" />
       <TestimonialsCarousel reviews={allReviews} />
     </section>

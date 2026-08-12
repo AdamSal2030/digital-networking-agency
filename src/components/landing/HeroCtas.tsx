@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type { MouseEvent } from "react";
 
 function scrollToSection(id: string, e: MouseEvent<HTMLAnchorElement>) {
@@ -18,9 +19,9 @@ export function HeroCtas() {
       <a href="#contact" className="btn-p btn-glow" onClick={(e) => scrollToSection("contact", e)}>
         <span>Book a Free Consultation →</span>
       </a>
-      <a href="#packages" className="btn-g" onClick={(e) => scrollToSection("packages", e)}>
+      <Link href="/services" className="btn-g">
         View Packages
-      </a>
+      </Link>
     </div>
   );
 }

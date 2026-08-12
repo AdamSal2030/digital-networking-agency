@@ -31,6 +31,14 @@ export function ScrollReveal() {
     const targets: Element[] = [];
     auto.forEach((el) => {
       if ((el as HTMLElement).dataset.sr) return;
+      // Skip elements that already belong to the homepage `.reveal` system
+      // (LandingEffects owns those) so the two don't fight and hide content.
+      if (
+        el.classList.contains("reveal") ||
+        el.classList.contains("reveal-l") ||
+        el.classList.contains("reveal-r")
+      )
+        return;
       (el as HTMLElement).dataset.sr = "1";
       el.classList.add("sr");
       targets.push(el);

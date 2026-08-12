@@ -7,7 +7,7 @@ import styles from "../../guides/guides.module.css";
 
 const SITE = "https://www.digitalnetworkingagency.com";
 const AUTHOR = "Sam Harris";
-const BOOKING = "https://calendly.com/dna-agency00/30min";
+const BOOKING = "/contact";
 
 export const dynamicParams = false;
 

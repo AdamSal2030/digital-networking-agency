@@ -4,17 +4,12 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "/#about", label: "About" },
-  { href: "/#packages", label: "Packages" },
-  { href: "/#alacarte", label: "A La Carte" },
-  { href: "/#prime", label: "DNA Prime" },
-  { href: "/#branding", label: "Branding" },
-  { href: "/#testimonials", label: "Reviews" },
+  { href: "/services", label: "Services" },
   { href: "/get-featured-in", label: "Get Featured" },
   { href: "/case-studies", label: "Case Studies" },
   { href: "/pr-for", label: "Industries" },
   { href: "/guides", label: "Guides" },
-  { href: "/contact", label: "Contact" }
+  { href: "/reviews", label: "Reviews" }
 ];
 
 export function NavMenu() {
