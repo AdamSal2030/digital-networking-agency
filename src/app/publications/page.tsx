@@ -41,12 +41,19 @@ const CATEGORIES: { name: string; blurb: string; items: string[] }[] = [
     ],
   },
   {
+    name: "News platforms & aggregators",
+    blurb:
+      "Not publications you pitch — they surface articles from publishers who feed them, so the route in is a feature that syndicates.",
+    items: ["Apple News", "Google News"],
+  },
+  {
     name: "Business & finance",
     blurb: "Read by founders, investors and operators.",
     items: [
       "Entrepreneur",
       "Inc.",
       "Fast Company",
+      "MarketWatch",
       "Benzinga",
       "CEO Weekly",
       "CEO World Biz",

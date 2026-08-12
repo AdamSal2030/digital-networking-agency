@@ -294,6 +294,48 @@ export const OUTLETS: Outlet[] = [
       "Its audience is founders and operators, so the coverage reaches actual peers and buyers rather than a general audience. Commercially useful, not just flattering.",
     audience: "Founders and growing private companies.",
   },
+  {
+    slug: "apple-news",
+    guideSlug: "how-to-get-featured-on-apple-news",
+    name: "Apple News",
+    title: "Get Featured on Apple News | Digital Networking Agency",
+    subhead: "Reach through the app on every iPhone",
+    value:
+      "Apple News carries content from publishers, so the route in is a feature with a publication that syndicates there. We place the story and tell you honestly how syndication works.",
+    about:
+      "Apple News is a news aggregation app built into iPhone, iPad and Mac, surfacing content from publishers who distribute through it alongside Apple's own editorial curation.",
+    why:
+      "Enormous built-in distribution on devices people already carry. Worth understanding clearly: appearing there generally means your article ran in a publication that feeds Apple News.",
+    audience: "Consumer brands and founders after mainstream reach.",
+  },
+  {
+    slug: "google-news",
+    guideSlug: "how-to-get-featured-on-google-news",
+    name: "Google News",
+    title: "Get Featured on Google News | Digital Networking Agency",
+    subhead: "Where people look when they search your name",
+    value:
+      "Google News surfaces articles from sites it already indexes, so the route in is being published on one of them. We handle the placement and explain exactly how it works.",
+    about:
+      "Google News aggregates coverage from publishers across the web, surfacing it in the News tab, the Google News app and news carousels in search results.",
+    why:
+      "It is where coverage about you shows up when someone searches your name. A permanent, indexed article keeps working long after publication.",
+    audience: "Anyone whose buyers research them before committing.",
+  },
+  {
+    slug: "marketwatch",
+    guideSlug: "how-to-get-featured-in-marketwatch",
+    name: "MarketWatch",
+    title: "Get Featured in MarketWatch | Digital Networking Agency",
+    subhead: "Financial media, staff-written",
+    value:
+      "We build the press record and positioning that make top-tier financial coverage plausible, and tell you honestly whether MarketWatch is realistic for your business.",
+    about:
+      "MarketWatch is a financial news site owned by Dow Jones, covering markets, investing and personal finance for an audience that follows money closely.",
+    why:
+      "Dow Jones credibility with a retail-investor and finance-literate readership. Like its stablemates it is staff-written, which is exactly why coverage there carries weight.",
+    audience: "Finance-facing companies with a substantive story.",
+  },
 ];
 
 export const getOutlet = (slug: string) =>
