@@ -78,6 +78,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${SITE}/about`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE}/publications`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE}/compare`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE}/privacy`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${SITE}/terms`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 
   const guideRoutes: MetadataRoute.Sitemap = GUIDES.map((guide) => ({

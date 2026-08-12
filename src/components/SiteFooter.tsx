@@ -78,8 +78,10 @@ export function SiteFooter() {
         <div className={styles.col} role="navigation" aria-label="Footer">
           <h3>Explore</h3>
           <Link href="/">Home</Link>
-          <Link href="/#about">About</Link>
+          <Link href="/about">About Us</Link>
           <Link href="/services">Services</Link>
+          <Link href="/publications">Publications</Link>
+          <Link href="/compare">Compare Options</Link>
           <Link href="/case-studies">Case Studies</Link>
           <Link href="/reviews">Reviews</Link>
           <Link href="/get-featured-in">Get Featured</Link>
@@ -126,6 +128,11 @@ export function SiteFooter() {
       <div className={styles.bottom}>
         <span className={styles.copy}>
           © 2026 Digital Networking Agency LLC — It&rsquo;s in our DNA
+          <span className={styles.legal}>
+            <Link href="/privacy">Privacy Policy</Link>
+            <i aria-hidden="true">•</i>
+            <Link href="/terms">Terms &amp; Conditions</Link>
+          </span>
         </span>
         <div className={styles.trust}>
           <span className={styles.secure}>

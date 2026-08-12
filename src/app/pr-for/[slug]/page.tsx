@@ -114,8 +114,29 @@ export default async function ServicePage({
     },
   ];
 
-  // A couple of related guides for internal linking
-  const related = GUIDES.slice(0, 3);
+  // Each industry has a matching how-to guide. Lead with it so the commercial
+  // page and its informational counterpart link to each other, then fill with
+  // other guides. (Previously this was GUIDES.slice(0,3) — the same three
+  // guides on every page, which is a weak internal-link signal.)
+  const GUIDE_FOR_SERVICE: Record<string, string> = {
+    startups: "how-to-get-press-for-your-startup",
+    "saas-companies": "how-to-get-press-for-your-saas-company",
+    coaches: "how-to-get-press-as-a-coach",
+    consultants: "how-to-get-press-as-a-consultant",
+    "real-estate-agents": "how-to-get-press-as-a-real-estate-agent",
+    attorneys: "how-to-get-press-as-an-attorney",
+    "financial-advisors": "how-to-get-press-as-a-financial-advisor",
+    "medical-practices": "how-to-get-press-for-your-medical-practice",
+    "ecommerce-brands": "how-to-get-press-for-your-ecommerce-brand",
+    authors: "how-to-get-press-as-an-author",
+    speakers: "how-to-get-press-as-a-speaker",
+    "personal-brands": "how-to-build-a-personal-brand-with-press",
+  };
+  const primary = GUIDES.find((g) => g.slug === GUIDE_FOR_SERVICE[service.slug]);
+  const related = [
+    ...(primary ? [primary] : []),
+    ...GUIDES.filter((g) => g.slug !== primary?.slug).slice(0, primary ? 3 : 4),
+  ];
 
   return (
     <div className={styles.page}>
