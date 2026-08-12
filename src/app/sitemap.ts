@@ -6,8 +6,22 @@ import { CASE_STUDIES } from "@/content/caseStudies";
 
 const SITE = "https://www.digitalnetworkingagency.com";
 
+// Stable, per-section content dates. Previously this used `new Date()`, which
+// stamped every URL with the build time — so all URLs shared one timestamp that
+// changed on every deploy. Google discounts that as a freshness signal. Bump the
+// relevant constant when that section's content actually changes.
+const UPDATED = {
+  home: new Date("2026-08-12"),
+  guides: new Date("2026-08-12"),
+  outlets: new Date("2026-08-12"),
+  services: new Date("2026-06-20"),
+  cases: new Date("2026-07-10"),
+  reviews: new Date("2026-08-11"),
+  contact: new Date("2026-08-11"),
+};
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  const lastModified = UPDATED.home;
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -36,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE}/contact`,
-      lastModified,
+      lastModified: UPDATED.contact,
       changeFrequency: "monthly",
       priority: 0.7,
     },
@@ -54,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE}/reviews`,
-      lastModified,
+      lastModified: UPDATED.reviews,
       changeFrequency: "weekly",
       priority: 0.7,
     },
@@ -68,28 +82,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const guideRoutes: MetadataRoute.Sitemap = GUIDES.map((guide) => ({
     url: `${SITE}/guides/${guide.slug}`,
-    lastModified,
+    lastModified: UPDATED.guides,
     changeFrequency: "monthly",
     priority: 0.7,
   }));
 
   const serviceRoutes: MetadataRoute.Sitemap = SERVICES.map((service) => ({
     url: `${SITE}/pr-for/${service.slug}`,
-    lastModified,
+    lastModified: UPDATED.services,
     changeFrequency: "monthly",
     priority: 0.9,
   }));
 
   const outletRoutes: MetadataRoute.Sitemap = OUTLETS.map((o) => ({
     url: `${SITE}/get-featured-in/${o.slug}`,
-    lastModified,
+    lastModified: UPDATED.outlets,
     changeFrequency: "monthly",
     priority: 0.9,
   }));
 
   const caseRoutes: MetadataRoute.Sitemap = CASE_STUDIES.map((c) => ({
     url: `${SITE}/case-studies/${c.slug}`,
-    lastModified,
+    lastModified: UPDATED.cases,
     changeFrequency: "monthly",
     priority: 0.7,
   }));

@@ -11,9 +11,16 @@ import {
 } from "@/components/landing/sections";
 import { ServicesTeaser } from "@/components/landing/HomeExtras";
 import { VideoTestimonial } from "@/components/VideoTestimonial";
+import { HomeFAQ } from "@/components/landing/HomeFAQ";
+import type { Metadata } from "next";
 
 // Refresh the homepage (and its Trustpilot testimonials) every 6 hours.
 export const revalidate = 21600;
+
+// The homepage was the only route without a canonical.
+export const metadata: Metadata = {
+  alternates: { canonical: "https://www.digitalnetworkingagency.com" },
+};
 
 export default function Home() {
   return (
@@ -31,6 +38,7 @@ export default function Home() {
       <VideoTestimonial />
       <TestimonialsSection />
       <GuidesSection />
+      <HomeFAQ />
       <CtaFooterSection />
       <LandingEffects />
     </>

@@ -49,6 +49,27 @@ export default function RootLayout({
         image: "https://www.digitalnetworkingagency.com/icon.png",
         email: "sam@digitalnetworkingagency.com",
         telephone: "+1-330-227-6337",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "6545 Market Ave N, Suite 100",
+          addressLocality: "Canton",
+          addressRegion: "OH",
+          postalCode: "44721",
+          addressCountry: "US"
+        },
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          opens: "09:00",
+          closes: "18:00"
+        },
+        priceRange: "$$",
         areaServed: "Worldwide",
         knowsAbout: [
           "Public Relations",

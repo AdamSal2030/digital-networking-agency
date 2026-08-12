@@ -43,6 +43,9 @@
   color: var(--lime);
   display: block;
   margin-bottom: 18px;
+  /* sits inside the H1 so the full query is in the heading — reset inherited type */
+  line-height: 1.2;
+  font-weight: 400;
 }
 .hero h1 {
   font-family: "Bebas Neue", sans-serif;

@@ -224,6 +224,76 @@ export const OUTLETS: Outlet[] = [
       "Cross-border credibility is harder to build and worth more when you have it. The right frame for global ambitions.",
     audience: "Companies with international reach.",
   },
+  {
+    slug: "entrepreneur",
+    guideSlug: "how-to-get-featured-in-entrepreneur",
+    name: "Entrepreneur",
+    title: "Get Featured in Entrepreneur Magazine | Digital Networking Agency",
+    subhead: "The title founders name without thinking",
+    value:
+      "We develop your story and pitch it toward Entrepreneur on your behalf. You approve every word before anything is submitted.",
+    about:
+      "Entrepreneur has covered startups, small business and founder stories since 1977, reaching an audience of operators and business owners across its magazine and entrepreneur.com.",
+    why:
+      "Its readers are founders and operators, so a feature reaches people who might actually buy from you — not just people impressed by the logo. Recognised instantly, and specific enough to mean something.",
+    audience: "Founders, operators and small-business owners.",
+  },
+  {
+    slug: "business-insider",
+    guideSlug: "how-to-get-featured-in-business-insider",
+    name: "Business Insider",
+    title: "Get Featured in Business Insider | Digital Networking Agency",
+    subhead: "Hard to get, and worth it for that reason",
+    value:
+      "We build the story and the press record that make coverage at this level plausible, then pitch on your behalf. We are honest with you about the odds before we start.",
+    about:
+      "Business Insider is one of the most-read business publications in the world, written by its own newsroom and covering companies, markets, tech and careers for business decision-makers.",
+    why:
+      "Because it is genuinely difficult. A Business Insider mention signals that a working journalist judged your story worth telling — and its readers are the people in a position to act on it.",
+    audience: "Founders and executives with a substantive, evidenced story.",
+  },
+  {
+    slug: "bloomberg",
+    guideSlug: "how-to-get-featured-in-bloomberg",
+    name: "Bloomberg",
+    title: "Get Featured in Bloomberg | Digital Networking Agency",
+    subhead: "The top of the financial media stack",
+    value:
+      "We build the press record and positioning that make top-tier financial coverage possible. We will also tell you honestly whether Bloomberg is realistic for your business.",
+    about:
+      "Bloomberg is a global financial news organisation covering markets, capital and the economy for investors and finance professionals.",
+    why:
+      "Few names carry more weight with investors. Coverage here signals genuine financial significance — which is exactly why it cannot be bought.",
+    audience: "Companies with real financial or market significance.",
+  },
+  {
+    slug: "fast-company",
+    guideSlug: "how-to-get-featured-in-fast-company",
+    name: "Fast Company",
+    title: "Get Featured in Fast Company | Digital Networking Agency",
+    subhead: "For the idea, not the announcement",
+    value:
+      "We shape the idea inside your business into a story that reads like an argument rather than an advertisement, then pitch it where it fits.",
+    about:
+      "Fast Company covers innovation, design, sustainability, leadership and the future of work, and is known for its annual lists recognising innovative companies and people.",
+    why:
+      "Its readers are creative and strategic professionals. A feature here frames you as someone doing something structurally different, not just successfully.",
+    audience: "Innovative, design-led and future-of-work businesses.",
+  },
+  {
+    slug: "inc",
+    guideSlug: "how-to-get-featured-in-inc",
+    name: "Inc.",
+    title: "Get Featured in Inc. Magazine | Digital Networking Agency",
+    subhead: "Written for founders, read by founders",
+    value:
+      "We find the lesson inside your business and build it into a piece written to editorial standard. You approve every word before anything is submitted.",
+    about:
+      "Inc. has covered entrepreneurs and growing companies for decades, spanning growth, hiring, leadership and funding, and is known for the Inc. 5000 ranking.",
+    why:
+      "Its audience is founders and operators, so the coverage reaches actual peers and buyers rather than a general audience. Commercially useful, not just flattering.",
+    audience: "Founders and growing private companies.",
+  },
 ];
 
 export const getOutlet = (slug: string) =>

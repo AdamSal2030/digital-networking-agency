@@ -131,8 +131,12 @@ export default async function OutletLanding({
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
-          <span className={styles.kicker}>Get featured in</span>
-          <h1>{o.name}</h1>
+          {/* The full "Get featured in <Outlet>" phrase lives inside the H1 so
+              the target query is in the heading; the kicker is styled, not split out. */}
+          <h1>
+            <span className={styles.kicker}>Get featured in</span>
+            {o.name}
+          </h1>
           <p className={styles.subhead}>{o.subhead}</p>
           <p className={styles.value}>{o.value}</p>
           <div className={styles.heroCtas}>
