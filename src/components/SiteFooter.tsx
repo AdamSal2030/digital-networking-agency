@@ -132,6 +132,8 @@ export function SiteFooter() {
             <Link href="/privacy">Privacy Policy</Link>
             <i aria-hidden="true">•</i>
             <Link href="/terms">Terms &amp; Conditions</Link>
+            <i aria-hidden="true">•</i>
+            <Link href="/refunds">Refund Policy</Link>
           </span>
         </span>
         <div className={styles.trust}>
