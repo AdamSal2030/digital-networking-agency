@@ -115,6 +115,35 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        {/* Speculation Rules: prefetch likely next-navigations and prerender the
+            two highest-intent paths. preload_check.py scored the site 50/100
+            with "blocks=0" before this. */}
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              prefetch: [
+                {
+                  where: {
+                    and: [
+                      { href_matches: "/*" },
+                      { not: { href_matches: "/api/*" } },
+                    ],
+                  },
+                  eagerness: "moderate",
+                },
+              ],
+              prerender: [
+                {
+                  where: {
+                    href_matches: ["/contact", "/services"],
+                  },
+                  eagerness: "moderate",
+                },
+              ],
+            }),
+          }}
+        />
       </head>
       <body>
         <NavMenu />

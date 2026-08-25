@@ -41,7 +41,12 @@ export function HeroSection() {
       <div className="hero-right">
         <div className="hero-visual reveal-r">
           <div className="hero-visual-frame">
-            <img src="/hero-media.jpg" alt="DNA PR — press coverage across the world's leading media" />
+            <img
+              src="/hero-media.jpg"
+              alt="DNA PR — press coverage across the world's leading media"
+              fetchPriority="high"
+              decoding="async"
+            />
             <div className="hero-visual-grad" />
           </div>
           <div className="hero-badge hero-badge--a">
