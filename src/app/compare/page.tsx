@@ -5,7 +5,7 @@ import styles from "./compare.module.css";
 const SITE = "https://www.digitalnetworkingagency.com";
 
 const DESCRIPTION =
-  "PR agency, wire service, DIY pitching or a media placement firm? An honest comparison of what each actually buys you, what it costs in time, and when to use which.";
+  "PR agency, wire service, DIY pitching or a media placement firm? An honest comparison of what each buys you and when to use which.";
 
 export const metadata: Metadata = {
   title: "Compare Your PR Options | Digital Networking Agency",

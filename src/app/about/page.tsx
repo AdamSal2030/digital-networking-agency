@@ -5,7 +5,7 @@ import styles from "./about.module.css";
 const SITE = "https://www.digitalnetworkingagency.com";
 
 const DESCRIPTION =
-  "Digital Networking Agency is a PR and media placement firm led by Sam Harris. We develop, write and place founder and brand stories in publications people actually trust.";
+  "Digital Networking Agency is a PR and media placement firm. We develop, write and place founder and brand stories in publications people trust.";
 
 export const metadata: Metadata = {
   title: "About Us | Digital Networking Agency",

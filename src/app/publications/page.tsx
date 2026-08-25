@@ -6,7 +6,7 @@ import styles from "./publications.module.css";
 const SITE = "https://www.digitalnetworkingagency.com";
 
 const DESCRIPTION =
-  "The publications Digital Networking Agency places clients in — MSN, USA Today, Yahoo Finance, Entrepreneur, Benzinga, AP News and over 1,100 more. Browse by category.";
+  "The publications DNA places clients in — MSN, USA Today, Yahoo Finance, Entrepreneur, AP News and over 1,100 more. Browse by category.";
 
 export const metadata: Metadata = {
   title: "Publications We Place Clients In | Digital Networking Agency",

@@ -11,7 +11,7 @@ import { LandingEffects } from "@/components/landing/effects";
 const SITE = "https://www.digitalnetworkingagency.com";
 
 const DESCRIPTION =
-  "DNA PR services in full — monthly packages, single A La Carte features, the premium DNA Prime strategy, and elite branding. Founder-friendly PR that gets you featured and keeps you there.";
+  "DNA PR services in full — monthly packages, single A La Carte features, the premium DNA Prime strategy, and elite branding.";
 
 export const metadata: Metadata = {
   title: "Services & Packages | Digital Networking Agency",
