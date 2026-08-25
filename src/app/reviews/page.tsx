@@ -12,7 +12,7 @@ const SITE = "https://www.digitalnetworkingagency.com";
 export const metadata: Metadata = {
   title: "Client Reviews | Digital Networking Agency on Trustpilot",
   description:
-    "Real, verified client reviews of Digital Networking Agency on Trustpilot. See why founders and brands trust DNA to get them featured in the world's most respected publications.",
+    "Real, verified client reviews of Digital Networking Agency on Trustpilot — why founders and brands trust DNA to get them featured.",
   alternates: { canonical: `${SITE}/reviews` },
   openGraph: {
     title: "Client Reviews | Digital Networking Agency on Trustpilot",

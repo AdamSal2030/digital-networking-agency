@@ -228,7 +228,7 @@ export const OUTLETS: Outlet[] = [
     slug: "entrepreneur",
     guideSlug: "how-to-get-featured-in-entrepreneur",
     name: "Entrepreneur",
-    title: "Get Featured in Entrepreneur Magazine | Digital Networking Agency",
+    title: "Get Featured in Entrepreneur Magazine | DNA PR",
     subhead: "The title founders name without thinking",
     value:
       "We develop your story and pitch it toward Entrepreneur on your behalf. You approve every word before anything is submitted.",

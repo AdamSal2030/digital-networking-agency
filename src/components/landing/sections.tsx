@@ -17,17 +17,20 @@ export function HeroSection() {
       <div className="hero-wm">DNA</div>
       <div className="hero-left">
         <div className="hero-eyebrow">Public Relations · Done Differently</div>
-        <div className="hero-head-words">
-          <div className="hero-word" style={{ animationDelay: ".25s" }}>
+        {/* The homepage had no <h1> at all — the hero was styled divs. This is
+            the same visual, promoted to a real heading. Spans (not divs) so the
+            markup stays valid inside an h1; .hero-word is display:block. */}
+        <h1 className="hero-head-words">
+          <span className="hero-word" style={{ animationDelay: ".25s" }}>
             <span className="word-fill">DIGITAL</span>
-          </div>
-          <div className="hero-word" style={{ animationDelay: ".45s" }}>
+          </span>
+          <span className="hero-word" style={{ animationDelay: ".45s" }}>
             <span className="word-fill">NETWORKING</span>
-          </div>
-          <div className="hero-word" style={{ animationDelay: ".65s" }}>
+          </span>
+          <span className="hero-word" style={{ animationDelay: ".65s" }}>
             <span className="word-fill lime-word">AGENCY</span>
-          </div>
-        </div>
+          </span>
+        </h1>
         <p className="hero-vp">
           We turn founders &amp; brands into household names by{" "}
           <strong>pitching your story</strong> to our network of editors &amp;

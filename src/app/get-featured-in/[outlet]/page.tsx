@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { OUTLETS, getOutlet } from "@/content/outlets";
 import styles from "../getfeatured.module.css";
+import { clampDescription } from "@/lib/meta";
 
 const SITE = "https://www.digitalnetworkingagency.com";
 const BOOKING = "/contact";
@@ -22,7 +23,7 @@ export async function generateMetadata({
   const o = getOutlet(outlet);
   if (!o) return {};
   const url = `${SITE}/get-featured-in/${o.slug}`;
-  const description = `Get featured in ${o.name}. ${o.value}`;
+  const description = clampDescription(`Get featured in ${o.name}. ${o.value}`);
   return {
     title: o.title,
     description,

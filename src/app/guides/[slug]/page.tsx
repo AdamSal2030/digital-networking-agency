@@ -58,6 +58,38 @@ export async function generateMetadata({
   };
 }
 
+
+// Every guide ends with a "Frequently asked questions" H2 followed by
+// <h3>Question</h3><p>Answer</p> pairs, but none of that was exposed as
+// FAQPage schema — so ~130 Q&A pairs across the guide library were invisible
+// to rich results and AI answer engines. This lifts them out of the body HTML.
+function extractFaq(body: string): { q: string; a: string }[] {
+  const start = body.indexOf('id="frequently-asked-questions"');
+  if (start === -1) return [];
+  const tail = body.slice(start);
+  const strip = (h: string) =>
+    h
+      .replace(/<[^>]+>/g, "")
+      .replace(/&amp;/g, "&")
+      .replace(/&rsquo;|&#8217;/g, "\u2019")
+      .replace(/&ldquo;/g, "\u201c")
+      .replace(/&rdquo;/g, "\u201d")
+      .replace(/&mdash;/g, "\u2014")
+      .replace(/&nbsp;/g, " ")
+      .replace(/&quot;/g, '"')
+      .replace(/\s+/g, " ")
+      .trim();
+  const out: { q: string; a: string }[] = [];
+  const re = /<h3>([\s\S]*?)<\/h3>\s*((?:<p>[\s\S]*?<\/p>\s*)+)/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(tail)) !== null) {
+    const q = strip(m[1]);
+    const a = strip(m[2]);
+    if (q && a) out.push({ q, a });
+  }
+  return out;
+}
+
 export default async function GuidePage({
   params,
 }: {
@@ -70,6 +102,8 @@ export default async function GuidePage({
   const url = `${SITE}/guides/${guide.slug}`;
   const updated = "2026-08-09";
   const [bodyTop, bodyRest] = splitBody(guide.body);
+
+  const faqs = extractFaq(guide.body);
 
   const jsonLd = [
     {
@@ -122,6 +156,20 @@ export default async function GuidePage({
       },
       sameAs: ["https://instagram.com/dnateams"],
     },
+    ...(faqs.length
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "@id": `${url}#faq`,
+            mainEntity: faqs.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          },
+        ]
+      : []),
   ];
 
   return (

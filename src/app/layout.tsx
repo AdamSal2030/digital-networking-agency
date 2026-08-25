@@ -8,13 +8,13 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.digitalnetworkingagency.com"),
-  title: "DNA PR — Get Featured in Forbes, Rolling Stone & 100+ Top Outlets",
+  title: "DNA PR — Get Featured in Forbes, MSN & 1,100+ Outlets",
   description:
-    "DNA is a results-driven PR agency that pitches founders' and brands' stories to our network of editors and journalists at the world's most trusted publications — building lasting authority.",
+    "We pitch founders' and brands' stories to editors at MSN, USA Today, Forbes and 1,100+ trusted publications. You approve every word before it publishes.",
   openGraph: {
     title: "DNA PR — Get Featured in the World's Most Trusted Publications",
     description:
-      "Results-driven PR & media relations. We pitch your story to our editor and journalist contacts at Forbes, Rolling Stone, FOX & 100+ top outlets — because it's in your DNA.",
+      "Results-driven PR & media relations. We pitch your story to editors at Forbes, MSN, USA Today and 1,100+ top outlets — because it's in your DNA.",
     url: "https://www.digitalnetworkingagency.com",
     siteName: "Digital Networking Agency",
     type: "website",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DNA PR — Get Featured in the World's Most Trusted Publications",
     description:
-      "Results-driven PR & media relations. We pitch your story to our editor and journalist contacts at Forbes, Rolling Stone, FOX & 100+ top outlets.",
+      "Results-driven PR & media relations. We pitch your story to editors at Forbes, MSN, USA Today and 1,100+ top outlets.",
   },
 };
 export default function RootLayout({
@@ -41,7 +41,7 @@ export default function RootLayout({
         name: "Digital Networking Agency",
         alternateName: ["DNA", "DNA PR"],
         description:
-          "Digital Networking Agency (DNA) is a results-driven public relations and media relations firm. We pitch founders' and brands' stories to our network of editors and journalists at Forbes, Rolling Stone, USA Today and 100+ trusted publications to build lasting authority.",
+          "Digital Networking Agency (DNA) is a results-driven public relations and media placement firm. We pitch founders' and brands' stories to editors and journalists at MSN, USA Today, Yahoo Finance, Entrepreneur and over 1,100 other publications to build lasting authority.",
         disambiguatingDescription:
           "A public relations and media placement agency for founders and brands — not a directory, listing site, or B2B agency marketplace.",
         url: "https://www.digitalnetworkingagency.com",
@@ -137,7 +137,7 @@ export default function RootLayout({
           `}
         </Script>
         <noscript>
-          <img height="1" width="1" style={{display: "none"}}
+          <img height="1" width="1" alt="" style={{display: "none"}}
             src="https://www.facebook.com/tr?id=1487682899685317&ev=PageView&noscript=1"
           />
         </noscript>

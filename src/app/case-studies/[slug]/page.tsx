@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CASE_STUDIES, getCaseStudy } from "@/content/caseStudies";
 import styles from "../case.module.css";
+import { clampDescription } from "@/lib/meta";
 
 const SITE = "https://www.digitalnetworkingagency.com";
 const BOOKING = "/contact";
@@ -22,7 +23,9 @@ export async function generateMetadata({
   const c = getCaseStudy(slug);
   if (!c) return {};
   const url = `${SITE}/case-studies/${c.slug}`;
-  const description = `How Digital Networking Agency featured ${c.name} in ${c.outlet}. ${c.quote}`;
+  const description = clampDescription(
+    `How Digital Networking Agency featured ${c.name} in ${c.outlet}. ${c.quote}`
+  );
   return {
     title: `${c.name} in ${c.outlet} | DNA Case Study`,
     description,

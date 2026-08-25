@@ -65,7 +65,7 @@ nav.scrolled .nav-logo-img{height:34px;}
 .hero-left{position:relative;z-index:2;}
 .hero-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:5px;color:var(--lime);text-transform:uppercase;margin-bottom:36px;display:flex;align-items:center;gap:14px;opacity:0;animation:slideR .7s .15s cubic-bezier(.16,1,.3,1) forwards;}
 .hero-eyebrow::before{content:'';display:block;width:44px;height:1px;background:var(--lime);}
-.hero-word{overflow:hidden;opacity:0;animation:wordUp 1s cubic-bezier(.16,1,.3,1) forwards;}
+.hero-word{display:block;overflow:hidden;opacity:0;animation:wordUp 1s cubic-bezier(.16,1,.3,1) forwards;}
 .word-fill{font-family:'Bebas Neue',sans-serif;font-size:clamp(46px,7.4vw,104px);line-height:.88;letter-spacing:2.5px;color:var(--white);display:block;-webkit-text-stroke:0px transparent;transition:color .4s,-webkit-text-stroke .4s;}
 .word-fill:hover{color:transparent;-webkit-text-stroke:2px var(--lime);}
 .lime-word{
@@ -558,7 +558,7 @@ a.btn-p span{position:relative;z-index:2;color:inherit;}
 .hero-offer{display:inline-flex;align-items:center;gap:10px;padding:9px 18px;border:1px solid var(--border);border-radius:100px;background:rgba(143,255,0,.06);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--lime);margin-bottom:30px;opacity:0;animation:slideR .7s .15s cubic-bezier(.16,1,.3,1) forwards;}
 .hero-offer-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:pulse 1.8s ease-in-out infinite;flex-shrink:0;}
 @media(max-width:760px){.hero-offer{font-size:10px;letter-spacing:1px;padding:8px 14px;}}
-.hero-head-words{margin:0;}
+.hero-head-words{margin:0;font-size:inherit;font-weight:inherit;}
 .hero-vp{font-family:'Cormorant Garamond',serif;font-size:clamp(17px,1.4vw,21px);line-height:1.6;color:#c8ccd2;max-width:540px;margin:26px 0 0;opacity:0;animation:fadeUp .8s 1.6s forwards;}
 .hero-vp strong{color:var(--lime);font-weight:600;}
 .btn-glow{animation:ctaGlow 3.2s ease-in-out infinite;}
