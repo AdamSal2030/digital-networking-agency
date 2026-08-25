@@ -6,6 +6,9 @@ import { FloatingContact } from "@/components/FloatingContact";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SiteFooter } from "@/components/SiteFooter";
 
+const FONT_HREF =
+  "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Bebas+Neue&display=swap";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.digitalnetworkingagency.com"),
   title: "DNA PR — Get Featured in Forbes, MSN & 1,100+ Outlets",
@@ -107,10 +110,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Fonts were render-blocking (~990ms per Lighthouse). Preconnect, then
+            load the stylesheet asynchronously via the media="print" swap so it
+            never blocks first paint. display=swap is already in the URL, and the
+            <noscript> keeps it working without JS. */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Bebas+Neue&display=swap"
-          rel="stylesheet"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var l=document.createElement('link');l.rel='stylesheet';" +
+              "l.href=" + JSON.stringify(FONT_HREF) + ";l.media='print';" +
+              "l.onload=function(){this.media='all';this.onload=null;};" +
+              "document.head.appendChild(l);})();",
+          }}
+        />
+        <noscript>
+          <link rel="stylesheet" href={FONT_HREF} />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
